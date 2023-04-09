@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Check Your Age where you can drive in India or not </h1>
+    <input id="age" value="" type="number" placeholder="Enter Your Age">
+    <button onclick="check()">Check Age</button>
+    <br>
+    <h1 id="result"> Result</h1>
+
+</body>
+</html>
+
+<script>
+    function check(){
+      let a = document.getElementById("age").value;
+
+      if(a>=18){
+       document.getElementById("result").innerText = "You can drive in India";
+       document.getElementById("result").style.color = "green";
+       document.getElementById("result").style.fontWeight = "bold";
+       
+       var img = document.createElement("img");
+       img.src = "https://media2.giphy.com/media/DffShiJ47fPqM/200w.webp?cid=ecf05e477ffuj2mri9vqhgeewr97js9b30y1y92lwdwxkgn7&rid=200w.webp&ct=g";
+       img.alt = "A description of your image";
+       var container = document.getElementById("result");
+       container.appendChild(img);
+       
+      }
+      else if(a<18){
+        document.getElementById("result").innerText = "You can Not drive in India";
+        document.getElementById("result").style.color = "red";
+       document.getElementById("result").style.fontWeight = "bold";
+
+       var img = document.createElement("img");
+       img.src = "https://media1.giphy.com/media/uqMQsE4HKYvfnjhIRQ/200w.webp?cid=ecf05e47se82b5032eddsf53gq2k6mk546wx4uq50mvjwpss&rid=200w.webp&ct=g";
+       img.alt = "A description of your image";
+       var container = document.getElementById("result");
+       container.appendChild(img);
+        
+      }
+    }
+</script>

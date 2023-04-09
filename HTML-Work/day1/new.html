@@ -10,6 +10,20 @@
     <h1 id="head"> Welcome To HTML </h1>
     <button onclick="lick()"> Like </button>
     <button onclick="dislick()">Dislike</button>
+  <hr>
+
+  <h1>Signup</h1> 
+  <input id="name" type="text" placeholder="Enter Your name" value="">
+  <select id="gender">
+    <option> Select Gender </option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  <button onclick="Signup()"> Signup </button>
+  <br>
+  <h2 id="nameDisplay"> Display Name Hear </h2>
+  
+  <h2 id="genderDisplay"> Display Gender </h2>
 </body>
 </html>
 
@@ -20,4 +34,19 @@
     function dislick(){
       document.getElementById("head").innerText=("I Hate HTML")
     }
+   
+    function Signup(){
+       let n = document.getElementById("name").value;
+       let g = document.getElementById("gender").value
+       
+       document.getElementById("nameDisplay").innerText= "Name:- "+ n;
+       document.getElementById("genderDisplay").innerText= "Gender:- "+ g;
+    }
+    
+    
+
+
+
+
+
 </script>
