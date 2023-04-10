@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(4,200px);
+        grid-template-rows: 200px;
+        gap: 20px;
+    }
+    #container >div{
+        background-color: teal;
+        font-size: 40px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <h1>JavaScript querySelector</h1>
+    <p>Rahul</p>
+    <p>Priyanshu</p>
+    <p>Pradeep</p>
+    <hr>
+    <br>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
+
+<script>
+    // document.querySelector("p").style.color="red";
+    document.querySelector("h1").addEventListener("mouseover",changeColor);
+
+    function changeColor(){
+        document.querySelector("h1").style.color="blue"
+    }
+</script>
