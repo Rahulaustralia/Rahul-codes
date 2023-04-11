@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        width: 100%;
+        display: flex;
+    }
+    #sidbar{
+        width:35%;
+        padding: 5px;
+        border: 1px solid blue;
+    }
+    #mainbar{
+        width: 65%;
+        padding: 5px;
+        border: 1px solid red;
+    }
+    table{
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+     th{
+        width: 45%;
+        justify-content: space-evenly;
+        color: red;
+    }
+</style>
+<body>
+    <div id="container">   
+    <div id="sidbar">
+        <form action="">
+            <input type="text" placeholder="Enter your Name" id="name">
+            <input type="email" placeholder="Enter your Email-id" id="email">
+            <select name="" id="gender">
+                <option>Select Your Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <input type="submit" id="submit" value="submit">
+        </form>
+    </div> 
+    <!-- // sidbar end  -->
+
+    <div id="mainbar">
+      <table>
+        <thead>
+            <th> Name </th>
+            <th> Email-id </th>
+            <th> Gender </th>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+     <!-- // mainbar end hear -->
+
+</div> 
+<!-- // container end hear -->
+</body>
+</html>
+
+<script>
+ document.querySelector("form").addEventListener("submit", myfunctio);
+
+ let myArr = JSON.parse(localStorage.getItem("myData"))|| []
+ displaydata(myArr)
+ 
+ function myfunctio(event){
+  event.preventDefault();
+
+   let myobj ={
+      myname:document.getElementById("name").value,
+      myemail:document.getElementById("email").value,
+      mygender:document.getElementById("gender").value,
+   };
+
+  myArr.push(myobj);
+   displaydata(myArr)
+   localStorage.setItem("myData",JSON.stringify(myArr));
+  
+ }
+
+ function displaydata(myArr){
+    document.querySelector("tbody").innerHTML="";
+    myArr.forEach(function(el){
+   let tr = document.createElement("tr");
+
+   let td1 = document.createElement("td");
+   td1.innerText = el.myname;
+   let td2 = document.createElement("td");
+   td2.innerText = el.myemail;
+   let td3 = document.createElement("td");
+   td3.innerText = el.mygender;
+
+
+   tr.append(td1,td2,td3);
+   document.querySelector("tbody").append(tr);
+  });
+ }
+ 
+</script>

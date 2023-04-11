@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> forEach in JavaScript </h1>
+</body>
+</html>
+
+<script>
+    let names =[
+        {firstn:"Rahul", lastn:"pandey",color:"yellow"},
+        {firstn:"Priyanshu", lastn:"pawar",color:"blue"},
+        {firstn:"Pradeep", lastn:"kusum",color:"pink"},
+    ];
+
+
+
+
+    names.forEach(function(el){
+     let btn = document.createElement("div");
+     btn.style.color=el.color;
+     btn.innerText=el.firstn;
+     btn.style.padding="10px";
+     btn.style.fontWeight="bold";
+     btn.style.fontSize="25px";
+
+     document.querySelector("body").append(btn);
+
+    });
+</script>
