@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Async/Await Example</title>
+  </head>
+  <body>
+    <h1 id="name"></h1>
+    <p id="email"></p>
+    <script>
+      async function example() {
+        try {
+          const result = await fetch('https://jsonplaceholder.typicode.com/users');
+          const data = await result.json();
+          document.getElementById("name").innerHTML = data.name;
+          document.getElementById("email").innerHTML = data.email;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      example();
+    </script>
+  </body>
+</html>
