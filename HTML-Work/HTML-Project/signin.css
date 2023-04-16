@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+}
+div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: lightseagreen;
+    width: 60%;
+    margin: auto;
+    padding: 5%;
+    margin-top: 10%;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+input,button{
+    width: 100%;
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    padding: 5px;
+}
+button{
+    background-color: black;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}

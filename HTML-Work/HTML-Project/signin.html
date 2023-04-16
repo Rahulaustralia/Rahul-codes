@@ -8,6 +8,46 @@
     <link rel="stylesheet" href="signin.css">
 </head>
 <body>
-    
+    <div>
+        <h1> Sign in </h1>
+        <form >
+            <input type="emal" id="email" placeholder="Enter Your Email-id">
+            <input type="password" id="password" placeholder="Enter Your Password">
+            <input type="submit"  value="Signin">
+        </form>
+        <a href="signup.html">Create Account</a>
+    </div>
 </body>
 </html>
+
+<script>
+    let form = document.querySelector("form");
+    let userData = JSON.parse(localStorage.getItem("useData")) || [];
+    
+    form.addEventListener("submit", function(e){
+        e.preventDefault()
+        let data = {
+            email:form.email.value,
+            password:form.password.value,
+        }
+        
+        if(checkSignin(data.email,data.password)=== true){
+          localStorage.setItem("signin",JSON.stringify(data));
+          alert("Sign in Successful"); 
+          window.location.href="index.html" 
+        } else{
+            alert("Wrong Username or Password");
+        }
+
+    })
+    function checkSignin (email,password) {
+      let filter = userData.filter(function(element){
+        return element.email === email && element.password === password;
+      })
+      if(filter.length>0){
+        return true;
+      } else{
+        return false;
+      }
+    }
+</script>
