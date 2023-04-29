@@ -1,0 +1,29 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.product-email {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.product-phone {
+    font-size: 1rem;
+}
