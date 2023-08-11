@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #main {
+        color: red;
+        text-align: center;
+        font-size: bold;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      #container button {
+        color: blue;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main">Welcome to Like amd Dislike</h1>
+    <div id="container">
+      <button onClick="like()">Like</button>
+      <button onclick="dislike()">Dislike</button>
+      <button>Reset</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  function like() {
+    document.getElementById("main").innerText = "Some one Like me";
+  }
+
+  function dislike() {
+    document.getElementById("main").innerText = "Some one Dislike me";
+  }
+</script>
