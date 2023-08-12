@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset some default styles and provide a basic styling */
+      body,
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style the main container */
+      #mainContainer {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style the input and select elements */
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      /* Style the button */
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Style the table */
+      #tableContainer {
+        margin-top: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+      }
+
+      /* Highlight the first row in the table */
+      tr:first-child {
+        font-weight: bold;
+        background-color: #f0f0f0;
+      }
+
+      /* Apply some responsive styling */
+      @media (max-width: 600px) {
+        #mainContainer {
+          max-width: 100%;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        color: red;
+        font-size: 31px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'sans-serif;
+      "
+    >
+      Personal Details Form
+    </h1>
+    <div id="mainContainer">
+      <input id="fname" type="text" placeholder="Enter First Name" value="" />
+      <input id="lname" type="text" placeholder="Enter Last Name" value="" />
+      <input id="mno" type="number" placeholder="Enter Mobile No." value="" />
+      <select id="gender">
+        <option>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <button onclick="saveFun()">Save Details</button>
+    </div>
+    <div id="tableContainer">
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Mobile Number</th>
+          <th>Gender</th>
+        </tr>
+        <tr>
+          <td id="det1"></td>
+          <td id="det2"></td>
+          <td id="det3"></td>
+          <td id="det4"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  function saveFun() {
+    let Fname = document.getElementById("fname").value;
+    let Lname = document.getElementById("lname").value;
+    let Mno = document.getElementById("mno").value;
+    let Gender = document.getElementById("gender").value;
+
+    document.getElementById("det1").innerHTML = Fname;
+    document.getElementById("det2").innerHTML = Lname;
+    document.getElementById("det3").innerHTML = Mno;
+    document.getElementById("det4").innerHTML = Gender;
+  }
+</script>
