@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* label {
+        margin-left: 20px;
+        margin-right: 50px;
+      } */
+      input {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: blue; text-align: center">
+      <u> STUDENT REGISTRATION FORM </u>
+    </h1>
+    <div>
+      <form
+        style="
+          background-color: blue;
+          color: white;
+          padding: 40px;
+          width: 80%;
+          margin: auto;
+        "
+      >
+        <label>FIRST NAME</label>
+        <input
+          style="margin-left: 37px"
+          type="text"
+          maxlength="30"
+          pattern="[A-Za-z]"
+        />
+        <label>(max 30 character a-z and A-Z)</label>
+        <br />
+        <label>LAST NAME </label>
+        <input
+          style="margin-left: 41px"
+          type="text"
+          maxlength="30"
+          pattern="[A-Za-z]"
+        />
+        <label>(max 30 character a-z and A-Z)</label>
+        <br />
+        <label for="">DATE OF BIRTH</label>
+        <input style="margin-left: 15px" type="date" />
+        <br />
+        <label for="">EMAIL ID</label>
+        <input style="margin-left: 61px" type="email" />
+        <br />
+        <label for="">MOBILE NUMBER</label>
+        <input type="number" minlength="10" maxlength="10" />
+        <label for="">(10 digit number)</label>
+        <br />
+        <label for="" style="margin-right: 100px">Gender</label>
+        <label for=""> Male</label>
+        <input type="radio" value="male" />
+        <label for=""> Female </label>
+        <input type="radio" value="female" style="padding: 0px; margin: 0px" />
+        <br />
+        <label for="">ADDRESS</label>
+        <textarea
+          style="margin-left: 55px"
+          name=""
+          id=""
+          cols="30"
+          rows="4"
+        ></textarea>
+        <br />
+        <label for="">CITY</label>
+        <input
+          style="margin-left: 90px"
+          type="text"
+          maxlength="30"
+          pattern="[A-Za-z]"
+        />
+        <label>(max 30 character a-z and A-Z)</label>
+        <br />
+        <label for="">PIN CODE</label>
+        <input
+          style="margin-left: 53px"
+          type="number"
+          maxlength="6"
+          minlength="6"
+        />
+        <label for="">(6 digit number)</label>
+        <br />
+        <label for="">STATE</label>
+        <input
+          style="margin-left: 80px"
+          type="text"
+          maxlength="30"
+          pattern="[A-Za-z]"
+        />
+        <label>(max 30 character a-z and A-Z)</label>
+        <br />
+        <label for="">COUNTRY</label>
+        <select
+          name=""
+          id=""
+          style="margin-left: 51px; margin-top: 5px; width: 100px"
+        >
+          <option value="">INdia</option>
+          <option value="">Australia</option>
+          <option value="">USA</option>
+        </select>
+        <br />
+        <label style="margin-right: 60px" for="">HOBBIES</label>
+        Drawing <input type="checkbox" /> Singing
+        <input type="checkbox" /> Cricket <input type="checkbox" /> Drawing
+        <input type="checkbox" />
+        <br />
+        <div style="margin-left: 130px">
+          other <input type="checkbox" /> <input type="text" />
+        </div>
+        <br />
+        <label style="margin-top: 30px" for="">QUALIFICATION</label>
+        <div id="main" style="width: 80%; display: flex">
+          <div style="width: 20%; margin-left: 15%">
+            <label for="">S1.No Examination</label>
+            <br />
+            <label style="padding-top: 10px"> 1 Class X</label>
+            <br />
+            <br />
+            <label>2 Class XII</label>
+            <br />
+            <br />
+            <label>3 Graduation</label>
+            <br />
+            <br />
+            <label>4 Masters</label>
+          </div>
+          <div style="width: 20%">
+            <label for="">Board</label>
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <label for="">(10 char max)</label>
+          </div>
+          <div style="width: 20%">
+            <label for="">Percentage</label>
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <label for="">(upto 2 decimal)</label>
+          </div>
+          <div style="width: 20%">
+            <label for="">Year of Passing</label>
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <input type="text" />
+            <br />
+            <label for="">(only Year)</label>
+          </div>
+        </div>
+        <br />
+        <label style="margin-right: 30px" for=""
+          >COURSES <br />
+          APPLIED FOR</label
+        >
+        BCA <input type="radio" /> B.Com <input type="radio" /> B.Sc
+        <input type="radio" /> B.A <input type="radio" />
+        <br />
+        <div style="margin-left: 40%; margin-top: 20px">
+          <button style="padding: 5px; width: 100px">Submit</button>
+          <button style="padding: 5px; width: 100px">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

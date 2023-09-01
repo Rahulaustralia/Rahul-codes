@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2 {
+        margin-top: 15px;
+        text-align: center;
+      }
+      form {
+        width: 45%;
+        height: 400px;
+        margin: auto;
+      }
+      label {
+        text-align: center;
+        padding: 20px;
+        width: 150px;
+      }
+
+      .dive {
+      }
+      #container {
+        background-color: #2acae0;
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Student Name: Rahul Pandey</h1>
+      <h1>Student id: 0820CS151058</h1>
+      <h2 style="margin-bottom: 50px">Registration Form</h2>
+      <form action="">
+        <div class="dive">
+          <label>Name</label>
+          <input style="margin-left: 20px" type="text" />
+          <label>CNIC</label>
+          <input style="margin-left: 22px" type="text" />
+        </div>
+        <br />
+        <div class="dive">
+          <label>Course</label>
+          <input style="margin-left: 12px" type="text" />
+          <label>Subject</label>
+          <input style="margin-left: 15px" type="text" />
+        </div>
+        <br />
+        <div class="dive">
+          <label>Email</label>
+          <input style="margin-left: 20px" type="email" />
+          <label>Password</label>
+          <input type="password" />
+        </div>
+        <br />
+        <div class="dive">
+          <label>Address</label>
+          <textarea
+            style="margin-left: 7px"
+            name=""
+            id=""
+            cols="30"
+            rows="4"
+          ></textarea>
+        </div>
+        <br />
+        <div class="dive">
+          <label>Gender</label>
+          <input type="radio" value="Male" /> Male
+          <input type="radio" value="Female" /> Female
+        </div>
+        <br />
+        <div class="dive">
+          <label>City</label>
+          <select name="" id="" style="margin-left: 35px">
+            <option value="">Bangalore</option>
+            <option value="">Indore</option>
+            <option value="">Ujjain</option>
+            <option value="">Dewas</option>
+          </select>
+        </div>
+        <br />
+        <div class="dive" style="margin-left: 90px">
+          <input type="radio" /> <label>New Students</label>
+          <input type="radio" /> <label>Coming Student</label>
+        </div>
+        <br />
+        <div class="dive" style="margin-left: 42%; margin-top: 30px">
+          <button style="padding: 5px; border-radius: 5px">Submit</button>
+          <button style="padding: 5px; border-radius: 5px">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
