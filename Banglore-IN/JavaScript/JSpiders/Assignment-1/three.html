@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      #heading {
+        color: red;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 60px;
+        font-family: sans-serif;
+      }
+      #myDiv {
+        width: 400px;
+        height: 250px;
+        border: 2px solid black;
+        margin: auto;
+        margin-top: 30px;
+        padding: 5px;
+        border-radius: 15px;
+      }
+      input {
+        padding: 5px;
+      }
+      label {
+        color: blue;
+        font-size: large;
+        font-weight: bold;
+      }
+      button {
+        padding: 10px;
+        width: 150px;
+        margin-left: 100px;
+        margin-top: 20px;
+        color: white;
+        background-color: blue;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDiv">
+      <h2 style="color: red; text-align: center">Check Both are same or not</h2>
+      <label for="">Password</label>
+      <input
+        style="margin-left: 80px"
+        id="password1"
+        value=""
+        type="password"
+      />
+      <br />
+      <br />
+      <label for="">Conform Password</label>
+      <input id="password2" value="" type="password" />
+      <br />
+      <button id="btn">Submit</button>
+    </div>
+    <br />
+    <br />
+    <h1 id="heading"></h1>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let pass1 = document.getElementById("password1").value;
+    let pass2 = document.getElementById("password2").value;
+
+    if (pass1 == pass2) {
+      document.getElementById("heading").innerText = " Both Password are Same";
+    } else {
+      document.getElementById("heading").innerText =
+        "Password are Confound Password are Different";
+    }
+  }
+</script>

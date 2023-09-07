@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: sans-serif;
+      }
+      #container {
+        width: 400px;
+        height: auto;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        margin: auto;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: red">
+      Result of Class 10 <sup>th</sup>
+    </h1>
+    <div id="container">
+      <label>Maths</label>
+      <input type="number" placeholder="Enter Marks" id="rp1" value="" /> <br />
+      <label>Science</label>
+      <input type="number" placeholder="Enter Marks" id="rp2" value="" /> <br />
+      <label>Social Science</label>
+      <input type="number" placeholder="Enter Marks" id="rp3" value="" /> <br />
+      <label>Chemistry</label>
+      <input type="number" placeholder="Enter Marks" id="rp4" value="" /> <br />
+      <label>English</label>
+      <input type="number" placeholder="Enter Marks" id="rp5" value="" /> <br />
+      <button id="btn">Submit</button>
+    </div>
+    <div id="result">
+      <h1 id="res"></h1>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#btn").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let math = parseFloat(document.getElementById("rp1").value);
+    let sci = parseFloat(document.getElementById("rp2").value);
+    let ss = parseFloat(document.getElementById("rp3").value);
+    let chem = parseFloat(document.getElementById("rp4").value);
+    let eng = parseFloat(document.getElementById("rp5").value);
+    let percentage = Math.trunc((math + sci + ss + chem + eng) * 100) / 500;
+
+    if (math < 35 || sci < 35 || ss < 35 || chem < 35 || eng < 35) {
+      document.getElementById("res").innerText =
+        " Better Luck Next Time! AAP Fail Ho Gaye Hai " + percentage + "%.";
+
+      let img = document.createElement("img");
+      img.src = "https://media.tenor.com/AtJtdZm3lzUAAAAC/crying-senthil.gif";
+      document.getElementById("res").appendChild(img);
+    } else if (percentage >= 90) {
+      document.getElementById("res").innerText =
+        "Tum Ne To Aag Laga Di Above 90% 😮🫡 A+" + percentage + "%.";
+
+      let img = document.createElement("img");
+      img.src =
+        "https://media.tenor.com/k5tDWXPVNZ4AAAAM/aag-laga-di-anu-malik.gif";
+      document.getElementById("res").appendChild(img);
+    } else if (percentage >= 60 && percentage < 90) {
+      document.getElementById("res").innerText =
+        " congratulations You are B+ 🎉" + percentage + "%. ";
+
+      let img = document.createElement("img");
+      img.src =
+        "https://media.tenor.com/KWO0NRq_zHoAAAAM/congratulations-and-celebrations-bagha-nattu-kaka.gif";
+      document.getElementById("res").appendChild(img);
+    } else if (percentage >= 35 && percentage < 60) {
+      document.getElementById("res").innerText =
+        "Puri Duniya Se Kaho Copy Nahi C+ 🎉" + percentage + "%. ";
+
+      let img = document.createElement("img");
+      img.src =
+        "https://media.tenor.com/mfRDx0DlFGoAAAAM/%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80-%E0%A4%B9%E0%A4%BF%E0%A4%82%E0%A4%A6%E0%A5%80.gif";
+      document.getElementById("res").appendChild(img);
+    }
+  }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .item1 {
+        background-color: blue;
+        height: 200px;
+        width: 400px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .item2 {
+        background-color: rgb(255, 70, 0);
+        height: 200px;
+        width: 400px;
+        position: relative;
+        top: -100px;
+        left: 200px;
+        z-index: 1;
+      }
+
+      .item3 {
+        background-color: rgb(4, 255, 0);
+        height: 200px;
+        width: 400px;
+        position: relative;
+        top: -200px;
+        left: 300px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+  </body>
+</html>

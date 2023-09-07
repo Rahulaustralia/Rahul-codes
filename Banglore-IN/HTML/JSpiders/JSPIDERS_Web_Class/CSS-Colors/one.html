@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myid h3 {
+        color: rgba(50, 100, 200, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: red">CSS Colors</h1>
+    <p>1:- By Name :- Examples = color:green,red,blue;</p>
+    <p>
+      2:- rgb / rgba :- Examples = rgb: rgb stands for red green and blue,
+      <br />
+      It is a css function inside this we are diffing red green and blue color
+      in scale of 0 - 255 respect <br />
+      color: rgb(0-255[red],0-255[green],0-255[blue])
+    </p>
+    <br />
+    <p>
+      rgba:- "a"= alpha value which defined the transparancy of the color whith
+      its background in a scale belong 0-1 <br />
+      Example :- color : rgba(0-255, 0-255,0-255,0-1)
+    </p>
+    <br />
+    <p>
+      3:- hex :- Hexadecimal representation of rgb values =(0-9,a-7) Example:-
+      #rrggbb
+    </p>
+    <p>4:- hsl/ hsla</p>
+    <p>
+      hsl:- Saturation and Lightness <br />
+      hue - the color circle in a deg of 0-360 <br />
+      satutation - shedes of gray (0% - 100) Lightness :- (0%- 100%)
+    </p>
+    <p>hsl:- Syntax hsl(0-360deg, 0-100%, 0-100%</p>
+    <p>hsla:- Syntax color:hsla(0-360,0-100%,0-100,0-1)</p>
+    <br />
+    <br />
+    <p>
+      Gradient Color :- there are two types of gradient colors 1] Linear
+      Gradient , [2] Redial Gradient
+    </p>
+    <p>
+      Gradient color are only applicable in background colors or background
+      Property <br />
+      for taking multipal colors at a time we are us ing gradient colors.
+    </p>
+    <p>
+      Linear :-Linear Gradient we are getting the colors in a linear diraction
+    </p>
+    <p>
+      Syntax :- background-image:linear-gradient(direction,color1,color2...color
+      N <br />
+      direction :- to bottom/to top/to left/to right/-deg
+    </p>
+    <p>Radial Gradient:- it will give Circler gradient color</p>
+    <p>Santax background:radial-gradient(color1,color2,...color N)</p>
+    <div>
+      <div id="myid">
+        <h3>Good Morning</h3>
+        <h4 style="color: #0f0">Hello CSS Colors</h4>
+        <h4 style="color: #f00">Hello CSS Colors</h4>
+        <h4 style="color: teal">Hello CSS Colors</h4>
+        <br />
+        <h5 style="color: hsl(200deg, 20%, 30%); font-size: 35px">
+          Jay Shree Ram
+        </h5>
+        <h6 style="color: hsla(150deg, 10%, 10%, 0.4); font-size: 40px">
+          I Love Cricket
+        </h6>
+        <div
+          style="
+            height: 200px;
+            width: 200px;
+            background-image: linear-gradient(45deg, red, green, blue);
+          "
+        ></div>
+        <br />
+        <div
+          style="
+            height: 300px;
+            width: 200px;
+            background: radial-gradient(red, green, blue);
+          "
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>

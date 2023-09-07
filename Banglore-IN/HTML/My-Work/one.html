@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="name" type="text" value="" placeholder="Enter Your Name" />
+    <input id="pass" type="text" value="" placeholder="Enter Your Password" />
+    <button>Submit</button>
+    <h1></h1>
+    <h2></h2>
+  </body>
+</html>
+
+<script>
+  document.querySelector("button").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let Name = document.getElementById("name").value;
+    let Password = document.getElementById("password").value;
+
+    document.querySelector("h1").innerText = Name;
+    document.querySelector("h2").innerText = Password;
+  }
+</script>
