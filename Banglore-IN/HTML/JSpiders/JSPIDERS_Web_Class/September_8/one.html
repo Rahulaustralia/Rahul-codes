@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rp1 {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register Form</h1>
+    <label for="">User Name</label>
+    <input type="text" value="" id="rname" placeholder="Enter Your Name" />
+    <br />
+    <label for="">Password</label>
+    <input
+      type="password"
+      value=""
+      id="rpas"
+      placeholder="Enter Your Password"
+    />
+    <br />
+    <label for="">Conform Password</label>
+    <input
+      type="password"
+      value=""
+      id="rcpas"
+      placeholder="Enter Your Conform Password"
+    />
+    <br />
+    <button id="btn">Submit</button>
+    <br />
+    <br />
+    <h1 class="rp1">
+      Name:-
+      <p id="user_name" class="rp1"></p>
+    </h1>
+    <br />
+    <h2 class="rp1">
+      Password:-
+      <p id="user_pass" class="rp1"></p>
+    </h2>
+  </body>
+</html>
+
+<script>
+  //   let num = 5;
+  //   let bag = 1;
+  //   for (let i = 1; i <= num; i++) {
+  //     bag = bag * i;
+  //     console.log(i);
+  //   }
+  //   console.log(bag);
+
+  document.querySelector("#btn").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let user = document.getElementById("rname").value;
+    let pass = document.getElementById("rpas").value;
+    let cnf_pass = document.getElementById("rcpas").value;
+
+    if (pass == cnf_pass) {
+      alert("Welcome" + " " + user);
+      document.getElementById("user_name").innerText = user;
+      document.getElementById("user_pass").innerText = pass;
+    } else {
+      alert("Please enter a correct password");
+    }
+  }
+</script>
