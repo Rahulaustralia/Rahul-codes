@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Objects</h1>
+    <li>objects is nothing but a fisical antity or real world antitity</li>
+    <li>
+      An object have n number of property and methods in a object we are
+      creating key and values pairs
+    </li>
+    <p>[Key:Value]</p>
+    <li>How many ways we create object</li>
+    <h1>3 Ways</h1>
+    <ol>
+      <li>Object literals</li>
+      <li>By Creating instance of object</li>
+      <li>By Using object Constructor (by using function constructor)</li>
+    </ol>
+    <p>
+      let car = { <br />
+      company: "BMW", <br />
+      color:"Blue", <br />
+      type:"sports" <br />
+      }
+    </p>
+    <h1>Object Literal</h1>
+    <p>this is a easiest way to create a javascript object</p>
+    <p>
+      using object literal you can create and diffine a object in a same time
+    </p>
+    <h1>New:- new key word in javascript is use to instance of object</h1>
+    <h2>This Keyword:- in a object this keyword refer to current object</h2>
+    <p>there is a two way to call objects . notation and [] notation</p>
+    <p>
+      if key is not present ina object and you are going to axcess that key you
+      are geting undefie
+    </p>
+    <li>If key is having that time updatetion is happing</li>
+    <p>Method :- A function is accoicate with object call as methods</p>
+  </body>
+</html>
+
+<script>
+  //   let obj = {
+  //     name: "Rahul",
+  //     address: "Indore",
+  //     isMari: true,
+  //   };
+  //   console.log(obj);
+
+  //   let obj2 = {};
+  //   obj2.name = "Priyanshu";
+  //   obj2.address = "Indore";
+  //   obj2.isMari = false;
+
+  //   console.log(obj2);
+
+  // by creating instance way
+
+  //   let obj = new Object();
+  //   obj.name = "Priyanshu";
+  //   obj.address = "Indore";
+  //   obj.isMari = false;
+
+  //   console.log(obj);
+
+  // function Constructor
+
+  //   function details(name, add, ismari) {
+  //     this.name = name;
+  //     this.add = add;
+  //     this.ismari = true;
+  //   }
+  //   let obj = new details("rahul", "Dewas", true);
+
+  //   console.log(obj);
+
+  //   function details(name, add, ismari) {
+  //     this.name = name;
+  //     this.add = add;
+  //     this.ismari = true;
+  //   }
+  //   let obj = new details("rahul", "Dewas", true);
+
+  // . Notation
+  //   console.log(obj.name);
+  //   console.log(obj.add);
+
+  // [] Bracket Notation
+
+  //   console.log(obj["name"]);
+  //   console.log(obj["add"]);
+
+  //   console.log(obj.salary); if key is not present it will be undefined.
+
+  //   delete obj.name; // delete key word is use to delete the key and value from the object.
+  //   console.log(obj);
+
+  // Methods
+
+  //   let obj = {
+  //     namee: "Rahul",
+  //     add: "Dewas",
+  //   };
+
+  let myObj = {
+    name: "Rahul",
+    City: "Indore",
+    age: 26,
+    isMari: true,
+  };
+
+  console.log(myObj);
+  delete myObj.name;
+  console.log(myObj);
+  console.log(myObj.City);
+</script>

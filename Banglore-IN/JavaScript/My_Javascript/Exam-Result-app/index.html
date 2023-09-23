@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Exam-Result</title>
+  </head>
+  <body>
+    <div style="margin-top: 35px"></div>
+    <div id="container">
+      <div id="leftdiv">
+        <div id="form">
+          <h2 style="color: #007aff; text-align: center; margin-top: 15px">
+            Details Form
+          </h2>
+          <label for="" style="display: inline-block; margin-top: 20px"
+            >Student Name</label
+          >
+          <input
+            required
+            type="text"
+            placeholder="Enter Student Name"
+            id="name"
+            value=""
+          />
+          <br />
+          <label for="">Batch Code</label>
+          <select name="" id="batch">
+            <option value="">Select</option>
+            <option value="M-1">M-1</option>
+            <option value="M-3">M-3</option>
+            <option value="M-5">M-5</option>
+            <option value="M-8">M-8</option>
+          </select>
+          <br />
+          <label for="">HTML Marks</label>
+          <input type="number" id="html" value="" required />
+          <br />
+          <label for="">CSS Marks</label>
+          <input type="number" id="css" value="" required />
+          <br />
+          <label for="">JavaScript Marks</label>
+          <input type="number" id="javascript" required />
+          <br />
+          <label for="">React Marks</label>
+          <input type="number" id="react" value required />
+          <br />
+          <label for="">Communication Marks</label>
+          <input type="number" id="mock" value="" required />
+          <br />
+          <button id="btn">Submit</button>
+        </div>
+      </div>
+      <div id="rightdiv">
+        <h1 style="text-align: center; color: red">Exam Report JSpiders</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Batch</th>
+              <th>HTML Marks</th>
+              <th>CSS Marks</th>
+              <th>JavaScript Marks</th>
+              <th>React Marks</th>
+              <th>Communication Marks</th>
+              <th>Percentage %</th>
+              <th>Final Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- append date hear -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./report.js"></script>

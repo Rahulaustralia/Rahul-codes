@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Try Amstrong Number</h1>
+  </body>
+</html>
+
+<script>
+  //   let num = 407;
+  //   let temp = num;
+  //   let len = num.length;
+  //   let sum = 0;
+
+  //   while (temp > 0) {
+  //     let rem = temp % 10;
+  //     // console.log(rem);  // 3 / 5 / 1
+  //     sum = sum + Math.pow(rem, len);
+  //     temp = Math.trunc(temp / 10);
+  //   }
+  //   if (sum === num) {
+  //     console.log(num);
+  //   } else {
+  //     console.log("not a Ams Number");
+  //   }
+
+  // Strong Number
+
+  //   let num = 145;
+  //   let temp = num;
+  //   let sum = 0;
+
+  //   while (temp > 0) {
+  //     let rem = temp % 10;
+  //     console.log(rem);
+  //   }
+
+  // Strong Number
+
+  let num = 145;
+  let temp = num;
+  let sum = 0;
+  while (temp > 0) {
+    let rem = temp % 10;
+    temp = Math.trunc(temp / 10);
+    let n = 1;
+    while (rem > 0) {
+      n = n * rem;
+      rem--;
+    }
+    sum = sum + n;
+  }
+  console.log(sum);
+</script>

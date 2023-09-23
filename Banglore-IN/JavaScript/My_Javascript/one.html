@@ -11,27 +11,131 @@
 </html>
 
 <script>
-  //   let a = 0,
-  //     b = 1;
+  //[1]  Palindromic Number between 1 to 2000
 
-  //   for (let i = 1; i <= 10; i++) {
-  //     console.log(a);
-  //     let c = a + b;
-  //     a = b;
-  //     b = c;
+  // for (let num = 1; num <= 2000; num++) {
+  //   let str = num.toString();
+  //   let bag = "";
+  //   for (let i = str.length - 1; i >= 0; i--) {
+  //     bag = bag + str[i];
   //   }
 
-  let num = 151;
-  let str = num.toString();
-  let bag = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    bag = bag + str[i];
-  }
+  //   let y = parseInt(bag);
+  //   if (y == num) {
+  //     console.log(num);
+  //   }
+  // }
 
-  let y = parseInt(bag);
-  if (y == num) {
-    console.log("Number is Plaindrome");
-  } else {
-    console.log("Number is not Plaindrome");
+  //[2]  Prime Number Between 1 to 2000
+
+  // for (let num = 1; num <= 2000; num++) {
+  //   let count = 0;
+  //   for (let i = 1; i <= num; i++) {
+  //     if (num % i == 0) {
+  //       count++;
+  //     }
+  //   }
+  //   if (count === 2) {
+  //     console.log(num);
+  //   }
+  // }
+
+  //[3]  Perfect Number Between 1 to 2000
+
+  // for (let num = 1; num <= 2000; num++) {
+  //   let bag = 0;
+  //   for (let i = 1; i < num; i++) {
+  //     if (num % i == 0) {
+  //       bag = bag + i;
+  //     }
+  //   }
+  //   if (num == bag) {
+  //     console.log(num);
+  //   }
+  // }
+
+  //[4]  All Even Numbers Between 1 to 2000
+  // let str = "";
+  // for (let num = 1; num <= 2000; num++) {
+  //   if (num % 2 == 0) {
+  //     str = str + num + " ";
+  //   }
+  // }
+  // console.log(str);
+
+  //[5]  Armstrong number Between 1 to 2000
+
+  // let num = 407;
+  // let temp = num;
+  // let len = num.length;
+  // let sum = 0;
+
+  // while (num > 0) {
+  //   let rem = temp % 10;
+  //   // console.log(rem);  // 3 / 5 / 1
+  //   sum = sum + Math.pow(rem, len);
+  //   temp = Math.trunc(temp / 10);
+  // }
+  // if (sum === num) {
+  //   console.log(num);
+  // } else {
+  //   console.log("not a Amstrong Number");
+  // }
+
+  // Strong Number between 1 to 2000
+
+  // for (let num = 1; num <= 2000; num++) {
+  //   let temp = num;
+  //   let sum = 0;
+
+  //   while (temp > 0) {
+  //     let rem = temp % 10;
+  //     let fact = 1;
+  //     for (let i = 1; i <= rem; i++) {
+  //       fact = fact * i;
+  //     }
+  //     sum = sum + fact;
+  //     temp = Math.trunc(temp / 10);
+  //   }
+  //   if (sum == num) {
+  //     console.log("Strong Number", num);
+  //   }
+  // }
+
+  // let num = 145;
+  // let temp = num;
+  // let sum = 0;
+
+  // while (temp > 0) {
+  //   let rem = temp % 10;
+  //   let fact = 1;
+  //   for (let i = 1; i <= rem; i++) {
+  //     fact = fact * i;
+  //   }
+  //   sum = sum + fact;
+  //   temp = Math.trunc(temp / 10);
+  // }
+  // console.log(sum);
+  // console.log(num);
+
+  // Prime Number Alternative
+
+  // for (let num = 1; num <= 200; num++) {
+  //   let count = 0;
+  //   for (let i = 1; i <= 10; i++) {
+  //     if (num % i == 0) {
+  //       count++;
+  //     }
+  //   }
+  //   if (count <= 2) {
+  //     console.log("Number is Prime!", num);
+  //   }
+  // }
+
+  // plaindrom
+
+  let num = 1001;
+  while (num > 0) {
+    let rem = num;
   }
 </script>

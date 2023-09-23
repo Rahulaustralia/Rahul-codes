@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+      }
+      #container {
+        width: 400px;
+        height: 670px;
+        margin: auto;
+        box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px,
+          rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px,
+          rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+        border-radius: 10px;
+        background-color: black;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      #display {
+        width: 85%;
+        height: 90px;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 30px;
+        background-color: white;
+        display: flex;
+        font-size: 35px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+      #display input {
+        width: 100%;
+        height: 100%;
+        font-size: 70px;
+        padding: 5px;
+      }
+      #mid {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        justify-content: space-evenly;
+        margin-top: 50px;
+      }
+      .btn {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 27px;
+        padding-top: 25px;
+        background-color: white;
+        cursor: pointer;
+      }
+      .btn:nth-child(1),
+      .btn:nth-child(2),
+      .btn:nth-child(3),
+      .btn:nth-child(4),
+      .btn:nth-child(8),
+      .btn:nth-child(12),
+      .btn:nth-child(16) {
+        background-color: red;
+        color: white;
+      }
+      .btn:nth-child(20) {
+        background-color: green;
+        color: white;
+      }
+      .r15:hover {
+        background-color: lightskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="display">
+        <!-- <input type="text" name="" id="screen" /> -->
+        <h1 id="screen"></h1>
+      </div>
+      <div id="mid">
+        <div class="btn">AC</div>
+        <div class="btn">DEL</div>
+        <div class="btn">%</div>
+        <div class="btn">/</div>
+        <div class="btn r15" id="r7">7</div>
+        <div class="btn r15" id="r8">8</div>
+        <div class="btn r15" id="r9">9</div>
+        <div class="btn">*</div>
+        <div class="btn r15" id="r4">4</div>
+        <div class="btn r15" id="r5">5</div>
+        <div class="btn r15" id="r6">6</div>
+        <div class="btn">-</div>
+        <div class="btn r15" id="r1">1</div>
+        <div class="btn r15" id="r2">2</div>
+        <div class="btn r15" id="r3">3</div>
+        <div class="btn">+</div>
+        <div class="btn r15" id="r00">00</div>
+        <div class="btn r15" id="r0">0</div>
+        <div class="btn r15">.</div>
+        <div class="btn">=</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let keys = document.querySelectorAll("#mid>div");
+  let bag = "";
+  for (let i = 0; i < keys.length; i++) {
+    keys[i] = document.addEventListener("click", myFunction);
+  }
+  function myFunction(event) {
+    let TargetNumber = event.target.innerText;
+    if (TargetNumber == "AC") {
+      bag = "";
+      document.querySelector("#display").innerText = "";
+    } else if (TargetNumber == "=") {
+      document.querySelector("#display").innerText = eval(bag);
+    } else if (TargetNumber == "DEL") {
+      document.querySelector("#display").innerText = "";
+    } else {
+      bag = bag + TargetNumber;
+      document.querySelector("#display").innerText = bag;
+    }
+  }
+</script>

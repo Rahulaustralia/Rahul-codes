@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        background-color: blueviolet;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 200px 200px 200px;
+      }
+      .boxs {
+        background-color: teal;
+        font-size: 45px;
+        color: white;
+        border: 1px solid black;
+      }
+      #container > .boxs:nth-child(2) {
+        background-color: brown;
+        grid-area: 2/2/3/3;
+      }
+      #container > .boxs:nth-child(1) {
+        background-color: gold;
+        grid-area: 1/1/2/4;
+      }
+      #container > .boxs:nth-child(3) {
+        background-color: lightgray;
+        grid-area: 2/1/9/2;
+        /* grid-row: 2 / span 7; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS- Grid</h1>
+    <br />
+    <div id="container">
+      <div class="boxs">1</div>
+      <div class="boxs">2</div>
+      <div class="boxs">3</div>
+      <div class="boxs">4</div>
+      <div class="boxs">5</div>
+      <div class="boxs">6</div>
+      <div class="boxs">7</div>
+      <div class="boxs">8</div>
+      <div class="boxs">9</div>
+      <div class="boxs">10</div>
+      <div class="boxs">11</div>
+      <div class="boxs">12</div>
+      <div class="boxs">13</div>
+      <div class="boxs">14</div>
+      <div class="boxs">15</div>
+      <div class="boxs">16</div>
+    </div>
+  </body>
+</html>

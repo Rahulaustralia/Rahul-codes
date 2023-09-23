@@ -1,0 +1,5 @@
+ # NPX :- (node package exicuter) and it is used to exicute javascript packages directly installing them.
+
+ npm install(i)
+ npm start
+ 

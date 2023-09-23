@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        width: 350px;
+        height: auto;
+        margin: auto;
+        padding: 15px;
+      }
+      input {
+        padding: 5px;
+        width: 300px;
+        margin-bottom: 10px;
+      }
+      select {
+        padding: 6px;
+        width: 311px;
+        margin-bottom: 10px;
+      }
+      th,
+      td {
+        padding: 15px;
+      }
+      table {
+        border-spacing: 3px;
+      }
+      #btn {
+        width: 99%;
+        margin: auto;
+        padding: 5px;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Registration Form</h1>
+    <form>
+      <fieldset>
+        <legend>My Form</legend>
+        <label for="">Name</label>
+        <input type="text" placeholder="Enter Your Name" id="uname" value="" />
+        <br />
+        <label for="">Email</label>
+        <input
+          type="email"
+          placeholder="Enter Your Email-id"
+          id="uemail"
+          value=""
+        />
+        <br />
+        <label for="">City</label>
+        <select name="" id="ucity">
+          <option>Options</option>
+          <option value="dewas">Dewas</option>
+          <option value="indore">Indore</option>
+          <option value="banglore">Banglore</option>
+        </select>
+        <br />
+        <label for="">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          id="upassword"
+          value=""
+        />
+        <button id="btn">Submit</button>
+      </fieldset>
+    </form>
+    <div id="space"></div>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", myFunction);
+
+  function myFunction(event) {
+    event.preventDefault();
+    let user_Name = document.getElementById("uname").value;
+    let user_Email = document.getElementById("uemail").value;
+    let user_City = document.getElementById("ucity").value;
+    let user_Password = document.getElementById("upassword").value;
+
+    // Create a table
+    let table = document.createElement("table");
+    table.style.border = "1px solid black";
+
+    // Create table rows
+    let row1 = table.insertRow(0);
+    let row2 = table.insertRow(1);
+    let row3 = table.insertRow(2);
+    let row4 = table.insertRow(3);
+
+    // Create table cells (columns)
+    let cell1_1 = row1.insertCell(0);
+    let cell1_2 = row1.insertCell(1);
+
+    let cell2_1 = row2.insertCell(0);
+    let cell2_2 = row2.insertCell(1);
+
+    let cell3_1 = row3.insertCell(0);
+    let cell3_2 = row3.insertCell(1);
+
+    let cell4_1 = row4.insertCell(0);
+    let cell4_2 = row4.insertCell(1);
+
+    // Set cell text content
+    cell1_1.innerHTML = "Name";
+    cell1_2.innerHTML = user_Name;
+
+    cell2_1.innerHTML = "Email";
+    cell2_2.innerHTML = user_Email;
+
+    cell3_1.innerHTML = "City";
+    cell3_2.innerHTML = user_City;
+
+    cell4_1.innerHTML = "Password";
+    cell4_2.innerHTML = user_Password;
+
+    // Append the table to the "container" div
+    document.getElementById("container").appendChild(table);
+  }
+</script>
