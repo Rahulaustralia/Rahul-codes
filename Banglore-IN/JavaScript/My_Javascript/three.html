@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Pattern</h1>
+  </body>
+</html>
+
+<script>
+  //      1
+  //     212
+  //    32123
+  //   4321234
+  //  543212345
+
+  let str = "";
+  for (let i = 1; i <= 5; i++) {
+    for (let j = i; j > 1; j--) {
+      if (j > i) {
+        str = str + " ";
+      } else {
+        str = str + j;
+      }
+    }
+    for (let k = 1; k <= i; k++) {
+      str = str + k;
+    }
+    str = str + "\n";
+  }
+  console.log(str);
+</script>
