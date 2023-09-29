@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Questions</h1>
+  </body>
+</html>
+
+<script>
+  // Q.1]  Sum of two array
+
+  let a = [1, 2, 3, 4];
+  let b = [4, 5, 6, 1];
+
+  let bag = 0;
+  let jhola = 0;
+  for (let i = 0; i < a.length; i++) {
+    bag += a[i];
+  }
+
+  for (let j = 0; j < b.length; j++) {
+    jhola += b[j];
+  }
+
+  let ans = bag + jhola;
+
+  console.log("Sum of Two Array is =" + " " + ans);
+
+  //  Q.2]  Count the length of element of an array ?
+
+  let arr = [1, 2, 3, 4, 5];
+
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    count++;
+  }
+  console.log("Length of an Array is =" + " " + count);
+
+  //  Q.3] Count the odd - even Number
+
+  let arr2 = [2, 3, 4, 5, 6];
+
+  let eCount = 0;
+  let oCount = 0;
+
+  for (let i = 0; i < arr2.length; i++) {
+    if (arr2[i] % 2 == 1) {
+      oCount++;
+    } else if (arr2[i] % 2 == 0) {
+      eCount++;
+    }
+  }
+
+  console.log("ODD Count = " + " " + oCount);
+  console.log("Even Count = " + " " + eCount);
+
+  // Q.4] FInd the  index value
+
+  let arr3 = [1, 2, 3, 4, 5, 6];
+
+  let val = prompt("Enter your value");
+
+  let box = "";
+  for (let i = 0; i < arr3.length; i++) {
+    if (val == i) {
+      box += arr3[i];
+    }
+  }
+
+  console.log("The Value is " + " " + box);
+</script>

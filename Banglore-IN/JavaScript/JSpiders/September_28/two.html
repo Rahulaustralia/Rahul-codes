@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Unique Value Count</h1>
+  </body>
+</html>
+
+<script>
+  let arr = [2, 3, 5, 9, 7, 15, 3, 3, 2, 8, 7, 9];
+  let count = 0;
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    let x = arr[i];
+
+    if (obj[x] == undefined) {
+      obj[x] = 1;
+    } else {
+      count++;
+    }
+  }
+
+  for (let key in obj) {
+    console.log(obj[key]);
+  }
+</script>
