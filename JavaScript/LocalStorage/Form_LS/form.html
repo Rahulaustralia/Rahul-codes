@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Name</label>
+      <input type="text" placeholder="Enter Your Name" id="name" />
+      <br />
+      <label for="">Age</label>
+      <input type="number" placeholder="Enter Your age" id="age" />
+      <br />
+      <select name="" id="gender">
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+  let userArr = [];
+  document.querySelector("form").addEventListener("submit", myFunction);
+
+  function myFunction(event) {
+    event.preventDefault();
+
+    let userObj = {
+      uname: document.querySelector("#name").value,
+      uage: document.querySelector("#age").value,
+      ugender: document.querySelector("#gender").value,
+    };
+    userArr.push(userObj);
+    console.log(userArr);
+  }
+</script>
