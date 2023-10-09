@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javascript DOM-2</h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  let root = document.getElementById("container");
+
+  let table = document.createElement("table");
+  table.setAttribute("border", "1");
+  table.setAttribute("cellspacing", "5px");
+  table.setAttribute("cellpadding", "5px");
+  table.st;
+  let trow = document.createElement("tr");
+  let th1 = document.createElement("th");
+  th1.innerText = "Name";
+  th1.style.color = "blue";
+
+  let th2 = document.createElement("th");
+  th2.innerText = "Batch";
+  th2.style.color = "red";
+
+  let th3 = document.createElement("th");
+  th3.innerText = "Fees";
+  th3.style.color = "gold";
+
+  let td1 = document.createElement("td");
+  td1.innerText = "Rahul Pandey";
+  let td2 = document.createElement("td");
+  td2.innerText = "A-1";
+  let td3 = document.createElement("td");
+  td3.innerText = "50000$";
+
+  th1.appendChild(td1);
+  th2.appendChild(td2);
+  th3.appendChild(td3);
+
+  trow.appendChild(th1, th2, td3);
+  table.append(th1, th2, th3);
+  console.log(table);
+  root.appendChild(table);
+</script>

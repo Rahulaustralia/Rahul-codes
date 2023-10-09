@@ -20,13 +20,27 @@
       </select>
       <input type="submit" />
     </form>
+
+    <br />
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </body>
 </html>
 
 <script>
-  let userArr = [];
+  let userArr = JSON.parse(localStorage.getItem("userData")) || [];
   document.querySelector("form").addEventListener("submit", myFunction);
 
+  displayTable(userArr);
   function myFunction(event) {
     event.preventDefault();
 
@@ -37,5 +51,24 @@
     };
     userArr.push(userObj);
     console.log(userArr);
+
+    displayTable(userArr);
+    localStorage.setItem("userData", JSON.stringify(userArr));
+  }
+
+  function displayTable(userArr) {
+    document.querySelector("tbody").innerHTML = "";
+    userArr.forEach((element) => {
+      let tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerText = element.uname;
+      let td2 = document.createElement("td");
+      td2.innerText = element.uage;
+      let td3 = document.createElement("td");
+      td3.innerText = element.ugender;
+
+      tr.append(td1, td2, td3);
+      document.querySelector("tbody").append(tr);
+    });
   }
 </script>

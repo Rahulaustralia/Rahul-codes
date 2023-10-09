@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>ToDo App</h1>
+      <input type="text" placeholder="Enter The Text" id="word" />
+      <button id="btn" onClick="myFunction()">ADD</button>
+    </div>
+    <div id="output"></div>
+  </body>
+</html>
+
+<script>
+  let count = 0;
+  function myFunction() {
+    let todo = document.getElementById("word");
+    let y = todo.value;
+    todo.value = "";
+    // console.log(y);
+
+    let val = document.getElementById("output");
+    count++;
+    console.log(count);
+    if (y == "") {
+      alert("Please Enter any Text");
+    } else {
+      if (count % 2 == 1) {
+        let x = document.createElement("p");
+        x.style.border = "1px solid black";
+        x.style.padding = "5px";
+        x.style.color = "red";
+        x.style.width = "100px";
+        x.style.height = "100px";
+        x.style.fontWeight = "bold";
+        x.style.textAlign = "center";
+        x.style.display = "inline-block";
+        x.style.marginRight = "5px";
+        x.style.fontSize = "25px";
+        let z = (x.innerText = y);
+        // console.log(x);
+        val.append(x);
+      } else if (count % 2 == 0) {
+        let x = document.createElement("p");
+        x.style.border = "1px solid black";
+        x.style.padding = "5px";
+        x.style.color = "blue";
+        x.style.width = "100px";
+        x.style.fontWeight = "bold";
+        x.style.height = "100px";
+        x.style.textAlign = "center";
+        x.style.display = "inline-block";
+        x.style.marginRight = "5px";
+        x.style.fontSize = "25px";
+        let z = (x.innerText = y);
+        // console.log(x);
+        val.append(x);
+      }
+    }
+  }
+</script>

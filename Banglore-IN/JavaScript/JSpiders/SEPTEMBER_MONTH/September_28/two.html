@@ -12,19 +12,21 @@
 
 <script>
   let arr = [2, 3, 5, 9, 7, 15, 3, 3, 2, 8, 7, 9];
-  let count = 0;
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
-    let x = arr[i];
+    let char = arr[i];
 
-    if (obj[x] == undefined) {
-      obj[x] = 1;
+    if (obj[char] == undefined) {
+      obj[char] = 1;
     } else {
-      count++;
+      obj[char]++;
     }
   }
-
+  let bag = "";
   for (let key in obj) {
-    console.log(obj[key]);
+    if (obj[key] == 1) {
+      bag += key + " ";
+    }
   }
+  console.log(bag);
 </script>
