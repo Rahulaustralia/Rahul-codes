@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Dom-3</h1>
+    <h2 id="oldData">Hello from Body</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque officiis
+      asperiores provident, porro explicabo voluptatibus similique voluptas? Nam
+      incidunt nulla quas laudantium voluptate dolorem illo? Inventore expedita
+      atque sint perferendis.
+    </p>
+    <h3>Jay Shree Mahakal</h3>
+    <h4 id="loc">I am from Indore (M.P)</h4>
+    <h5 id="inte">I Like Cricket</h5>
+  </body>
+</html>
+
+<script>
+  // replaceWith()
+  let old = document.getElementById("oldData");
+  let newE = document.createElement("h2");
+  newE.innerText = "Jay Shree Ram";
+  newE.style.color = "red";
+
+  old.replaceWith(newE);
+
+  // remove()
+
+  let city = document.getElementById("loc");
+  city.remove();
+
+  // toggle()
+  let like = document.getElementById("like");
+  like.toggle(city);
+</script>

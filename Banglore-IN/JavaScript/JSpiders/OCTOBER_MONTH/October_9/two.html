@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      #tableData {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      select {
+        appearance: none;
+      }
+
+      button#btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button#btn:hover {
+        background-color: #0056b3;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tableData">
+      <label for="">Name</label>
+      <input type="text" placeholder="Enter Your Name" id="name" />
+      <br />
+      <label for="">Batch</label>
+      <select name="" id="batch">
+        <option value="">Select Batch</option>
+        <option value="MERN">MERN</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+      </select>
+      <br />
+      <label for="">Fees</label>
+      <input type="number" placeholder="Enter Fees Amount" id="fees" />
+      <br />
+      <button id="btn">Add Data</button>
+    </div>
+    <div id="display">
+      <table border="1">
+        <thead>
+          <th>Student Name</th>
+          <th>Batch</th>
+          <th>Course Fees</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let sName = document.getElementById("name").value;
+    let sBatch = document.getElementById("batch").value;
+    let sFees = document.getElementById("fees").value;
+
+    let root = document.querySelector("tbody");
+
+    let tr = document.createElement("tr");
+
+    let td1 = (document.createElement("td").innerText = sName);
+    let td2 = (document.createElement("td").innerText = sBatch);
+    let td3 = (document.createElement("td").innerText = sFees);
+
+    tr.append(td1, td2, td3);
+    root.append(tr);
+  }
+</script>
