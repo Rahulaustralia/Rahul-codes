@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NUM_COUNT</title>
+  </head>
+  <body>
+    <h1>NUM_COUNT</h1>
+    <div id="root">
+      <button class="sum" name="btn1"><h1>+</h1></button>
+      <input type="text" class="inp" />
+      <button class="sub" name="sub1"><h1>-</h1></button><br />
+      <button class="sum"><h1>+</h1></button>
+      <input type="text" class="inp" />
+      <button class="sub"><h1>-</h1></button><br />
+      <button class="sum"><h1>+</h1></button>
+      <input type="text" class="inp" />
+      <button class="sub"><h1>-</h1></button>
+      <div style="display: flex">
+        <h2>TOTAL COUNT:</h2>
+        <h2 id="tot">0</h2>
+      </div>
+    </div>
+    <script>
+      let root = document.getElementById("root");
+      let sum = document.getElementsByClassName("sum");
+      let num = document.getElementsByClassName("inp");
+      let sub = document.getElementsByClassName("sub");
+      let tot = document.getElementById("tot");
+      let i = 0;
+      sum[0].addEventListener("click", () => {
+        i++;
+        num[0].value = i;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+      sub[0].addEventListener("click", () => {
+        if (i > 0) {
+          i--;
+        }
+        num[0].value = i;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+      let j = 0;
+      sum[1].addEventListener("click", () => {
+        j++;
+        num[1].value = j;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+      sub[1].addEventListener("click", () => {
+        if (j > 0) {
+          j--;
+        }
+        num[1].value = j;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+      let k = 0;
+      sum[2].addEventListener("click", () => {
+        k++;
+        num[2].value = k;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+      sub[2].addEventListener("click", () => {
+        if (k > 0) {
+          k--;
+        }
+        num[2].value = k;
+        tot.innerText = i + j + k;
+        console.log(tot);
+      });
+    </script>
+  </body>
+</html>

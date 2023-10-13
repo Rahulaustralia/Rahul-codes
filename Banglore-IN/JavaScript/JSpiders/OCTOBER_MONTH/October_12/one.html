@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>form Handling</h1>
+    <form id="form">
+      userName: <input type="text" placeholder="enter your name" id="un" />
+      <br />
+      email: <input type="email" placeholder="enter your email" id="email" />
+      <br />
+      password:
+      <input type="password" placeholder="enter your password" id="pass" />
+      <br />
+      Confirm_password:
+      <input
+        type="password"
+        placeholder="enter your confirm_password"
+        id="cpass"
+      />
+      <br />
+      course:
+      <select id="course">
+        <option value="react">react</option>
+        <option value="node">node</option>
+        <option value="next">next</option>
+      </select>
+      <br />
+      gender : M<input type="radio" name="gender" value="M" /> F<input
+        type="radio"
+        name="gender"
+        value="F"
+      />
+      O<input type="radio" name="gender" value="O" />
+
+      <br />
+      Enter your feedback :
+      <textarea
+        rows="10"
+        cols="10"
+        id="msg"
+        placeholder="enter your feedback"
+      ></textarea>
+      <button id="btn">submit</button>
+    </form>
+    <script>
+      //1st way
+      // let btn=document.getElementById('btn')
+      // btn.addEventListener('click',(e)=>{
+      //     e.preventDefault()
+      //      let un=document.getElementById('un')
+      //      let email=document.getElementById('email')
+      //      let pass=document.getElementById('pass')
+      //      let cpass=document.getElementById('cpass')
+      //      let course=document.getElementById('course')
+      //      let x=document.querySelector('input[name="gender"]:checked')
+      //      let gender=x.value
+      //      let msg=document.getElementById('msg')
+
+      //      console.log(un.value,email.value,pass.value,cpass.value,course.value,gender,msg.value)
+      //      un.value=" "
+      //      email.value=""
+      //      pass.value=""
+      //      cpass.value=""
+      //      msg.value=""
+      //   })
+
+      //2
+
+      let form = document.getElementById("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.target.un.value);
+        console.log(e.target.email.value);
+        console.log(e.target.pass.value);
+        console.log(e.target.cpass.value);
+      });
+    </script>
+  </body>
+</html>
+
+//event object
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>event Object</h1>
+    <!-- <button onclick="print(this)">click</button> -->
+    <button id="btn">click</button>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", (e) => {
+        console.log("event object", e);
+      });
+      // function print(e)
+      // {
+      //     console.log('event object',e)
+      // }
+      // console.log('event object')
+    </script>
+  </body>
+</html>

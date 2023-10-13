@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .all {
+        width: 400px;
+        display: inline-block;
+        display: flex;
+        border: 1px solid black;
+        margin: auto;
+        justify-content: space-evenly;
+        padding: 10px;
+      }
+      button {
+        width: 100px;
+        border-radius: 10px;
+        font-size: 35px;
+        font-weight: bold;
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      }
+      .plus:hover {
+        background-color: green;
+        font-size: 35px;
+        font-weight: bold;
+        color: white;
+      }
+      .sub:hover {
+        background-color: tomato;
+        font-size: 35px;
+        font-weight: bold;
+        color: white;
+      }
+      #display {
+        width: 500px;
+        height: 250px;
+        border: 1px solid black;
+        margin: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display">
+      <h1>Total</h1>
+    </div>
+    <div id="container">
+      <div class="all">
+        <button id="add1" class="plus">+</button>
+        <h1 id="hed1">0</h1>
+        <button id="des1" class="sub">-</button>
+      </div>
+      <div class="all">
+        <button id="add2" class="plus">+</button>
+        <h1 id="hed2">0</h1>
+        <button id="des2" class="sub">-</button>
+      </div>
+      <div class="all">
+        <button id="add3" class="plus">+</button>
+        <h1 id="hed3">0</h1>
+        <button id="des3" class="sub">-</button>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let count = 0;
+  let hed1 = document.getElementById("hed1");
+  hed1.innerText = count;
+
+  document.querySelector("#add1").addEventListener("click", myFunction1);
+  document.querySelector("#des1").addEventListener("click", myFun1);
+
+  function myFunction1() {
+    count++;
+    hed1.innerText = count;
+    updateButtonState(count, "des1");
+  }
+
+  function myFun1() {
+    if (count > 0) {
+      count--;
+      hed1.innerText = count;
+      updateButtonState(count, "des1");
+    }
+  }
+
+  let count2 = 0;
+  let hed2 = document.getElementById("hed2");
+  hed2.innerText = count2;
+
+  document.querySelector("#add2").addEventListener("click", myFunction2);
+
+  function myFunction2() {
+    count2++;
+    hed2.innerText = count2;
+    updateButtonState(count2, "des2");
+  }
+
+  let count3 = 0;
+  let hed3 = document.getElementById("hed3");
+  hed3.innerText = count3;
+
+  document.querySelector("#add3").addEventListener("click", myFunction3);
+  document.querySelector("#des3").addEventListener("click", myFun3);
+
+  function myFunction3() {
+    count3++;
+    hed3.innerText = count3;
+    updateButtonState(count3, "des3");
+  }
+
+  function myFun3() {
+    if (count3 > 0) {
+      count3--;
+      hed3.innerText = count3;
+      updateButtonState(count3, "des3");
+    }
+  }
+
+  // Function to disable/enable the decrement button
+  function updateButtonState(count, buttonId) {
+    let decrementButton = document.getElementById(buttonId);
+    decrementButton.disabled = count === 0;
+    decrementButton.style.backgroundColor = count === 0 ? "gray" : "#1877f2";
+  }
+</script>
