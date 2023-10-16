@@ -16,39 +16,70 @@
     <input type="text" placeholder="Enter Your Message" id="myText" />
     <button id="btn">Add</button>
     <div id="container">
-      <div class="card">
+      <!-- <div class="card">
         <h2>Hello</h2>
         <button>Edit</button>
         <button>Delete</button>
       </div>
+
       <div class="card">
         <h2>Hello</h2>
         <button>Edit</button>
         <button>Delete</button>
-      </div>
-      <div class="card">
-        <h2>Hello</h2>
-        <button>Edit</button>
-        <button>Delete</button>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
 
 <script>
+  let container = document.getElementById("container");
   let val = document.getElementById("myText");
   document.getElementById("btn").addEventListener("click", myFunction);
   let globArr = [];
+  let myData;
+  let myButton = document.getElementById("btn");
+
   function myFunction() {
     if (val.value) {
       let obj = {
-        id: Math.trunc(Math.random()),
+        id: Math.trunc(Math.random() * 1000),
         data: val.value,
       };
       globArr.unshift(obj);
-      console.log(globArr);
+      // console.log(globArr);
+      val.value = "";
+      print();
     } else {
       alert("Please enter some value");
     }
+  }
+
+  function print() {
+    let str = "";
+    if (globArr.length == 0) {
+      str += `<h1> Empty </h1>`;
+    } else {
+      globArr.map((obj, index) => {
+        str += `<div class="card">
+        <h2>${obj.data}</h2>
+        <button onclick="editFunction(${obj.id})">Edit</button>
+        <button onclick="delFunction(${obj.id})">Delete</button>
+      </div>`;
+      });
+    }
+    container.innerHTML = str;
+  }
+
+  function delFunction(id) {
+    globArr = globArr.filter((item) => item.id !== id);
+    print();
+  }
+
+  function editFunction(id) {
+    console.log(id);
+    myData = globArr.find((item) => item.id == id);
+    console.log(myData);
+    val.value = myData.val;
+    myButton.innerText = "ADD";
   }
 </script>
