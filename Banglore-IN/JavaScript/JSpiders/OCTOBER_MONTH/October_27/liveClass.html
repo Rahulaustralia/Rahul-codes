@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callback function</h1>
+  </body>
+</html>
+
+<script>
+  //   function print(name, cb) {
+  //     console.log("before callback callback");
+  //     cb(name);
+  //     console.log("after calling callback");
+  //   }
+
+  //   function sayMyName(name) {
+  //     console.log("My name is: ", name);
+  //   }
+  //   print("Rahul", sayMyName);
+
+  // callback for asynchronous
+
+  let emp = [{ name: "Rahul" }, { name: "Utsav Sir" }];
+  function endroll(student, cb) {
+    console.log("Before Callback");
+    setTimeout(() => {
+      console.log("start Task");
+      emp.push(student);
+      console.log("student endroll: done");
+      cb();
+      console.log("end task");
+    }, 3000);
+    console.log("After callback");
+  }
+
+  function getStudent() {
+    console.log("Inside getStudent Start");
+    setTimeout(() => {
+      console.log("all students is ", emp);
+    }, 1000);
+    console.log("Inside getStudent End");
+  }
+
+  let newStudent = { name: "Vicky sir" };
+  endroll(newStudent, getStudent);
+</script>

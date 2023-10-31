@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandParent {
+        background-color: yellow;
+        color: black;
+        height: 350px;
+        width: 350px;
+        margin: 30px;
+      }
+      #parent {
+        background-color: red;
+        color: black;
+        height: 250px;
+        width: 250px;
+        margin: 30px;
+      }
+      #child {
+        background-color: green;
+        color: black;
+        height: 125px;
+        width: 125px;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Flow</h1>
+    <div id="grandParent">
+      1
+      <div id="parent">
+        2
+        <div id="child">3</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let gp = document.getElementById("grandParent");
+  let p = document.getElementById("parent");
+  let c = document.getElementById("child");
+
+  gp.addEventListener(
+    "click",
+    () => {
+      console.log("Hi I am div 1");
+    },
+    { capture: false }
+  );
+
+  p.addEventListener(
+    "click",
+    (e) => {
+      e.stopPropagation();
+      console.log("Hi I am div 2");
+    },
+    { capture: false }
+  );
+
+  c.addEventListener(
+    "click",
+    (e) => {
+      e.stopPropagation();
+      console.log("Hi I am div 3");
+    },
+    { capture: false }
+  );
+</script>

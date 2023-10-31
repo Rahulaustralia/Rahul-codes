@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Timer Function</h1>
+  </body>
+</html>
+
+<script>
+  // SetInterval()
+
+  //   let x = setInterval(() => {
+  //     console.log("Hello");
+  //   }, 2000);
+
+  //   setTimeout(() => {
+  //     clearInterval(x);
+  //   }, 6000);
+
+  //  ClearTimeout()
+
+  function greet() {
+    console.log("Hello I am a greet function ");
+    let x = setTimeout(greet, 2000);
+    clearTimeout(x);
+  }
+
+  greet();
+</script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      form {
+        width: 440px;
+        margin: auto;
+        margin-top: 50px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 10px;
+      }
+    </style>
+    <title>Add Item</title>
+  </head>
+
+  <body>
+    <h1 class="text-center mt-4 text-danger">Add Products</h1>
+    <form id="form">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Product URL</label>
+        <input
+          type="url"
+          class="form-control"
+          id="pUrl"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Product Description</label
+        >
+        <input type="text" class="form-control" id="pDesc" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label"
+          >Product Price</label
+        >
+        <input type="number" class="form-control" id="pPrice" />
+      </div>
+
+      <button class="btn btn-primary">Add Product</button>
+    </form>
+  </body>
+</html>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.getElementById("form").addEventListener("submit", myFunction);
+  let globArr = [];
+  let Product_Url = document.getElementById("pUrl");
+  let Product_Desc = document.getElementById("pDesc");
+  let Product_Price = document.getElementById("pPrice");
+  let count = 0;
+  function myFunction(e) {
+    e.preventDefault();
+    if (Product_Url.value && Product_Desc.value && Product_Price.value) {
+      const key = new Date().getTime().toString();
+      let obj = {
+        id: count,
+        pu: Product_Url.value,
+        pd: Product_Desc.value,
+        pp: Product_Price.value,
+      };
+      count++;
+      localStorage.setItem(key, JSON.stringify(obj));
+      globArr.push(obj);
+      console.log(globArr);
+      Product_Url.value = "";
+      Product_Desc.value = "";
+      Product_Price.value = "";
+    } else {
+      alert("Please enter some value");
+    }
+  }
+</script>

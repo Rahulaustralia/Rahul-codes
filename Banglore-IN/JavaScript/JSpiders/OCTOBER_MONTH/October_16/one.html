@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>Form Validation</h1>
+      <hr />
+      User Name
+      <input type="text" placeholder="Enter Your Name" id="ussername" />
+      <br />
+      Password
+      <input type="password" placeholder="Enter Your Password" id="pass" />
+      <br />
+      Conform Password
+      <input type="password" placeholder="Enter Conform Password" id="cpass" />
+      <br />
+      Mobile
+      <input type="number" name="" id="mobile" />
+      <br />
+      Gender M<input type="radio" name="gender" id="m" /> F<input
+        type="radio"
+        name="gender"
+        id="f"
+      />
+      O<input type="radio" name="gender" id="o" />
+      <br />
+      Select Your Course
+      <select name="" id="course">
+        <option value="react">React</option>
+        <option value="node">Node</option>
+        <option value="next">Next</option>
+      </select>
+      <br />
+      <button id="btn">Submit</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  let btn = document.getElementById("btn");
+  btn.AddEventListener("click", validate);
+
+  function validate() {
+    let userName = document.getElementById("username").value;
+    let password = document.getElementById("pass").value;
+    let conformpass = document.getElementById("cpass").value;
+    let mobile = document.getElementById("mobile").value;
+    let gender = document.querySelector("input[name=gender].checked").value;
+    let course = document.getElementById("course").value;
+    let isvalidate = true;
+    if (userName || password || conformpass || mobile || gender || course) {
+      isvalidate = false;
+      console.log("sumthing is wrong");
+      alert("error");
+    } else {
+      console.log("Working...");
+      alert("success");
+    }
+  }
+</script>

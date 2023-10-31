@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="qus">
+      <form action="" id="form">
+        <label for="">Your Name</label>
+        <input type="text" Enter Your name="" id="name" />
+        <br />
+        <br />
+        <p>Q1] What is a capital of India?</p>
+        Australia<input
+          type="radio"
+          value="Australia"
+          name="country"
+          id="op1"
+        />
+        Pakistan<input type="radio" name="country" value="Pakistan" id="op2" />
+        Delhi<input type="radio" name="country" value="Delhi" id="op3" />
+        Indore<input type="radio" name="country" value="Indore" id="op4" />
+        <br />
+        <br />
+        <p>Q2] Indian Cricket Board Name?</p>
+        PCB<input type="radio" name="board" value="PCB" id="op1" /> ICC<input
+          type="radio"
+          name="board"
+          value="ICC"
+          id="op2"
+        />
+        CA<input type="radio" name="board" value="CA" id="op3" /> BCCI<input
+          type="radio"
+          name="board"
+          value="BCCI"
+          id="op4"
+        />
+        <br />
+        <br />
+        <p>Q3] Virat Jersey Number</p>
+        33<input type="radio" value="33" name="jn" id="op1" /> 10<input
+          type="radio"
+          name="jn"
+          value="10"
+          id="op2"
+        />
+        18<input type="radio" name="jn0" value="18" id="op3" /> 7<input
+          type="radio"
+          name="jn"
+          value="7"
+          id="op4"
+        />
+        <br />
+        <br />
+        <p>Q4] What is a capital of M.P?</p>
+        Ujjain<input type="radio" value="Ujjain" name="cap" id="op1" />
+        Dewas<input type="radio" name="cap" value="Dewas" id="op2" />
+        Bhopal<input type="radio" name="cap" value="Bhopal" id="op3" />
+        Indore<input type="radio" name="cap" value="Indore" id="op4" />
+        <br />
+        <br />
+
+        <button>Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  let form = document.getElementById("form");
+  form.addEventListener("submit", myFunction);
+
+  //   let output = document.querySelector("input[type=checkbox]").checked;
+
+  let count = 0;
+  let bag = 0;
+  function myFunction(e) {
+    e.preventDefault();
+    let A1 = document.querySelector('input[name="country"]:checked').value;
+    console.log(A1);
+    if (A1 == "Delhi") {
+      count++;
+    } else {
+      bag++;
+    }
+
+    let A2 = document.querySelector('input[name="board"]:checked').value;
+    if (A2 == "BCCI") {
+      count++;
+    } else {
+      bag++;
+    }
+
+    let A3 = document.querySelector('input[name="jn"]:checked').value;
+    if (A3 == "18") {
+      count++;
+    } else {
+      bag++;
+    }
+
+    let A4 = document.querySelector('input[name="cap"]:checked').value;
+    if (A4 == "Bhopal") {
+      count++;
+    } else {
+      bag++;
+    }
+
+    console.log(count);
+    console.log(bag);
+  }
+</script>

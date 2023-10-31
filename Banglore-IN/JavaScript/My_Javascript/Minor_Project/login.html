@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Login Page</title>
+    <style>
+        *,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    background: #ffffff;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.tip {
+    font-size: 20px;
+    margin: 40px auto 50px;
+    text-align: center;
+}
+
+.cont {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 550px;
+    margin: 0 auto 100px;
+    background: #fff;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3), 10px 10px 15px rgba(70, 70, 70, 0.15), inset -10px -10px 15px rgba(255, 255, 255, 0.3), inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+}
+
+.form {
+    position: relative;
+    width: 640px;
+    height: 100%;
+    -webkit-transition: -webkit-transform 1.2s ease-in-out;
+    transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+    padding: 50px 30px 0;
+}
+
+.sub-cont {
+    overflow: hidden;
+    position: absolute;
+    left: 640px;
+    top: 0;
+    width: 900px;
+    height: 100%;
+    padding-left: 260px;
+    background: #fff;
+    -webkit-transition: -webkit-transform 1.2s ease-in-out;
+    transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.cont.s--signup .sub-cont {
+    -webkit-transform: translate3d(-640px, 0, 0);
+    transform: translate3d(-640px, 0, 0);
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.img {
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    padding-top: 360px;
+}
+
+.img:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 900px;
+    height: 100%;
+    background-image: url("ext.jpg");
+    opacity: .8;
+    background-size: cover;
+    -webkit-transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.cont.s--signup .img:before {
+    -webkit-transform: translate3d(640px, 0, 0);
+    transform: translate3d(640px, 0, 0);
+}
+
+.img__text {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    color: #fff;
+    -webkit-transition: -webkit-transform 1.2s ease-in-out;
+    transition: -webkit-transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+}
+
+.img__text h2 {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.img__text p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cont.s--signup .img__text.m--up {
+    -webkit-transform: translateX(520px);
+    transform: translateX(520px);
+}
+
+.img__text.m--in {
+    -webkit-transform: translateX(-520px);
+    transform: translateX(-520px);
+}
+
+.cont.s--signup .img__text.m--in {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.img__btn {
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+    width: 100px;
+    height: 36px;
+    margin: 0 auto;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.img__btn:after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+
+.img__btn span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 1.2s;
+    transition: -webkit-transform 1.2s;
+    transition: transform 1.2s;
+    transition: transform 1.2s, -webkit-transform 1.2s;
+}
+
+.img__btn span.m--in {
+    -webkit-transform: translateY(-72px);
+    transform: translateY(-72px);
+}
+
+.cont.s--signup .img__btn span.m--in {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.cont.s--signup .img__btn span.m--up {
+    -webkit-transform: translateY(72px);
+    transform: translateY(72px);
+}
+
+h2 {
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    width: 260px;
+    margin: 25px auto 0;
+    text-align: center;
+}
+
+label span {
+    font-size: 12px;
+    color: #cfcfcf;
+    text-transform: uppercase;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.forgot-pass {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #cfcfcf;
+}
+
+.submit {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background: #d4af7a;
+    text-transform: uppercase;
+}
+
+.fb-btn {
+    border: 2px solid #d3dae9;
+    color: #8fa1c7;
+}
+
+.fb-btn span {
+    font-weight: bold;
+    color: #455a81;
+}
+
+.sign-in {
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.cont.s--signup .sign-in {
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 1.2s;
+    transition-duration: 1.2s;
+    -webkit-transform: translate3d(640px, 0, 0);
+    transform: translate3d(640px, 0, 0);
+}
+
+.sign-up {
+    -webkit-transform: translate3d(-900px, 0, 0);
+    transform: translate3d(-900px, 0, 0);
+}
+
+.cont.s--signup .sign-up {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="index.html">
+            <img
+              style="height: 40px; width: 100px; border-radius: 10px"
+              src="data:image/png;base64,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"
+              alt="error"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 100px"
+            >
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="add.html"
+                  >Add Item</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-light"
+                  href="product.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                <a href="login.html" class="text-decoration-none text-light"
+                  >Login
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <br>
+<br>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Welcome</h2>
+            <label>
+                <span>Email</span>
+                <input type="email" />
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" />
+            </label>
+            <p class="forgot-pass">Forgot password?</p>
+            <button type="button" class="submit">Sign In</button>
+         
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                 
+                    <h3>Don't have an account? Please Sign up!<h3>
+                </div>
+                <div class="img__text m--in">
+                
+                    <h3>If you already has an account, just sign in.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Create your Account</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" />
+                </label>
+                <button type="button" class="submit">Sign Up</button>
+               
+            </div>
+        
+        </div>
+        <a href="">Admin Login</a>
+    </div>
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+    </script>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

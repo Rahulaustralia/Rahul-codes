@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cont {
+        border: 1px solid black;
+        width: 200px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Todo</h1>
+    <input type="text" placeholder="Enter The Text" id="text" />
+    <button id="btn">Add</button>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", myFunction);
+  let Text_value = document.getElementById("text");
+  let container = document.getElementById("container");
+  let GlobArr = [];
+
+  function myFunction() {
+    if (Text_value.value) {
+      let obj = {
+        id: Math.trunc(Math.random() * 1000),
+        input_val: Text_value.value,
+      };
+      GlobArr.push(obj);
+      Text_value.value = "";
+      console.log(GlobArr);
+      print();
+    } else {
+      alert("Please enter a valid value");
+    }
+  }
+
+  function print() {
+    let str = "";
+
+    if (GlobArr == "") {
+      str += `<p> Empty </p>`;
+    } else {
+      GlobArr.map((obj, index) => {
+        str += `<div class="cont">
+        <h2>${obj.input_val}</h2>
+        <button onclick="eFun(${obj.id})">Edit</button>
+        <button onclick="dFun(${obj.id})">Delete</button>
+      </div>`;
+      });
+    }
+    container.innerHTML = str;
+  }
+
+  function dFun(id) {
+    GlobArr = GlobArr.find((item) => item.id != id);
+    print();
+  }
+</script>

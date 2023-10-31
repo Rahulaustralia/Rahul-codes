@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+    <input type="text" placeholder="Enter any Text" id="text" />
+    <button id="btn">Add</button>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  let text = document.getElementById("text").value;
+  localStorage.setItem("rahul", text);
+  let val = localStorage.getItem("rahul");
+  console.log(val);
+
+  let root = document.getElementById("container");
+  root.append(val);
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="exm"></p>
+    <div>
+      <h1 id="hed"></h1>
+    </div>
+  </body>
+</html>
+
+<script>
+  //   document.getElementById("exm").innerHTML = Math.sqrt(81);
+
+  //   document.getElementById("exm").innerHTML = ;
+
+  // var a = 1;
+  // var b = 0;
+
+  // while (a <= 3) {
+  //   a++;
+  //   b += a * 2;
+  //   console.log(b);
+  // }
+
+  // var a = "hello";
+  // var sum = 0;
+  // for (let i = 0; i < a.length; i++) {
+  //   sum += a[i] - "a";
+  // }
+  // console.log(sum);
+
+  // function solve(arr, rotation) {
+  //   if (rotation == 0) {
+  //     return arr;
+  //   }
+  //   for (let i = 0; i < rotation; i++) {
+  //     let element = arr.pop();
+  //     arr.unshift(element);
+  //   }
+  //   return arr;
+  // }
+
+  // solve([44, 1, 22, 111], 5);
+
+  // console.log(solve([44, 1, 22, 111], 5));
+
+  // (function (a) {
+  //   return (function () {
+  //     console.log(a);
+  //     a = 6;
+  //   })();
+  // })(21);
+
+  // const obj1 = {
+  //   first: 20,
+  //   second: 30,
+  //   first: 50,
+  // };
+  // console.log(obj1);
+
+  // for (var i = 0; i < 3; i++) {
+  //   setTimeout(() => console.log(i), 1);
+  // }
+
+  // for (let i = 0; i < 3; i++) {
+  //   setTimeout(() => console.log(i), 1);
+  // }
+
+  // function myFunction() {
+  //   console.log(name);
+  //   console.log(age);
+  //   var name = "Rahul";
+  //   let age = 21;
+  // }
+  // console.log(myFunction());
+
+  let arr = [49, 36, 81];
+
+  let res = arr.map(Math.sqrt);
+
+  document.getElementById("hed").innerText = res;
+</script>
