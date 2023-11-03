@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Error Handling</h1>
+    <script>
+      // try {
+      //      console.log('start')
+      //      blabla;
+      //      console.log('end')
+      // }
+      // catch{
+      //     console.log('error is occur')
+      // }
+
+      // try{
+      //     setTimeout(()=>{
+      //         blabla;
+      //     })
+      // }
+      // catch{
+      //     console.error('utsav')
+      // }
+
+      // setTimeout(()=>{
+      //     try{
+      //         blabla;
+      //     }
+      //     catch{
+      //         console.log('utsav')
+      //     }
+
+      // })
+
+      // try{
+      //     blabla;
+      // }
+      // catch(err){
+      //       console.log(err.name)
+      //       console.log(err.message)
+      //       console.log(err.stack)
+      // }
+
+      // let a=undefined
+      // a();
+
+      //    let x= eval("2+2"*A)
+      //    console.log(x)
+
+      try {
+        let res = `{"name":"utsav","add":"delhi"}`;
+        let data = JSON.parse(res);
+        if (!data.product) {
+          //custom error
+          throw new Error("data is not available");
+          console.log("hello");
+        }
+      } catch (err) {
+        console.log("hii i am error", err);
+      } finally {
+        console.log("class is done");
+      }
+    </script>
+  </body>
+</html>
