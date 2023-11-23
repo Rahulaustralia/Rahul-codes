@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Fetch API
+    <h1 id="head"></h1>
+  </body>
+</html>
+
+<script>
+  //   let url = "https://jsonplaceholder.typicode.com/albums";
+  //   let x = fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       data.map((el, id) => {
+  //         document.write(`<h1>${el.id}</h1>`);
+  //       });
+  //       return data;
+  //     });
+
+  //   fetch("https://dummyjson.com/products/1")
+  //     .then((res) => res.json())
+  //     .then((json) => console.log(json));
+
+  // setitem
+  // getitem
+
+  localStorage.getItem("key", "Anna");
+
+  let name = localStorage.getItem("key");
+
+  console.log(name);
+
+  document.getElementById("head").innerText = name;
+</script>

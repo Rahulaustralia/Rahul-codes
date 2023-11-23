@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Page</title>
     <style>
+      #main {
+        display: flex;
+        width: 100%;
+      }
+      #filter {
+      }
       #data-container {
+        width: 80%;
         margin: auto;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -22,8 +29,15 @@
   </head>
   <body>
     <h1>Product Page</h1>
-
-    <div id="data-container"></div>
+    <div id="main">
+      <div id="filter">
+        <input type="checkbox" name="" id="" /> High to Low Price <br />
+        <input type="checkbox" name="" id="" /> Low to High Price <br />
+        <input type="checkbox" name="" id="" /> Only below 500₹ Products <br />
+        <input type="checkbox" name="" id="" /> Over 1000₹ <br />
+      </div>
+      <div id="data-container"></div>
+    </div>
 
     <script>
       let Arr = [];
@@ -46,7 +60,7 @@
           itemDiv.innerHTML = `
             <p>Item ${index + 1}</p>
             <img src="${item.pu}" alt="Product Image" width="200">
-            <p>Price: ${item.pp}</p>
+            <p>Price: ${item.pp}₹ </p>
             <p>Description: ${item.pd}</p>
           `;
           dataContainer.appendChild(itemDiv);
