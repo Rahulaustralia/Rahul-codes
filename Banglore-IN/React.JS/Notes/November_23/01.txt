@@ -1,0 +1,77 @@
+
+
+import React, {Fragment} from 'react'
+import ReactDom from 'react-dom/client'
+let root=ReactDom.createRoot(document.getElementById('root'))
+
+// root.render(
+//            //1.div
+//             //  <div>
+//             //     <h1>hiii i am utsav</h1>
+//             //      <p>i am from delhi</p>
+//             //  </div>
+
+//             //2. React.fragment
+//                 //   <React.Fragment>
+//                 //       <h1>hello i am utsav</h1>
+//                 //       <p>i am form delhi</p>
+//                 //   </React.Fragment>
+
+//              //3.Fragment   
+//             //        <Fragment>
+//             //        <h1>hello i am utsav</h1>
+//             //        <p>i am form delhi</p>
+//             //    </Fragment>
+
+//             //<> </>
+//             // <>
+//             // <h1>hello i am utsav</h1>
+//             // <p>i am form delhi</p>
+//             // </>
+
+//             //[]
+//             // [
+//             //     <h1>hello i am utsav</h1>,
+//             //     <p>i am from delhi</p>
+//             // ]
+
+
+//             //jsx
+
+//            <>
+//            <h1>hello this side jsp</h1>
+//            <p>i am from mern side</p>
+//             <p>  i used to take react class</p>
+//            </> 
+
+            
+//                 )
+
+//without jsx write an element
+
+// root.render(
+//       React.createElement('div',null, React.createElement('h1',null,'utsav'),
+//       React.createElement('p',null,"i am form delhi")) 
+// )
+
+
+//jsx and their ruleset
+let name="utsav"
+root.render(
+    <>
+    <h1>hii i am utsav  and {name}</h1>
+    <input type='text'/> 
+    <p>{2+3}</p>
+    {/* {
+    console.log('hello')
+    console.log('hello')
+    } */}
+
+    {/* //ternary */}
+    { name=="vicky"?<h1>hii i am vicky</h1>:<h1>hii i am admin</h1> }
+    {name=="vicky" && <h1>hii i am vicky</h1>}
+    {name !="vicky" && <h1>hii i am admin</h1>}
+    </>
+)
+ 
+ 

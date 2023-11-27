@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <body>
+    <form id="form">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        placeholder="Enter Your Name"
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        placeholder="Enter Your Email-id"
+      />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        placeholder="Enter your Password"
+      />
+      <button>Signup</button>
+    </form>
+  </body>
+</html>
+
+<script>
+  let form = document.getElementById("form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+
+    let user = {
+      userEmail: email,
+      userPassword: password,
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    email = document.getElementById("email").value = "";
+    password = document.getElementById("password").value = "";
+    username = document.getElementById("username").value = "";
+    alert("Your details are Saved!");
+  });
+</script>

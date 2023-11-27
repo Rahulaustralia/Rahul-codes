@@ -1,0 +1,19 @@
+#container{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-evenly;
+    background-color: teal;
+    color: white;
+    width: 100%;
+    padding: 10px;
+}
+#container p{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#side{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        background-color: rgb(243, 243, 243);
+      }
+      div {
+        background-color: white;
+        width: 60%;
+        margin: auto;
+        padding: 8%;
+        margin-top: 50px;
+      }
+      input,
+      button {
+        width: 100%;
+        font-size: 20px;
+        display: block;
+        margin-top: 10px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: teal;
+      }
+      button {
+        background-color: teal;
+        color: white;
+        font-size: 25px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 10px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Signup</h1>
+      <form>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Name"
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Your Email-id"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Your Password"
+        />
+        <button id="signup">Signup</button>
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  let form = document.querySelector("form");
+  let userData = JSON.parse(localStorage.getItem("userData")) || [];
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let data = {
+      name: form.name.value,
+      email: form.email.value,
+      password: form.password.value,
+    };
+
+    if (checkEmails(data.email) === true) {
+      userData.push(data);
+      localStorage.setItem("userData", JSON.stringify(userData));
+    } else {
+      alert("Acount Already Exists");
+    }
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+  });
+
+  function checkEmails(email) {
+    let filtered = userData.filter(function (element) {
+      return email === element.email;
+    });
+    if (filtered.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>
