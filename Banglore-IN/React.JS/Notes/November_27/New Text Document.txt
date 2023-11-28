@@ -1,0 +1,155 @@
+//looping
+import React from 'react'
+
+function Looping() {
+    let arr=[{id:1,prodName:"nike",img:"https://media.istockphoto.com/id/1355687112/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=hEADFXL4HG9mF94yC5g3JA8lMHn8OZg7hRLoiel_L48=",price:7000},
+    {id:2,prodName:"adidas",img:"https://media.istockphoto.com/id/1355687112/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=hEADFXL4HG9mF94yC5g3JA8lMHn8OZg7hRLoiel_L48=",price:5000},
+    {id:3,prodName:"puma",img:"https://media.istockphoto.com/id/1355687112/photo/various-sport-equipment-gear.webp?b=1&s=170667a&w=0&k=20&c=hEADFXL4HG9mF94yC5g3JA8lMHn8OZg7hRLoiel_L48=",price:3000}]
+  return (
+    <div>
+           <div className="container">
+            <div className="row d-flex justify-content-center align-items-center gap-2">
+                <div className="col-md-4">
+                      {
+                        arr.map((item,i)=>{
+                            return  <div className="card" key={i}>
+                            <div className="card-header">
+                               <h1> id :{item.id}</h1>
+                            </div>
+                            <div className="card-body">
+                               productName:{item.prodName}
+                               <div>
+                                <img src={item.img}   className='img-fluid' height="200" width="200"/>
+                                price:{item.price}
+                               </div>
+                            </div>
+                        </div>
+                        })
+                      }
+                </div>
+            </div>
+           </div>
+    </div>
+  )
+}
+
+export default Looping
+
+//conditional rendring
+
+import React from 'react'
+
+function Condition() {
+   let data="MON"
+   switch (data) {
+    case "MON":
+         return <h1>HELLO  I AM MONDAY</h1>
+       
+   case "TUE":
+    return <h1>hello i am tue</h1>
+    default:
+        return <h1>errror</h1>
+   }
+
+
+
+
+
+//    let x=5
+//    if(x>7)
+//    {
+//     return <h1>hello utsav</h1>
+//    }
+//    else{
+//     return <h1>hello admin</h1>
+//    }
+
+
+
+
+
+
+
+
+//   //5.function call
+//    let x=2
+//   function print()
+//   {
+//     if(x>1)
+//     {
+//         return <h1>hello i am utsav</h1>
+//     }
+//     else{
+//         return <h1>hello i am admin</h1>
+//     }
+//   }
+
+//   return(
+//       print()
+//   )
+
+
+
+
+
+
+
+
+
+
+// //4.react element variable
+// let x=3
+// let str=''
+// if(x>2)
+// {
+//     str=<h1>hello i am utsav</h1>
+// }
+// else{
+//     str=<h1>hello i am admin</h1>
+// }
+
+// return (
+//        str
+// )
+
+
+
+
+
+
+
+
+
+
+
+
+//     let x=1
+//   return (
+//       <>
+//       <h1>conditional rendring</h1>
+//       {/* //1.  by using ?:*/}
+       {/* {x>3?<h1>hello i am utsav</h1>:<h1>hello i am admin</h1>} */}
+//       {/* //2 *   by using &&/}
+//       {/* {x>3 && <h1>hello i am utsav</h1>}
+//       {!(x>3) && <h1>hello i am admin</h1>} */}
+
+//       {/* //3  by iife*/}
+//        {/* {
+//         (function(){
+//                if(x>2)
+//                {
+//                 return <h1>hello i am utsav</h1>
+//                }
+//                else{
+//                 return <h1>hello i am admin</h1>
+//                }
+//         })()
+//        } */}
+
+//       <br/>
+//       <hr/>
+//       </>
+//   )
+}
+
+export default Condition

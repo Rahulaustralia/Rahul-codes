@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style/navbar.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Home Page</h1>
+    <div id="nav-container"></div>
   </body>
 </html>
+
+<script type="module">
+  let nav = document.getElementById("nav-container");
+  import navbar from "./navbar.js";
+  nav.innerHTML = navbar();
+</script>

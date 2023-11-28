@@ -3,7 +3,215 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Style/navbar.css" />
     <title>Product</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #Products {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px 20px;
+      }
+      #Products div {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #Products > div > img {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="nav-container"></div>
+    <div>
+      <select name="" id="filter">
+        <option value="All">All Products</option>
+        <option value="Men">Men's</option>
+        <option value="Women">Women's</option>
+        <option value="kids">Kids</option>
+      </select>
+    </div>
+    <div id="Products"></div>
+  </body>
 </html>
+
+<script type="module">
+  let nav = document.getElementById("nav-container");
+  import navbar from "./navbar.js";
+  nav.innerHTML = navbar();
+  let productData = [
+    {
+      pid: 10,
+      brand: "Puma",
+      category: "Men",
+      img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f6197eddc0cf4320b6e59ac29bbc55cf_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_JE0098_21_model.jpg",
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 1,
+      brand: "Puma",
+      category: "Men",
+      img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/f0dec3036b6a4934bffbdbc29b8797c9_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_JE0098_22_model.jpg",
+      price: 4000,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 2,
+      brand: "U.S Polo",
+      category: "Men",
+      img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5e7780fb996049f5bc7662ecb284ca35_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_JE0098_23_hover_model.jpg",
+      price: 3000,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 3,
+      brand: "Nike",
+      category: "Women",
+      img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0083cd605bfc40f8afb9e2a0c2070a7b_9366/INDIA_CRICKET_TRI_COLOR_JERSEY_WITH_2_STARS_WOMEN_Blue_JC8811_01_standard.jpg",
+      price: 2000,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 4,
+      brand: "Lee",
+      category: "Women",
+      img: "https://hashboosh.com/cdn/shop/files/31_5.jpg?v=1683341181&width=800",
+      price: 1000,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 5,
+      brand: "Levi's",
+      category: "kids",
+      img: "https://m.media-amazon.com/images/I/61kqhTCKtgL._AC_UL480_FMwebp_QL65_.jpg",
+      price: 500,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 6,
+      brand: "Dream11",
+      category: "kids",
+      img: "https://m.media-amazon.com/images/I/61xoUmgappL._AC_UL480_FMwebp_QL65_.jpg",
+      price: 400,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 7,
+      brand: "Dream11",
+      category: "kids",
+      img: "https://m.media-amazon.com/images/I/51b7q2N8pPL._AC_UL480_FMwebp_QL65_.jpg",
+      price: 300,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 8,
+      brand: "Lee",
+      category: "kids",
+      img: "https://m.media-amazon.com/images/I/518Xd9hgamL._AC_UL480_FMwebp_QL65_.jpg",
+      price: 200,
+      price: 5000,
+      name: "Indian Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+    {
+      pid: 9,
+      brand: "Adidas",
+      category: "Men",
+      img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/93a832a4952e4623a3ff944b63978167_9366/INDIA_CRICKET_TRAINING_JERSEY_Orange_JJ1141_21_model.jpg",
+      price: 100,
+      price: 5000,
+      name: "Australia Cricket Jersey",
+      size: "M,L,XL,XXL",
+    },
+  ];
+
+  let productContainer = document.getElementById("Products");
+  let filter = document.getElementById("filter");
+  let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+  function displayProducts(productData) {
+    productContainer.innerHTML = "";
+    productData.forEach(function (element) {
+      let Prod = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = element.img;
+      let name = document.createElement("h2");
+      name.textContent = element.name;
+      name.style.fontWeight = "bold";
+      name.style.color = "teal";
+      let size = document.createElement("p");
+      size.innerText = "Size:- " + element.size;
+      size.style.fontWeight = "bold";
+      let category = document.createElement("p");
+      category.innerText = "Category:- " + element.category;
+      category.style.fontWeight = "bold";
+      let brand = document.createElement("p");
+      brand.innerText = "Brand:- " + element.brand;
+      brand.style.fontWeight = "bold";
+      let price = document.createElement("h4");
+      price.innerText = "Price:- " + element.price;
+
+      let addToCart = document.createElement("button");
+      addToCart.innerText = "Add to Cart";
+      addToCart.style.backgroundColor = "red";
+      addToCart.style.color = "white";
+      addToCart.style.padding = "7px";
+      addToCart.style.borderRadius = "10px";
+      addToCart.style.border = "none";
+      addToCart.addEventListener("click", function () {
+        if (addToCartFunc(element.pid) === true) {
+          alert("Product added successfully!");
+          cartLS.push(element);
+          localStorage.setItem("cart-page", JSON.stringify(cartLS));
+        } else {
+          alert("Product Already in the cart!");
+        }
+      });
+      Prod.append(img, name, category, size, brand, price, addToCart);
+      productContainer.append(Prod);
+    });
+  }
+  displayProducts(productData);
+
+  filter.addEventListener("change", function () {
+    if (filter.value === "All") {
+      displayProducts(productData);
+    } else {
+      let filtered = productData.filter(function (element) {
+        return element.category === filter.value;
+      });
+      displayProducts(filtered);
+    }
+  });
+
+  function addToCartFunc(id) {
+    for (let i = 0; i < cartLS.length; i++) {
+      if (cartLS[i].pid == id) {
+        return false;
+      }
+    }
+    return true;
+  }
+</script>

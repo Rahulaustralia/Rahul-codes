@@ -1,0 +1,35 @@
+#parent{
+  width: 100%;
+  display: flex;
+}
+
+#sidebar{
+  width: 10%;
+  margin-left: 10px;
+} 
+#container{
+  width: 90%;
+ 
+}
+.sub{
+  display: flex;
+  flex-direction: column;
+}
+.sub button{
+  width: 100px;
+  margin-top: 20px;
+  padding: 5px;
+}
+#papa{
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  padding: 10px;
+}
+#card{
+  border: 1px solid black;
+}
+#card img{
+  height: 350px;
+}

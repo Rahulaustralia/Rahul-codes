@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #Products {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 10px 20px;
+      }
+      #Products div {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #Products > div > img {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Products"></div>
+  </body>
+</html>
+
+<script>
+  let productContainer = document.getElementById("Products");
+
+  let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+  function displayProducts(productData) {
+    productContainer.innerHTML = "";
+    productData.forEach(function (element) {
+      let Prod = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = element.img;
+      let name = document.createElement("h2");
+      name.textContent = element.name;
+      name.style.fontWeight = "bold";
+      name.style.color = "teal";
+      let size = document.createElement("p");
+      size.innerText = "Size:- " + element.size;
+      size.style.fontWeight = "bold";
+      let category = document.createElement("p");
+      category.innerText = "Category:- " + element.category;
+      category.style.fontWeight = "bold";
+      let brand = document.createElement("p");
+      brand.innerText = "Brand:- " + element.brand;
+      brand.style.fontWeight = "bold";
+      let price = document.createElement("h4");
+      price.innerText = "Price:- " + element.price;
+
+      let DeleteCart = document.createElement("button");
+      DeleteCart.innerText = "Delete";
+      DeleteCart.style.backgroundColor = "red";
+      DeleteCart.style.color = "white";
+      DeleteCart.style.padding = "7px";
+      DeleteCart.style.borderRadius = "10px";
+      DeleteCart.style.border = "none";
+      DeleteCart.addEventListener("click", function () {
+        Delete(element.pid);
+      });
+      Prod.append(img, name, category, size, brand, price, DeleteCart);
+      productContainer.append(Prod);
+    });
+  }
+  displayProducts(cartLS);
+
+  function Delete(id) {
+    let deleted = cartLS.filter(function (el) {
+      return el.pid != id;
+    });
+    cartLS = deleted;
+    localStorage.setItem("cart-page", JSON.stringify(cartLS));
+    displayProducts(cartLS);
+  }
+</script>
