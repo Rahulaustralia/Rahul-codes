@@ -1,0 +1,52 @@
+#navbar{
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    background-color:#242d7c;    
+}
+#leftNav{
+    width: 15%;
+    text-align: center;
+}
+#leftNav a{
+    color: white;
+}
+#rightNav{
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#rightNav a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+#rightNav2{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+#rightNav2 button{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+#rightNav2 p{
+    font-size: 20px;
+    color: white;
+}
+#parent{
+    width: 100%;
+}
+#sidebar{
+    width: 20%;
+    background-color: red;
+}
+#container{
+    width: 80%;
+    background-color: gold  ;
+}
