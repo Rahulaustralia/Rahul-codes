@@ -21,15 +21,23 @@ const Button2 = () => {
     marginTop:"50px",
   }
    let [data,setData]= useState("")
-   function myFun(){
-    console.log(data)
-   }
+  //  function myFun(){
+  //   console.log(data)
+  //  }
 
    function nameHandler(e){
      console.log(e.target.value)
     setData(e.target.value)
     }
-   
+   function myFun(){
+    let sortName = arr.filter((item,i)=>{
+      console.log(item.name)
+        return item.name === setData
+      console.log(setData)
+    })
+    console.log(sortName)
+    
+   }
   
     return (
     <div>
@@ -44,6 +52,9 @@ const Button2 = () => {
       <h1> {el.name} </h1>
        </div>
        ))}
+       </div>
+       <div id='sort'>
+      
        </div>
     </div>
   )

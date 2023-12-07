@@ -1,0 +1,68 @@
+
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import App from './App';
+import { createContext } from 'react';
+import Filter from './context/Filter';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+export let contextData=createContext()
+export   let authContext=createContext()
+let detils={name:"utsav",add:'delhi'}
+let auth={login:true}
+root.render(
+     <contextData.Provider value={{...detils}}>
+      <authContext.Provider value={{...auth}}>
+           <Filter>
+            <App />
+            </Filter>
+       </authContext.Provider>
+     </contextData.Provider>
+   
+  
+);
+
+////context
+import React from 'react'
+import { authContext, contextData } from '../index'
+import { useContext } from 'react'
+
+
+function C() {
+  let auth=  useContext(authContext)
+  let data=  useContext(contextData)
+return (
+    <h1>hello my name is  {data.name}and i am form {data.add} and i am active part of jsp{auth.login?"yes":"no"} </h1>
+)
+      
+//   return (
+//     <div>
+//         <contextData.Consumer>
+//             {(item)=>{
+//                  return  <authContext.Consumer>
+//                     {(data)=>{
+
+//                         return <h1>my name is {item.name} and i am from {item.add} and i am active member of jsp {data.login ? "yes" :"no"}</h1>
+//                     }}
+//                  </authContext.Consumer>
+//             }}
+//         </contextData.Consumer>
+//     </div>
+//   )
+}
+
+export default C
+
+//filter 
+
+import { createContext } from "react"
+
+ 
+export let filterContext= createContext()
+let filterData={text:"mobile",price:"0", sort:"lowest"}
+function Filter(props) {
+  return <filterContext.Provider value={{...filterData}}>{props.children} </filterContext.Provider>
+}
+
+export default Filter

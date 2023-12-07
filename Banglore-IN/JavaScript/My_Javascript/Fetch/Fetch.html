@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 90%;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      #myDiv {
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+          rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+          rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      #myDiv img {
+        width: 100%;
+        height: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Products</h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  // fetch("https://dummyjson.com/products")
+  //   .then((res) => res.json())
+  //   .then(console.log);
+
+  // fetch(`https://dummyjson.com/products`)
+  //   .then(function (res) {
+  //     return res.json();
+  //   })
+
+  //   .then(function (res) {
+  //     return (data = res.products);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+
+  // console.log(data);
+  // var actualData;
+  async function getData() {
+    let data = await fetch(`https://dummyjson.com/products`);
+    let res = await data.json();
+    actualData = res.products;
+    console.log(actualData);
+    actualData.map((ele, i) => {
+      let div = document.createElement("div");
+      div.setAttribute("id", "myDiv");
+
+      let img = document.createElement("img");
+      img.src = ele.images[0];
+      let h3 = document.createElement("h3");
+      h3.innerText = `Brand Name:- ${ele.title}`;
+      let p = document.createElement("p");
+      p.innerText = ele.description;
+      let p1 = document.createElement("h3");
+      p1.innerText = `Price:-  ${ele.price}`;
+      p1.style.color = "green";
+      let p2 = document.createElement("p");
+      p2.innerText = `Rating:-  ${ele.rating}`;
+      p2.style.color = "red";
+
+      let btn = document.createElement("button");
+      btn.innerText = "Add to cart";
+
+      div.append(img, h3, p, p1, p2, btn);
+
+      let container = document.getElementById("container");
+
+      container.append(div);
+
+      price: 549;
+      rating: 4.69;
+      stock: 94;
+      thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg";
+      title: "iPhone 9";
+    });
+  }
+  getData();
+</script>
