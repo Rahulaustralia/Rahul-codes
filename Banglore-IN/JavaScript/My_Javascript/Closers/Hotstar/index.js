@@ -12,18 +12,30 @@ async function main() {
 
     let actualData = data.Search;
 
-    appendMovies(actualData);
-    console.log(globalArr);
+    console.log(actualData);
+    if (actualData != undefined) {
+      appendMovies(actualData);
+    }
   } catch (err) {
     console.log(err);
   }
 }
 
 function appendMovies(data) {
+  movies_div.innerHTML = null;
   data.forEach(function (item) {
-    let p = document.createElement("p");
-    p.innerText = item.Title;
+    let div = document.createElement("div");
+    div.setAttribute("id", "myDiv");
+    let img = document.createElement("img");
+    img.src = item.Poster;
+    let h2 = document.createElement("h2");
+    h2.innerText = item.Title;
+    let h3 = document.createElement("h3");
+    h3.innerText = item.Type;
+    let h4 = document.createElement("h4");
+    h4.innerText = item.Year;
 
-    movies_div.append(p);
+    div.append(img, h2, h3, h4);
+    movies_div.append(div);
   });
 }
