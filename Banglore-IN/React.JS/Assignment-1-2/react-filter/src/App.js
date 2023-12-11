@@ -5,7 +5,8 @@ import Assignment3 from "./Components/Assignment3";
 function App() {
   return (
     <>
-      <Assignment2 />
+      {/* <Assignment2 /> */}
+      <Assignment3 />
     </>
   );
 }

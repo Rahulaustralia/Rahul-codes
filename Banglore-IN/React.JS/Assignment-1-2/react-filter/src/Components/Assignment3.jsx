@@ -37,12 +37,13 @@ const Assignment3 = () => {
       />
       <button onClick={handleClick}>Search</button>
 
-      <div className="conta">
+      <div>
         {data.map((ele, i) => {
           return (
             <>
               <div>
-                <h1>{ele.name}</h1>
+                <h1>Name:- {ele.name}</h1>
+                <p>Id:- {ele.id}</p>
               </div>
             </>
           );
