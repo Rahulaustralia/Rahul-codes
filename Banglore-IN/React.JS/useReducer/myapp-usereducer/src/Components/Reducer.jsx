@@ -1,4 +1,5 @@
 import React, { useReducer, useState } from "react";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function reducer(state, action) {}
 
@@ -21,13 +22,22 @@ const Reducer = () => {
         style={{
           margin: "auto",
           border: "1px solid blue",
-          width: "250px",
+          width: "350px",
           height: "200px",
           marginTop: "20px",
+          padding: "5px",
         }}
       >
-        <input type="text" value={data} onChange={handleChange} />
-        <button onClick={handleClick}> Add</button>
+        <input
+          className="form-control"
+          type="text"
+          value={data}
+          onChange={handleChange}
+        />
+        <button className="btn btn-danger form-control" onClick={handleClick}>
+          {" "}
+          Add
+        </button>
         <h1> {mystate} </h1>
       </div>
     </div>
