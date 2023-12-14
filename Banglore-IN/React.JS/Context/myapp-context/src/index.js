@@ -220,7 +220,7 @@ let details = { name: "Rahul Pandey", add: "Madhya Pradesh" };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ContextProduct.Provider value={{ ...products }}>
+  <ContextProduct.Provider value={[...products]}>
     <ContextData.Provider value={{ ...details }}>
       <App />
     </ContextData.Provider>
