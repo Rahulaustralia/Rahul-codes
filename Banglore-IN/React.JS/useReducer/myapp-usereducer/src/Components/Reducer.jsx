@@ -1,46 +1,45 @@
-import React, { useReducer, useState } from "react";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import React, { useReducer } from "react";
 
-function reducer(state, action) {}
+function reducer(state, action) {
+  switch (action.type) {
+    case "INC":
+      return state + 1;
+    case "DEC":
+      return state - 1;
+
+    default:
+      return state;
+  }
+}
 
 const Reducer = () => {
-  let initialValue = {
-    arr: [],
-  };
-  let [state, dispatch] = useReducer(reducer, initialValue);
-  let [data, setData] = useState("");
-  let [mystate, setMystate] = useState("");
-  function handleChange(e) {
-    setData(e.target.value);
+  const [state, dispatch] = useReducer(reducer, 1);
+
+  function handleInc() {
+    dispatch({ type: "INC" });
   }
-  function handleClick() {
-    setMystate(data);
+
+  function handleDec() {
+    dispatch({ type: "DEC" });
   }
+
   return (
-    <div>
-      <div
-        style={{
-          margin: "auto",
-          border: "1px solid blue",
-          width: "350px",
-          height: "200px",
-          marginTop: "20px",
-          padding: "5px",
-        }}
-      >
-        <input
-          className="form-control"
-          type="text"
-          value={data}
-          onChange={handleChange}
-        />
-        <button className="btn btn-danger form-control" onClick={handleClick}>
-          {" "}
-          Add
+    <>
+      <div>
+        <h1> Counter using useReducer </h1>
+        <h2> Count = {state} </h2>
+        <button className="btn btn-success" onClick={handleInc}>
+          Increment
         </button>
-        <h1> {mystate} </h1>
+        <button
+          className="btn btn-danger"
+          onClick={handleDec}
+          disabled={state === 0}
+        >
+          Decrement
+        </button>
       </div>
-    </div>
+    </>
   );
 };
 
