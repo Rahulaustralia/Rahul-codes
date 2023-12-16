@@ -9,7 +9,7 @@ const Counter = () => {
     if (togell) {
       time = setInterval(() => {
         setCount((value) => value + 1);
-      }, 500);
+      }, 50);
     }
     return () => clearInterval(time);
   }, [togell]);

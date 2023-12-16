@@ -6,8 +6,8 @@ import Assignment2 from "./Components/Assignment2";
 function App() {
   return (
     <>
-      {/* <Counter /> */}
-      <Assignment2 />
+      <Counter />
+      {/* <Assignment2 /> */}
     </>
   );
 }
