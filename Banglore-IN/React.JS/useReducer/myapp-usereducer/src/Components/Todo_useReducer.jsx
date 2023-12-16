@@ -32,17 +32,35 @@ const Todo_useReducer = () => {
   return (
     <>
       <div>
-        <input type="text" value={text} onChange={handlerChange} />
-        <button onClick={handleAdd}>Add </button>
+        <input
+          className="form-control w-25"
+          type="text"
+          value={text}
+          onChange={handlerChange}
+        />
+        <button className="btn btn-success" onClick={handleAdd}>
+          Add{" "}
+        </button>
         <div>
-          {state.map((item, i) => {
-            return (
-              <>
-                <h1 key={i}> {item.text} </h1>
-                <button onClick={() => handleRemove(i)}>Remove</button>
-              </>
-            );
-          })}
+          {state.length > 0 ? (
+            state.map((item, i) => {
+              return (
+                <>
+                  <div style={{ display: "flex", padding: "10px" }}>
+                    <h1 key={i}> {item.text} </h1>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => handleRemove(i)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </>
+              );
+            })
+          ) : (
+            <h1>No Todo Available </h1>
+          )}
         </div>
       </div>
     </>
