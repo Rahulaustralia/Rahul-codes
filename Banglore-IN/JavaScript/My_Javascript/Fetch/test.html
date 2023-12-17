@@ -10,4 +10,9 @@
   </body>
 </html>
 
-<script></script>
+<script>
+  fetch(`https://dummyjson.com/products`).then(function (res) {
+    return res.json();
+    console.log(res);
+  });
+</script>
