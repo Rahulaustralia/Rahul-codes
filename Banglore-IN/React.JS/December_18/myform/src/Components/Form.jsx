@@ -18,12 +18,18 @@ const Form = () => {
   }
 
   function optionHandle(e) {
-    console.log(e.target.value);
     let val = e.target.value;
 
-    arr.filter((item, i) => {
-      return <></>;
-    });
+    if (val === "All") {
+      // If "All" is selected, display all items
+      setArr(arr);
+    } else {
+      // Filter the array based on the selected year
+      let filteredArr = arr.filter((item) => {
+        return item.date.startsWith(val); // Assuming the year is at the beginning of the date
+      });
+      setArr(filteredArr);
+    }
   }
 
   return (
@@ -65,7 +71,7 @@ const Form = () => {
           margin: "auto",
           display: "grid",
           gridTemplateColumns: "repeat(3,1fr)",
-          gap: "10px",
+          gap: "15px",
           textAlign: "center",
           marginTop: "50px",
         }}
@@ -76,7 +82,11 @@ const Form = () => {
               <>
                 <div
                   key={i}
-                  style={{ border: "1px solid black", borderRadius: "10px" }}
+                  style={{
+                    boxShadow:
+                      "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
+                    borderRadius: "10px",
+                  }}
                 >
                   <h1 style={{ color: "red" }}>Subscribe:-{item.opt}</h1>
                   <h2 style={{ color: "green" }}> Price:- {item.price} </h2>

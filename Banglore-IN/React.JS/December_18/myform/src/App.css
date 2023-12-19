@@ -41,3 +41,10 @@ border: none;
 margin: 5px;
 width: 100%;
 }
+#select{
+   margin-left: 45%;
+   margin-top: 20px;
+   padding: 7px;
+   width: 150px;
+   border-radius: 10px;
+}
