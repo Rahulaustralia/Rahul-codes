@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Style/navbar.css" />
+    <link rel="stylesheet" href="./Style/index.css" />
     <title>Document</title>
   </head>
   <body>
     <div id="nav-container"></div>
+    <div id="main"></div>
   </body>
 </html>
 
@@ -15,4 +17,60 @@
   let nav = document.getElementById("nav-container");
   import navbar from "./navbar.js";
   nav.innerHTML = navbar();
+
+  let actualData;
+
+  async function getData() {
+    try {
+      let res = await fetch("https://dummyjson.com/products");
+      let data = await res.json();
+      actualData = data.products;
+      console.log(actualData);
+      appendData(actualData);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  getData();
+
+  let main = document.getElementById("main");
+
+  function appendData(actualData) {
+    actualData.forEach(function (el) {
+      let div = document.createElement("div");
+      div.setAttribute("id", "block");
+
+      let img = document.createElement("img");
+      img.src = el.thumbnail;
+      let t1 = document.createElement("h1");
+      t1.innerHTML = `Brand:-  ${el.brand}`;
+      let t2 = document.createElement("h2");
+      t2.innerHTML = `Category:- ${el.category}`;
+      let t3 = document.createElement("h4");
+      t3.innerHTML = `Details:-  ${el.description}`;
+      let t4 = document.createElement("h2");
+      t4.innerText = `Price:- ${el.price}`;
+      let t5 = document.createElement("h3");
+      t5.innerText = `Rating:- ${el.rating}`;
+      let t6 = document.createElement("h2");
+      t6.innerText = `Title:- ${el.title}`;
+      div.append(img, t1, t2, t6, t3, t4);
+
+      main.append(div);
+    });
+  }
+
+  //   brand
+  // category
+  // description
+  // discountPercentage
+  // id
+  // images
+  // price
+  // rating
+  // stock
+
+  // thumbnai
+  // title
 </script>
