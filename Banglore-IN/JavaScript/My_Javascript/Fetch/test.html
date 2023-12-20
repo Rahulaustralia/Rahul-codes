@@ -7,12 +7,51 @@
   </head>
   <body>
     <h1>Test Fetch API Data</h1>
+    <h2>Total Products:- <label id="quntity"></label></h2>
+    <div id="container"></div>
   </body>
 </html>
 
 <script>
-  fetch(`https://dummyjson.com/products`).then(function (res) {
-    return res.json();
-    console.log(res);
-  });
+  // fetch(`https://dummyjson.com/products`).then(function (res) {
+  //   return res.json();
+  //   console.log(res);
+  // });
+  let actualData;
+  async function getData() {
+    try {
+      let res = await fetch("https://dummyjson.com/products");
+
+      let data = await res.json();
+
+      actualData = data.products;
+
+      console.log(actualData);
+      appendProduct(actualData);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  getData();
+  let container = document.getElementById("container");
+  let quntity = document.getElementById("quntity");
+
+  function appendProduct(actualData) {
+    actualData.forEach(function (el) {
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+
+      img.src = el.thumbnail;
+      let h3 = document.createElement("h3");
+      h3.innerText = el.brand;
+      let h4 = document.createElement("h4");
+      h4.innerText = el.category;
+
+      div.append(img, h3, h4);
+
+      container.append(div);
+    });
+  }
 </script>
