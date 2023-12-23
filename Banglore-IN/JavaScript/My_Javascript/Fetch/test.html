@@ -19,6 +19,7 @@
       #container div {
         border: 1px solid black;
         padding: 10px;
+        border-radius: 10px;
       }
     </style>
   </head>
@@ -46,11 +47,13 @@
       img = document.createElement("img");
       img.src = el.image;
       let h1 = document.createElement("h1");
-      h1.innerHTML = el.id;
+      h1.innerHTML = `ID:- ${el.id}`;
+      h2 = document.createElement("h2");
+      h2.innerHTML = `Price:- ${el.price}`;
       let h3 = document.createElement("h3");
-      h3.innerHTML = el.category;
+      h3.innerHTML = `Category:- ${el.category}`;
 
-      div.append(img, h1, h3);
+      div.append(img, h1, h2, h3);
 
       container.append(div);
     });
