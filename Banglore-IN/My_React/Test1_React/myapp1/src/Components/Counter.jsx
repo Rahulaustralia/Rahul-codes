@@ -1,12 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { incHandler, decHandler } from "../redux/action/action.Creater";
 
 const Counter = () => {
-  const [count, setCount] = useState(1);
+  let x = useSelector((item) => {
+    return item.counterReducer;
+  });
+  let dispatch = useDispatch();
   return (
     <div>
-      <h1>Counter {count} </h1>
-      <button>Inc</button>
-      <button>Dec</button>
+      <h1>Inc: {x.inc}</h1>
+      <h2>Dec: {x.dec}</h2>
+      <button
+        onClick={() => {
+          dispatch(incHandler());
+        }}
+      >
+        Inc
+      </button>
+      <button
+        onClick={() => {
+          dispatch(decHandler());
+        }}
+      >
+        Dec
+      </button>
     </div>
   );
 };
