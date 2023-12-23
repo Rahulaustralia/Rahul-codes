@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: auto;
+      }
+      #container div img {
+        width: 100%;
+        height: 300px;
+      }
+      #container div {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Test Page</h1>
@@ -25,12 +42,15 @@
   function appendData(data) {
     data.forEach((el) => {
       let div = document.createElement("div");
+
+      img = document.createElement("img");
+      img.src = el.image;
       let h1 = document.createElement("h1");
       h1.innerHTML = el.id;
       let h3 = document.createElement("h3");
       h3.innerHTML = el.category;
 
-      div.append(h1, h3);
+      div.append(img, h1, h3);
 
       container.append(div);
     });
