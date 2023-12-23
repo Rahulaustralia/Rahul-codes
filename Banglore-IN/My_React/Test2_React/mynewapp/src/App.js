@@ -1,11 +1,12 @@
 import "./App.css";
+import FetchApi from "./Components/FetchApi";
 import Products from "./Components/Products";
 
 function App() {
   return (
     <>
-      <h1> Hello </h1>
-      <Products />
+      {/* <Products /> */}
+      <FetchApi />
     </>
   );
 }
