@@ -4,14 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      button {
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        color: red;
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
-    <h1>Palindrome</h1>
+    <h1>The Given Number is</h1>
+    <h1 id="display"></h1>
+    <button>Check New Number</button>
   </body>
 </html>
 
 <script>
-  let num = 121;
+  let display = document.getElementById("display");
+  let num = prompt("Enter any Number!");
 
   let str = num.toString();
+  let bag = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    bag += str[i];
+  }
+  let myNum = parseInt(bag);
+  if (myNum == num) {
+    display.innerText = " Palindrome!";
+    display.style.color = "green";
+  } else {
+    display.innerText = "Not Palindrome!";
+    display.style.color = "red";
+  }
+  document.querySelector("button").addEventListener("click", myFunction);
+
+  function myFunction() {
+    window.location.reload();
+  }
 </script>
