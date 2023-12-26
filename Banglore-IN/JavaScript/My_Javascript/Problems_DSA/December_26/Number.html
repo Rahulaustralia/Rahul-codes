@@ -13,13 +13,16 @@
 <script>
   let num = 8198;
   let count = 0;
-  let sum = 0;
+  let sum = "";
+  let arr = [];
   while (num >= 1) {
     count++;
     sum += Math.trunc(num) % 10;
     num = Math.trunc(num / 10);
+    arr.push(sum);
   }
 
+  console.log(arr);
   console.log(sum);
   // Sum of digites
 

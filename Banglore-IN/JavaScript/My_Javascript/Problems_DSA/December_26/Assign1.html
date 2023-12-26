@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Problem:1] Sum of even digites and sum of odd digites in given Number
+      12345 ?
+    </h1>
+  </body>
+</html>
+
+<script>
+  // Problem:1] Sum of even digites and sum of odd digites in given Number 12345 ?
+
+  let num = 12345;
+  let str = num.toString().split("");
+
+  let bag = 0;
+  let jhola = 0;
+  for (let i = 0; i < str.length; i++) {
+    // bag = bag + Number(str[i]);
+
+    if (Number(str[i]) % 2 == 0) {
+      bag += Number(str[i]);
+    } else if (Number(str[i]) % 2 == 1) {
+      jhola += Number(str[i]);
+    }
+  }
+  console.log("Even Number Sum", bag);
+  console.log("Odd Number Sum", jhola);
+</script>
