@@ -12,4 +12,15 @@
 
 <script>
   let num = 12345;
+  let rev = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    rev = rev * 10 + rem;
+    num = Math.trunc(num / 10);
+  }
+  console.log(rev);
+
+  // p}1 frbinachy serise  in a given range
+  // p}2 FInd factors for the given Number
+  // p}3 Fectorials of any number
 </script>
