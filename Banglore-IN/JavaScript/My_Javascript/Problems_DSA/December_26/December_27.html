@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Amstrong Number</h1>
+  </body>
+</html>
+
+<script>
+  let num = Number(prompt("Enter any Number"));
+  let temp = num;
+  let count = 0;
+
+  while (num > 0) {
+    count++;
+    num = Math.trunc(num / 10);
+  }
+
+  let sum = 0;
+  num = temp;
+  while (num > 0) {
+    let rem = num % 10;
+    let fact = 1;
+
+    for (let i = 1; i <= count; i++) {
+      fact = rem * fact;
+    }
+    sum = sum + fact;
+    num = Math.trunc(num / 10);
+  }
+
+  if (sum == temp) {
+    console.log("Armstrong Number");
+  } else {
+    console.log("Not a Armstrong Number!");
+  }
+</script>
