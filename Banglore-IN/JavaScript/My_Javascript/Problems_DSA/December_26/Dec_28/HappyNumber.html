@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Happy Number</h1>
+  </body>
+</html>
+
+<script>
+  let num = Number(prompt("Enter a number"));
+  //   let temp = num;
+  do {
+    let sum = 0;
+    while (num > 0) {
+      let rem = num % 10;
+      //   console.log(rem);
+
+      let square = rem * rem;
+      sum = sum + square;
+      num = Math.trunc(num / 10);
+
+      //   console.log(square);
+    }
+    //   console.log(sum);
+
+    num = sum;
+  } while (num > 9);
+  {
+    if (num == 1) {
+      console.log("Happy Number!");
+    } else {
+      console.log("Not a Happy Number!");
+    }
+  }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>AutoMorphic Number</h1>
+  </body>
+</html>
+
+<script>
+  let num = 25;
+  let temp = num;
+  let mul = num * num;
+  let d = 1;
+
+  while (num > 0) {
+    d = d * 10;
+    num = Math.trunc(num / 10);
+  }
+
+  if (mul % d == temp) {
+    console.log("AutoMorphic Number", temp);
+  } else {
+    console.log("Not AutoMorphic Number!", temp);
+  }
+</script>

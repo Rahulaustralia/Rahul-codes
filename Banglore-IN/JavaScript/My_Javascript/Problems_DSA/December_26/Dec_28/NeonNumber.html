@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Neon Number</h1>
+  </body>
+</html>
+
+<script>
+  let num = Number(prompt("Enter a number"));
+  let square = num * num;
+  let temp = num;
+  let sum = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    sum += rem;
+    num = Math.trunc(num / 10);
+  }
+  console.log(sum, "sum");
+
+  if (temp == sum) {
+    console.log("Neon Number", temp);
+  } else {
+    console.log("Not Neon Number", temp);
+  }
+</script>
