@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Next Plaindrom</h1>
+  </body>
+</html>
+
+<script>
+  let num = 1112;
+  let temp = num;
+  let str = "";
+
+  while (num > 0) {
+    let rem = num % 10;
+    str += rem;
+
+    num = Math.trunc(num / 10);
+  }
+  if (str == temp) {
+    console.log("Number is plaindrom");
+  } else {
+    console.log("not plaindrom");
+  }
+</script>
