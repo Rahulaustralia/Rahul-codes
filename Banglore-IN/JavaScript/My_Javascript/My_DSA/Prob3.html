@@ -11,19 +11,19 @@
 </html>
 
 <script>
-  let num = 1112;
+  let num = 111;
   let temp = num;
   let str = "";
+  for (let i = num; ; i++) {
+    while (i > 0) {
+      let rem = num % 10;
+      str += rem;
 
-  while (num > 0) {
-    let rem = num % 10;
-    str += rem;
-
-    num = Math.trunc(num / 10);
-  }
-  if (str == temp) {
-    console.log("Number is plaindrom");
-  } else {
-    console.log("not plaindrom");
+      num = Math.trunc(num / 10);
+    }
+    if (str == temp) {
+      console.log(num, "Number is plaindrom");
+      break;
+    }
   }
 </script>

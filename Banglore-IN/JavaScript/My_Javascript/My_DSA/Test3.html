@@ -17,28 +17,17 @@
   //          13 14
   //             15
 
-  // let str = "";
-  // let num = 1;
-  // for (let i = 0; i < 5; i++) {
-  //   for (let j = 1; j <= i; j++) {
-  //     str += " ";
-  //   }
-  //   for (let j = 1; j <= num - i; j++) {
-  //     str += j;
-  //     num++;
-  //   }
-  //   str += "\n";
-  // }
-  // console.log(str);
-
   let str = "";
+  let num = 1;
+  let n = 5;
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < n; i++) {
     for (let j = 1; j <= i; j++) {
-      str += " ";
+      str += " " + " ";
     }
-    for (let k = 1; k <= i; k++) {
-      str += k;
+    for (let j = 1; j <= n - i; j++) {
+      str += num + " ";
+      num++;
     }
     str += "\n";
   }
