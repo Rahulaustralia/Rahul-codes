@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Sub string</h1>
+  </body>
+</html>
+
+<script>
+  let str = "nitin";
+
+  let i = str.charAt(0);
+  let j = str.charAt(length - 1);
+  function isPal(str) {
+    while (i < j) {
+      if (str.charAt(i) !== str.charAt(j)) return false;
+      {
+        i++;
+        j--;
+      }
+      return true;
+    }
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j < str.length; j++) {
+      let bag = "";
+      for (let k = i; k <= j; k++) {
+        bag += str[k];
+      }
+      //   console.log(bag);
+      isPal(bag);
+    }
+  }
+</script>
