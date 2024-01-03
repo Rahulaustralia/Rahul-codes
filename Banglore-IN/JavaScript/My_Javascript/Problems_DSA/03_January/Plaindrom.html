@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Paildrome String</h1>
+    <h1 id="output"></h1>
+  </body>
+</html>
+
+<script>
+  //   let output = document.getElementById("output");
+
+  //   let str = prompt("Enter a string");
+
+  //   let res = "";
+  //   for (let i = str.length - 1; i >= 0; i--) {
+  //     res += str.charAt(i);
+  //   }
+  //   if (str === res) {
+  //     output.innerText = `${str}"Plaindrome"`;
+  //     output.style.color = "green";
+  //   } else {
+  //     output.innerText = `${str} "Not a Plaindrome" `;
+  //     output.style.color = "Red";
+  //   }
+
+  // Second MEthode of Plaindrome
+
+  let output = document.getElementById("output");
+
+  let str = prompt("Enter a string");
+  let i = str.charAt(0);
+  let j = str.charAt(str.length - 1);
+  function isPla(str) {
+    while (i < j) {
+      if (str.charAt(i) != str.charAt(j)) return false;
+      {
+        i++;
+        j--;
+      }
+      return true;
+    }
+  }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Substring</h1>
+  </body>
+</html>
+
+<script>
+  let s1 = "madam";
+
+  let arr = [];
+  for (let i = 0; i < s1.length; i++) {
+    for (let j = i + 1; j < s1.length; j++) {
+      let str = s1.substring(i, j + 1);
+      if (isPla(str)) {
+        arr.push(str);
+        console.log(arr);
+      }
+    }
+  }
+
+  let ans = "";
+  let max = arr[0];
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  console.log(max, "Maximum length");
+
+  function isPla(str) {
+    let i = 0;
+    let j = str.length - 1;
+    while (i < j) {
+      if (str.charAt(i) !== str.charAt(j)) return false;
+      {
+        i++;
+        j--;
+      }
+      return true;
+    }
+  }
+</script>

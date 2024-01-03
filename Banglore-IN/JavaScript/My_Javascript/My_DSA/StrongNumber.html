@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Strong Number</h1>
+  </body>
+</html>
+
+<script>
+  // Strong Number
+
+  let num = Number(prompt("Enter a number"));
+  let temp = num;
+  let sum = 0;
+  while (num > 0) {
+    let rem = num % 10;
+    let fact = 1;
+    for (let i = 1; i <= rem; i++) {
+      fact = fact * i;
+    }
+    sum += fact;
+    num = Math.trunc(num / 10);
+  }
+  console.log(sum);
+  if (temp == sum) {
+    console.log(temp, "Strong Number");
+  } else {
+    console.log(temp, "Not a strong number");
+  }
+
+  //   let num = 4;
+  //   let sum = 0;
+  //   let multi = 1;
+  //   for (let i = 1; i <= num; i++) {
+  //     multi = multi * i;
+  //     sum += multi;
+  //   }
+  //   console.log(multi);
+</script>
