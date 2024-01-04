@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>WAP to remove duplicate word from string</h1>
+  </body>
+</html>
+
+<script>
+  let str = "cricket is a sport and i love cricket";
+
+  let ch = str.split(" ");
+  //   console.log(ch);
+
+  for (let i = 0; i < ch.length; i++) {
+    for (let j = i + 1; j < ch.length; j++) {
+      if (ch[i] == ch[j]) {
+        ch[j] = " ";
+      }
+    }
+    if (ch[i] != " ") {
+      console.log(ch[i]);
+    }
+  }
+</script>

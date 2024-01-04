@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Vowels count</h1>
+  </body>
+</html>
+
+<script>
+  let str = "australia always win";
+  let ch = str.split("");
+
+  console.log(ch);
+  let count = 0;
+  let count2 = 0;
+  for (let i = 0; i < ch.length; i++) {
+    if (
+      str[i] == "a" ||
+      str[i] == "e" ||
+      str[i] == "i" ||
+      str[i] == "o" ||
+      str[i] == "u"
+    ) {
+      count++;
+    } else {
+      count2++;
+    }
+  }
+  console.log("Vowels" + "=" + count);
+  console.log("consonent" + "=" + count2);
+</script>

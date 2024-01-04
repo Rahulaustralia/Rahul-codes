@@ -1,0 +1,28 @@
+React
+
+Virtual DOM
+
+Fragment 
+
+<React.Fragment  key="" will work>
+
+</React.Fragment>
+
+<>  key=""   X  
+</>
+
+jest:- use for testing purposes
+
+JSX:- Javascript XML 
+
+without jsx how to create element 
+
+
+Webpack:- it convert react code to browser understandable code
+Babel:-
+
+linier search
+Binary search
+
+
+styled component

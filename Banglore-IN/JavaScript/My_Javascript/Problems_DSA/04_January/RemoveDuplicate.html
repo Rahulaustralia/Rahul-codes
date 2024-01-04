@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Remove Duplicates</h1>
+  </body>
+</html>
+
+<script>
+  //   let str = "racecar";
+  //   let obj = [];
+  //   for (i = 0; i < str.length - 1; i++) {
+  //     let char = str[i];
+  //     if (obj[char] == undefined) {
+  //       obj[char] = 1;
+  //     } else {
+  //       obj[char]++;
+  //     }
+  //   }
+  //   let res = "";
+  //   for (let key in obj) {
+  //     res = obj[key];
+  //   }
+  //   console.log(res);
+
+  //   let str = "banana";
+
+  //   let ch = [...str];
+  //   let res = "";
+  //   console.log(ch);
+
+  //   for (let i = 0; i < ch.length; i++) {
+  //     for (let j = i + 1; j < ch.length; j++) {
+  //       if (ch[i] == ch[j]) {
+  //         ch[j] = " ";
+  //       }
+  //     }
+  //     if (ch[i] != " ") {
+  //       res += ch[i];
+  //     }
+  //   }
+  //   console.log(res);
+
+  let s1 = "australia";
+
+  let s2 = [...s1];
+  let res = "";
+  for (let i = 0; i < s1.length; i++) {
+    for (let j = i + 1; j < s1.length; j++) {
+      if (s2[i] == s2[j]) {
+        s2[j] = " ";
+      }
+    }
+    if (s2[i] != " ") {
+      res += s2[i];
+    }
+  }
+
+  console.log(res);
+</script>

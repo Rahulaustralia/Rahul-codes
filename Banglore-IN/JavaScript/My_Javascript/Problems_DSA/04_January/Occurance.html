@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Occurance of each char</h1>
+  </body>
+</html>
+
+<script>
+  //   let s1 = "banana";
+
+  //   let s2 = [...s1];
+  //   let res = "";
+  //   for (let i = 0; i < s1.length; i++) {
+  //     let count = 1;
+  //     for (let j = i + 1; j < s1.length; j++) {
+  //       if (s2[i] == s2[j]) {
+  //         count++;
+  //         s2[j] = " ";
+  //       }
+  //     }
+  //     if (s2[i] != " ") {
+  //       console.log(s2[i] + "=" + count);
+  //     }
+  //   }
+
+  let str = "australia";
+
+  let ch = [...str];
+
+  for (let i = 0; i < ch.length; i++) {
+    let count = 1;
+    for (let j = i + 1; j < ch.length; j++) {
+      if (ch[i] == ch[j]) {
+        count++;
+        ch[j] = " ";
+      }
+    }
+    if (ch[i] != " ") {
+      console.log(ch[i] + "=" + count);
+    }
+  }
+</script>
