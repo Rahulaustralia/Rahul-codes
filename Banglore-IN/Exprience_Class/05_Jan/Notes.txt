@@ -1,0 +1,27 @@
+//  Date:- 05/01/2024
+
+Conduction Rendering  ----------------------------------------------------------------
+
+- if else
+- switch
+- 
+
+
+looping ----------------------------------------------------------------
+
+- if e
+
+map
+without-map
+key
+Props ----------------------------------------------------------------
+
+props:- inmuatable , Real object , read only, 
+default props:- 
+children props:-
+
+State:-
+
+- what is state ?
+- state and props
+
