@@ -12,17 +12,21 @@ const Navbar = () => {
           justifyContent: "space-around",
           backgroundColor: "black",
           color: "white",
-          padding: "12px",
+          padding: "15px",
         }}
       >
         <Link to="/" className="nav1">
           Home
         </Link>
-        <Link to="/about" className="nav1">
-          About
-        </Link>
+
         <Link to="/products" className="nav1">
           Products
+        </Link>
+        <Link to="/cart" className="nav1">
+          Cart
+        </Link>
+        <Link to="/about" className="nav1">
+          About
         </Link>
       </div>
     </div>
