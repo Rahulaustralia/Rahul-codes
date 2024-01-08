@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+#container{
+   background-color: black;
+   color:white;
+   display: flex;
+   padding: 12px;
+   justify-content: space-between;
+   width: 100%;
+}
+#one{
+    width: 25%;
+}
+#two a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;  
+}
+#two a:hover{
+    color: gold;
+    
+}
+#two{
+    width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;   
+}
+#three button{
+    padding: 7px;
+    font-size: 20px;
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    width: 100px;
+    border-radius: 10px;
+}
+#three{
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    
+}

@@ -9,3 +9,15 @@
     text-decoration: none;
     font-weight: bold;
 }
+.nav_parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+.nav_container{
+    position: sticky;
+    width: 100%;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Styles/Product.css";
 
 let products = [
   {
@@ -221,56 +222,65 @@ const Products = () => {
     boxShadow:
       "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
     padding: "8px",
-    backgroundColor: "black",
     color: "white",
     borderRadius: "20px",
   };
   return (
     <>
-      <div
-        style={{
-          width: "90%",
-          margin: "auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(3,1fr)",
-          gap: "20px",
-        }}
-      >
-        {products.map((el) => {
-          return (
-            <>
-              <div style={divStyle} key={el.id}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "300px",
-                    borderRadius: "20px",
-                  }}
-                  src={el.image}
-                  alt="error"
-                />
-                <h4 style={{ color: "gray" }}> Tittle:- {el.title} </h4>
-                <h4 style={{ color: "blue" }}> Category:- {el.category} </h4>
-                <h4 style={{ color: "red" }}> Price:- {el.price} </h4>
-                <button
-                  style={{
-                    width: "100%",
-                    padding: "10px",
-                    color: "black",
-                    backgroundColor: "white",
-                    fontWeight: "bold",
-                    fontSize: "15px",
-                    borderRadius: "10px",
-                    marginBottom: "20px",
-                  }}
-                  onClick={handleadd()}
-                >
-                  Add to cart
-                </button>
-              </div>
-            </>
-          );
-        })}
+      <div className="parent">
+        <div className="child1">
+          <div>
+            <label>Search</label>{" "}
+            <input
+              style={{ width: "93%", padding: "8px", borderRadius: "10px" }}
+              type="text"
+            />
+          </div>
+
+          <div className="btn">
+            <button>Men's</button>
+            <button>Women's</button>
+            <button> Jewelery</button>
+            <button>Electronics</button>
+          </div>
+        </div>
+        <div className="child2">
+          {products.map((el) => {
+            return (
+              <>
+                <div style={divStyle} key={el.id}>
+                  <img
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      borderRadius: "20px",
+                    }}
+                    src={el.image}
+                    alt="error"
+                  />
+                  <h4 style={{ color: "gray" }}> Tittle:- {el.title} </h4>
+                  <h4 style={{ color: "gray" }}> Category:- {el.category} </h4>
+                  <h4 style={{ color: "red" }}> Price:- {el.price} </h4>
+                  <button
+                    style={{
+                      width: "100%",
+                      padding: "10px",
+                      color: "black",
+                      backgroundColor: "white",
+                      fontWeight: "bold",
+                      fontSize: "15px",
+                      borderRadius: "10px",
+                      marginBottom: "20px",
+                    }}
+                    onClick={handleadd()}
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </>
   );

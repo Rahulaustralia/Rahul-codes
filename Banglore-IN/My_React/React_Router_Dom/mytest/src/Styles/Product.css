@@ -1,0 +1,27 @@
+.child1{
+    width: 18%;
+    height: vh;
+    position:fixed;
+    
+    margin-top: 40px;
+    padding: 8px;
+  }
+  .parent{
+    display: flex;
+
+  }
+  .btn button{
+    width: 100%;
+    margin-top: 30px;
+    padding: 8px;
+    
+  }
+  .child2{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 25px;
+    position: absolute;
+    left: 25%;
+  }

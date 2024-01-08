@@ -4,17 +4,8 @@ import "../Styles/Nav.css";
 
 const Navbar = () => {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          backgroundColor: "black",
-          color: "white",
-          padding: "15px",
-        }}
-      >
+    <div className="nav_container">
+      <div className="nav_parent">
         <Link to="/" className="nav1">
           Home
         </Link>
