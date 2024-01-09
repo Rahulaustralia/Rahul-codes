@@ -213,9 +213,26 @@ let products = [
 const Products = () => {
   const [cart, setCart] = useState([]);
 
-  function handleadd(product) {
-    // setCart([...cart, product]);
-    // console.log(cart, "hi from add to cart");
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  function handleAdd(product) {
+    setCart([...cart, product]);
+    console.log(cart);
+  }
+
+  function handleCategoryFilter(category) {
+    setSelectedCategory(category);
+
+    // If a category is selected, filter products based on the category; otherwise, show all products
+    if (category) {
+      const filtered = products.filter(
+        (product) => product.category === category
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
   }
 
   let divStyle = {
@@ -238,14 +255,22 @@ const Products = () => {
           </div>
 
           <div className="btn">
-            <button>Men's</button>
-            <button>Women's</button>
-            <button> Jewelery</button>
-            <button>Electronics</button>
+            <button onClick={() => handleCategoryFilter("men's clothing")}>
+              Men's
+            </button>
+            <button onClick={() => handleCategoryFilter("women's clothing")}>
+              Women's
+            </button>
+            <button onClick={() => handleCategoryFilter("jewelery")}>
+              Jewelery
+            </button>
+            <button onClick={() => handleCategoryFilter("electronics")}>
+              Electronics
+            </button>
           </div>
         </div>
         <div className="child2">
-          {products.map((el) => {
+          {filteredProducts.map((el) => {
             return (
               <>
                 <div style={divStyle} key={el.id}>
@@ -272,7 +297,7 @@ const Products = () => {
                       borderRadius: "10px",
                       marginBottom: "20px",
                     }}
-                    onClick={handleadd()}
+                    onClick={() => handleAdd(el)}
                   >
                     Add to cart
                   </button>

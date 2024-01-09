@@ -39,9 +39,18 @@
     width: 100px;
     border-radius: 10px;
 }
+#three button a{
+    text-decoration: none;
+    color: black;
+}
 #three{
     width: 25%;
     display: flex;
     justify-content: space-around;
     
+}
+
+img{
+  width: 60%;
+  height: 400px;
 }
