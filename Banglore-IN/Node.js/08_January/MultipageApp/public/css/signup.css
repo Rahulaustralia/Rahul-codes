@@ -1,17 +1,73 @@
-*{
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f95103;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+#Main-cont{
+    display: grid;
+    gap: 20px;
+}
+#Main-cont h1{
+    margin-left: 20px;
 }
 
-#container{
-    width: 40%;
-    padding: 10px;
-    height: 400px;
-    margin: auto;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  #container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
     text-align: center;
-}
+  }
 
-#container input{
-    
-}
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 10px;
+    color: #555;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  button {
+    background-color: #f95103;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color:red;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  input[type="radio"] {
+    margin: 0 5px;
+  }

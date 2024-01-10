@@ -11,20 +11,33 @@
 </html>
 
 <script>
-  let arr = [12, 45, 18, 5, 10];
+  // let arr = [12, 45, 18, 5, 10];
 
-  let point = arr[0];
-  let myArr = [];
+  // let point = arr[0];
+  // let myArr = [];
+
+  // for (let i = 0; i < arr.length; i++) {
+  //   for (let j = i + 1; j < arr.length; j++) {
+  //     if (arr[j] < arr[i]) {
+  //       let temp = arr[j];
+  //       arr[j] = arr[i];
+  //       myArray.push(arr[j]);
+  //       arr[i] = temp;
+  //     }
+  //   }
+  //   console.log(arr);
+  // }
+
+  let arr = [10, 51, 5, 12, 3];
 
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < arr[i]) {
         let temp = arr[j];
         arr[j] = arr[i];
-        myArray.push(arr[j]);
         arr[i] = temp;
       }
     }
-    console.log(arr);
   }
+  console.log(arr);
 </script>
