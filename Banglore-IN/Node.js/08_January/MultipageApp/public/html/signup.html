@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/signup.css" />
+    <link rel="stylesheet" href="/signupcss" />
+    <link rel="stylesheet" href="/style" />
   </head>
   <body id="Main-cont">
-    <h1
+    <div id="container">
+      <div id="one">
+        <h1>Logo</h1>
+      </div>
+      <div id="two">
+        <a href="/"><h5>Home</h5></a>
+        <a href="/about"> <h5>About</h5> </a>
+        <a href="/contact"> <h5>Contact</h5> </a>
+      </div>
+      <div id="three">
+        <button><a href="signup"> Signup </a></button>
+      </div>
+    </div>
+    <!-- <h1
       style="
         background-color: white;
         padding: 5px;
@@ -16,27 +30,86 @@
       "
     >
       जय श्री राम🚩🚩
-    </h1>
+    </h1> -->
     <div id="container">
       <h1>Signup</h1>
-      <form action="">
+      <form action="" id="form">
         <label>First Name</label>
-        <input type="text" placeholder="Enter Your First Name" />
+        <input
+          type="text"
+          placeholder="Enter Your First Name"
+          name="Fname"
+          id="fname"
+        />
         <label>Last Name</label>
-        <input type="text" placeholder="Enter Your Last Name" />
+        <input
+          type="text"
+          placeholder="Enter Your Last Name"
+          name="Lname"
+          id="lname"
+        />
         <br />
         <label>Mobile Number</label>
-        <input type="phone" placeholder="Enter Your Phone Number" />
+        <input
+          type="phone"
+          placeholder="Enter Your Phone Number"
+          id="pnumber"
+          name="mobile"
+        />
         <label>Email</label>
-        <input type="email" placeholder="Enter Your Email" />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          name="Email"
+          id="email"
+        />
         <br />
-        <label> Gender</label>
-        Male <input type="radio" /> Female <input type="radio" />
+        <label for="password">PASSWORD</label>
+        <input type="password" name="password" id="password" />
         <br />
-        <button onclick="submit"><a href="#">Register</a></button>
+        <label for="gender"> Gender</label>
+        <input type="radio" name="gender" value="male" /> Male
+        <input type="radio" name="gender" value="female" />Female
+        <input type="radio" name="gender" value="other" /> Other
+        <br />
+        <label for="dob">DOB</label>
+        <input type="date" name="dob" id="dob" />
+
+        <br />
+        <button><a href="#">Register</a></button>
       </form>
     </div>
   </body>
 </html>
 
-<script></script>
+<script>
+  let form = document.getElementById("form");
+  console.log(form);
+
+  let userDetails = {};
+
+  form.addEventListener("input", (event) => {
+    // console.log(event.target.value);
+    let value = event.target.value;
+    let name = event.target.name;
+    userDetails[name] = value;
+    console.log(userDetails);
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const { Fname, Lname, Email, Mobile, gender, password, dob } = userDetails;
+    if (Fname && Lname && Email && Mobile && gender && password && dob) {
+      fetch("/newusers", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userDetails),
+      })
+        .then((data) => data.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    } else {
+      alert("Fill out all the fields before submitting");
+    }
+  });
+</script>
