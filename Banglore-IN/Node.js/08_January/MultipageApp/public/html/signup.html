@@ -33,7 +33,7 @@
     </h1> -->
     <div id="container">
       <h1>Signup</h1>
-      <form action="" id="form">
+      <form id="form">
         <label>First Name</label>
         <input
           type="text"
@@ -100,7 +100,7 @@
     event.preventDefault();
     const { Fname, Lname, Email, Mobile, gender, password, dob } = userDetails;
     if (Fname && Lname && Email && Mobile && gender && password && dob) {
-      fetch("/newusers", {
+      fetch("/newuser", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userDetails),

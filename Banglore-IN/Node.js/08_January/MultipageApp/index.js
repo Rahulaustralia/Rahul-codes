@@ -47,13 +47,14 @@ const server = http.createServer((req, res) => {
     }
   }
   if (method == "POST") {
-    if (url == "/newusers") {
+    if (url == "/newuser") {
       req.on("data", (data) => {
         console.log(data.toString());
         let newUser = JSON.parse(data.toString());
         let users = fs.readFileSync("./users.json", "utf-8")
           ? JSON.parse(fs.readFileSync("./users.json", "utf-8"))
           : [];
+
         users.push(newUser);
         console.log(newUser);
         fs.writeFileSync("./users.json", JSON.stringify(users));
