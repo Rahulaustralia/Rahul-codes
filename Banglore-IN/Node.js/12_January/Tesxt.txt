@@ -1,0 +1,62 @@
+HTTP Headers 
+:- General Headers
+:- Request Headers
+:- Response Headers
+:- Entity Headers
+
+
+#] It adds same additional information about the http  request/Response
+
+example:- 
+Autentication 
+context Type
+Cookies
+Cors
+Message
+ #]Context-Length
+Status code
+location
+
+
+: http status code:- 
+100 -> information code 
+200 -> successful code
+300 -> Re - Deriction code
+400 -> Client side error
+500 -> Server side error
+
+#]  Informational responses (100 – 199) 
+ 100 - continue
+ 102 - Processing
+
+ #] Successful responses (200 – 299) =>
+    200 - Ok
+    201 - created 
+    202 - expected
+
+#]Redirection messages (300 – 399) =>
+   301 - move permanently
+   308 - permanent redirect 
+
+#]Client error responses (400 – 499) =>
+   400 - bad request
+   401 - on othersied
+   402 - payment required (subscription required)
+   404 - not FOUND 
+   405 Method not allowed
+   408 - request timeout
+
+#] Server error responses (500 – 599) =>
+   500 - internal server error
+   502 - bad gateway
+   503 - service not available
+
+
+
+ Q1] What is http headers ?
+ Q2] What is Response headers ?
+ Q3] What is status codes and there uses ?
+
+
+
+

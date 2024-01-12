@@ -11,6 +11,10 @@ const server = http.createServer((req, res) => {
   if (method == "GET") {
     if (url == "/") {
       let data = fs.readFileSync("./public/index.html", "utf8");
+      res.writeHead(200, {
+        "Content-Type": "text/html",
+        message: "THIS IS THE HOME FILE",
+      });
       res.write(data);
       res.end();
     }
@@ -31,6 +35,10 @@ const server = http.createServer((req, res) => {
           : [];
         users.push(newUser);
         fs.writeFileSync("./user.json", JSON.stringify(users));
+        res.writeHead(201, {
+          "Content-type": "application/json",
+          message: "LOGIN RESPONSE",
+        });
         res.write(JSON.stringify({ msg: "DATA RECIEVED" }));
         res.end();
       });
