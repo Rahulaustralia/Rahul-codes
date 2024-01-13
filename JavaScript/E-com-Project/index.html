@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      nav {
+        background-color: #450948;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+      ul {
+        display: flex;
+        padding: 20px;
+      }
+      li {
+        margin-left: 35px;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+      li a {
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      li a:hover {
+        color: gold;
+      }
+      #container {
+        width: 100%;
+        display: flex;
+      }
+      #leftdiv {
+        width: 70%;
+      }
+      #rightdiv {
+        width: 30%;
+        text-align: end;
+        padding: 10px;
+        margin: auto;
+      }
+      #btn {
+        width: 80px;
+        padding: 4px;
+        margin-right: 40px;
+        border-radius: 10%;
+        background-color: white;
+        border: none;
+      }
+      #btna {
+        text-decoration: none;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: #450948;
+        background-color: white;
+      }
+
+      #headimg {
+        width: 100%;
+        height: 290px;
+        /* border: 1px solid black; */
+      }
+      #headimg img {
+        width: 100%;
+        height: 100%;
+      }
+      .maincontainer {
+        width: 100%;
+        display: flex;
+      }
+      .block2 {
+        width: 20%;
+        height: 400px;
+        margin: auto;
+        padding: 15px;
+      }
+      .block2 img {
+        width: 100%;
+        height: 75%;
+        cursor: pointer;
+      }
+
+      .rp1 {
+        margin-top: 5px;
+      }
+      .rpp {
+        color: rgb(168, 168, 168);
+      }
+
+      /* Reset some default margin and padding */
+
+      .site-footer {
+        background-color: #450948;
+        color: #fff;
+        padding: 40px 0;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-logo img {
+        max-width: 150px;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        display: flex;
+      }
+
+      .footer-links li {
+        margin-right: 20px;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: gold;
+      }
+
+      .footer-social a {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 15px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        color: gold;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #555;
+      }
+
+      .footer-bottom p {
+        font-size: 14px;
+      }
+
+      .rph1 {
+        font-family: sans-serif;
+        color: #450948;
+        margin: 30px;
+      }
+      .rp2h1 {
+        color: orangered;
+      }
+
+      /* Image Crozel CSS */
+
+      /* Slideshow container */
+      .slideshow-container {
+        /* max-width: 1000px; */
+        width: 100%;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div id="container">
+        <div id="leftdiv">
+          <ul>
+            <li type="none"><a href="#"> All Product </a></li>
+            <li type="none"><a href="clothes.html"> Clothes </a></li>
+            <li type="none"><a href="#"> Laptops </a></li>
+            <li type="none"><a href="#"> Mobiles </a></li>
+            <li type="none"><a href="#"> Electronics </a></li>
+          </ul>
+        </div>
+        <!-- left div end -->
+        <div id="rightdiv">
+          <button id="btn"><a id="btna" href="login.html"> Login </a></button>
+        </div>
+      </div>
+      <!-- container close -->
+    </nav>
+    <header>
+      <div id="headimg">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/ecd2ad8cd7384e16.jpg?q=20"
+            />
+            <div class="text">Caption Text</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/b73a4767858ab633.jpg?q=20"
+              style="width: 100%"
+            />
+            <div class="text">Caption Two</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img
+              src="https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/c82b2264cd509229.jpg?q=20"
+              style="width: 100%"
+            />
+            <div class="text">Caption Three</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br />
+
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      <h1 class="rph1">Top Selling Products</h1>
+    </header>
+    <div class="maincontainer">
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/k/u/6/-original-imaghxen343tbjgj.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹1,39,999</del>
+          <label style="color: green; padding-left: 10px">₹1,27,999</label>
+        </h3>
+        <p class="rp1">Details:- APPLE iPhone 14 Pro Max (Gold, 128 GB)</p>
+        <p class="rp1">+ ₹99 Secured Packaging Fee</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/z/1/h/-original-imagqhvgybexgkmh.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹1999</del>
+          <label style="color: green; padding-left: 10px"> ₹103</label>
+        </h3>
+        <p class="rp1">
+          Details:- Square Case Series Digital Watch - For Boys & Girls Black
+          square LED Watch
+        </p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/k6qsn0w0/tablet/3/q/z/lenovo-za5g0047in-original-imafp4w7qvpnprv5.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹14,000</del>
+          <label style="color: green; padding-left: 10px">₹6,827</label>
+        </h3>
+        <p class="rp1">
+          Details:- Lenovo Tab M8 HD (2nd Gen) 2 GB RAM 32 GB ROM 8 inch with
+          Wi-Fi Only Tablet (Iron Grey)
+        </p>
+        <p class="rp1">Size M, L, XL, XXL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/577de48e3b3b4e29b5cb189982c3d46c_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_IW9429_25_model.jpg"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹9 999.00</del>
+          <label style="color: green; padding-left: 10px">₹4 999.00</label>
+        </h3>
+        <p class="rp1">Details:- INDIA CRICKET ODI JERSEY MEN ORIGINAL</p>
+        <p class="rp1">Size M, L, XL, XXL</p>
+      </div>
+    </div>
+    <br />
+
+    <h1 class="rph1">NEW LAUNCH</h1>
+
+    <div class="maincontainer">
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/printer/r/5/g/-original-imagnuwerspazeeh.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹₹18,499</del>
+          <label style="color: green; padding-left: 10px">₹16,499</label>
+        </h3>
+        <p class="rp1">
+          Details:- HP Smart Tank All In One 580 Multi-function WiFi Color
+          Inkjet Printer
+        </p>
+        <p class="rp1">Bank OfferFlat ₹500 off on HDFC Bank Credit Card EMI</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/d/h/q/m6-pro-5g-mzb0eprin-poco-original-imags3e7vewsafst.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹19,999</del>
+          <label style="color: green; padding-left: 10px"> ₹12,999</label>
+        </h3>
+        <p class="rp1">
+          Details:- POCO M6 Pro 5G (Power Black, 128 GB) (6 GB RAM)#JustHere
+        </p>
+        <p class="rp1">+ ₹49 Secured Packaging Fee</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/computer/n/h/v/-original-imagq9hcmgg3etg8.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹70,900</del>
+          <label style="color: green; padding-left: 10px">₹42,990</label>
+        </h3>
+        <p class="rp1">
+          Details:- ASUS Vivobook 15 Core i5 1135G7 11th Gen - (8 GB/512 GB
+          SSD/Windows 11 Home)
+        </p>
+        <p class="rp1">Available offers</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/k0o69ow0/smartwatch/r/z/z/mwwg2hn-a-apple-original-imafkf2ynp2sqyhu.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹99,999</del>
+          <label style="color: green; padding-left: 10px">₹73,900</label>
+        </h3>
+        <p class="rp1">
+          Details:- APPLE Watch Series 5 GPS + Cellular (Silver Strap, Regular)
+        </p>
+        <p class="rp1">Hurry, Only 2 left!</p>
+      </div>
+    </div>
+
+    <h1 class="rph1">Top Branded Shirts For Mens</h1>
+    <div class="maincontainer">
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/h/b/h/s-1122-shbccpyd-04-01-the-indian-garage-co-original-imagmzhhrbhnpdzv.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹2149</del>
+          <label style="color: green; padding-left: 10px">₹537</label>
+        </h3>
+        <p class="rp1">
+          Details:- Men Regular Fit Checkered Cut Away Collar Casual Shirt
+        </p>
+        <p class="rp1">Size:- M, L</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/shirt/a/c/r/s-st10-vebnor-original-imagqthzjzwzrvup.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹1799</del>
+          <label style="color: green; padding-left: 10px"> ₹289</label>
+        </h3>
+        <p class="rp1">
+          Details:- Men Regular Fit Printed Spread Collar Casual Shirt
+        </p>
+        <p class="rp1">Size:- XL, XXL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/612/612/kmxsakw0/shirt/c/j/e/l-um0012-cnd-creation-original-imagfq7hf2gyyaju.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹999</del>
+          <label style="color: green; padding-left: 10px">₹499</label>
+        </h3>
+        <p class="rp1">
+          Details:- Men Slim Fit Solid Cut Away Collar Formal Shirt
+        </p>
+        <p class="rp1">Size:- M, L, XL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://rukminim2.flixcart.com/image/416/416/xif0q/shirt/6/z/f/xl-hlsh014792-highlander-original-imagqny2zymcycyh.jpeg?q=70"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹1900</del>
+          <label style="color: green; padding-left: 10px">₹560</label>
+        </h3>
+        <p class="rp1">
+          Details:- Men Slim Fit Printed Spread Collar Formal Shirt
+        </p>
+        <p class="rp1">Size:- M</p>
+      </div>
+    </div>
+
+    <h1 class="rph1 rp2h1">INDIA CRICKET FOR ICC WORLD CUP 2023</h1>
+    <div class="maincontainer">
+      <div class="block2">
+        <img
+          src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0fe95c515e7422d83229a5f7fd96005_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_IW9429_21_model.jpg"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹9,999</del>
+          <label style="color: green; padding-left: 10px">₹2,999</label>
+        </h3>
+        <p class="rp1">Details:- INDIA CRICKET ODI JERSEY MEN (COPY)</p>
+        <p class="rp1">Size:- M, L, XL, XXL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/09036697621147b59986189c3a5eb275_9366/INDIA_CRICKET_TEST_JERSEY_MEN_White_IW9425_21_model.jpg"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹9,999.00</del>
+          <label style="color: green; padding-left: 10px"> ₹4,999.00</label>
+        </h3>
+        <p class="rp1">Details:- INDIA CRICKET TEST JERSEY MEN</p>
+        <p class="rp1">Size:- M, L, XL, XXL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/30744143c5f1485185e4422cb80d7975_9366/INDIA_CRICKET_T20I_JERSEY_MEN_Blue_IW9427_25_model.jpg"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹8,000</del>
+          <label style="color: green; padding-left: 10px">₹3,827</label>
+        </h3>
+        <p class="rp1">
+          Details:- INDIA CRICKET T20I JERSEY MEN Wi-Fi Only Tablet (Iron Grey)
+        </p>
+        <p class="rp1">Size:- M, L, XL, XXL</p>
+      </div>
+      <div class="block2">
+        <img
+          src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/577de48e3b3b4e29b5cb189982c3d46c_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_IW9429_25_model.jpg"
+          alt="error"
+        />
+        <h3 class="rp1">
+          Price:- <del style="color: red">₹9 999.00</del>
+          <label style="color: green; padding-left: 10px">₹4 999.00</label>
+        </h3>
+        <p class="rp1">Details:- INDIA CRICKET ODI JERSEY MEN ORIGINAL</p>
+        <p class="rp1">Size:- M, L, XL, XXL</p>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWIE4V1748oYbyMrUxi5nc4wdm7wLpPkmBIQ&usqp=CAU"
+            alt="error"
+          />
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Your Ecommerce Site. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides((slideIndex += n));
+  }
+
+  function currentSlide(n) {
+    showSlides((slideIndex = n));
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>

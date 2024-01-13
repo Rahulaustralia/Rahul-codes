@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laptop</title>
+    <style>
+      #laptop-container {
+        width: 100%;
+        display: flex;
+      }
+
+      #la-child1 {
+        width: 15%;
+        /* position: -webkit-sticky; */
+        position: fixed;
+        left: 15;
+      }
+      #la-child2 {
+        width: 70%;
+        margin-left: 15%;
+      }
+
+      #la-child3 {
+        width: 15%;
+        position: fixed;
+        margin-left: 84%;
+      }
+      h3 {
+        background-color: #450948;
+        color: white;
+        font-size: large;
+        font-weight: bold;
+        text-align: center;
+        padding: 3px;
+      }
+      ul li::marker {
+        color: #450948;
+        font-size: 30px;
+      }
+      ul li label {
+        color: #450948;
+        font-size: large;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      ul li label:hover {
+        color: red;
+      }
+      select {
+        width: 90%;
+        padding: 10px;
+        color: #450948;
+        margin-left: 10px;
+        border: 3px solid #450948;
+        border-radius: 7px;
+      }
+
+      .la-maincontainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 320px);
+        gap: 20px;
+        padding: 20px;
+      }
+      .la-block2 {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 10px;
+      }
+      .la-block2 img {
+        width: 100%;
+
+        cursor: pointer;
+      }
+
+      .la-rp1 {
+        margin-top: 5px;
+      }
+      #la-h1 {
+        text-align: center;
+        color: #450948;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="laptop-container">
+      <div id="la-child1">
+        <a href="index.html">Home</a>
+        <h3>Products Category</h3>
+        <ul>
+          <li><label for="">HP</label> <input type="checkbox" /></li>
+          <li><label for="">HCL</label> <input type="checkbox" /></li>
+          <li><label for="">DELL</label> <input type="checkbox" /></li>
+          <li><label for="">Acer</label> <input type="checkbox" /></li>
+          <li><label for="">Apple</label> <input type="checkbox" /></li>
+          <li><label for="">Lenovo</label> <input type="checkbox" /></li>
+        </ul>
+        <br />
+
+        <h3>Short by Price</h3>
+        <ul>
+          <li><label for="">High To Low</label> <input type="checkbox" /></li>
+          <li><label for="">Low To High</label> <input type="checkbox" /></li>
+        </ul>
+        <br />
+        <h3>Select Category</h3>
+        <select name="" id="">
+          <option value="">Select</option>
+          <option value="">Laptop</option>
+          <option value="">Tablet</option>
+          <option value="">PC</option>
+        </select>
+      </div>
+
+      <div id="la-child2">
+        <h1 id="la-h1">laptop</h1>
+
+        <div class="la-maincontainer">
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d0fe95c515e7422d83229a5f7fd96005_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_IW9429_21_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹9,999</del>
+              <label style="color: green; padding-left: 10px">₹2,999</label>
+            </h3>
+            <p class="la-rp1">Details:- INDIA CRICKET ODI JERSEY MEN (COPY)</p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/09036697621147b59986189c3a5eb275_9366/INDIA_CRICKET_TEST_JERSEY_MEN_White_IW9425_21_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹9,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹4,999.00</label>
+            </h3>
+            <p class="la-rp1">Details:- INDIA CRICKET TEST JERSEY MEN</p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/30744143c5f1485185e4422cb80d7975_9366/INDIA_CRICKET_T20I_JERSEY_MEN_Blue_IW9427_25_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹8,000</del>
+              <label style="color: green; padding-left: 10px">₹3,827</label>
+            </h3>
+            <p class="la-rp1">
+              Details:- INDIA CRICKET T20I JERSEY MEN Wi-Fi Only Tablet (Iron
+              Grey)
+            </p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/577de48e3b3b4e29b5cb189982c3d46c_9366/INDIA_CRICKET_ODI_JERSEY_MEN_Blue_IW9429_25_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹9 999.00</del>
+              <label style="color: green; padding-left: 10px">₹4 999.00</label>
+            </h3>
+            <p class="la-rp1">
+              Details:- INDIA CRICKET ODI JERSEY MEN ORIGINAL
+            </p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/41a1e2e26a29400182dc115e70cdd0f1_9366/INDIA_CRICKET_ODI_JERSEY_WOMEN_Blue_IW9423_25_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹7,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹3,999.00</label>
+            </h3>
+            <p class="la-rp1">Details:- INDIA CRICKET ODI JERSEY WOMEN</p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7a3c9cb15a114d4d94b34c7342049e07_9366/INDIA_CRICKET_T20I_JERSEY_WOMEN_Blue_IW9421_22_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹9,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹4,999.00</label>
+            </h3>
+            <p class="la-rp1">Details:- INDIA CRICKET T20I JERSEY WOMEN</p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/09f5587c011a42809067a3dcb17021aa_9366/INDIA_TEST_MATCH_CRICKET_JERSEY_WOMEN_White_IW9422_21_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹6,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹2,999.00</label>
+            </h3>
+            <p class="la-rp1">
+              Details:- INDIA TEST MATCH CRICKET JERSEY WOMEN
+            </p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/76396a31668b4c92b673af0000932c2f_9366/Train_Essentials_3-Stripes_Training_Tee_Red_IB8154_21_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹1,999</del>
+              <label style="color: green; padding-left: 10px"> ₹999</label>
+            </h3>
+            <p class="la-rp1">
+              Details:- TRAIN ESSENTIALS 3-STRIPES TRAINING TEE
+            </p>
+            <p class="la-rp1">Size:- XS,M, L</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0acdb6d2e0344147b4ef183dafd9c144_9366/Own_the_Run_Woven_Astro_Pants_Black_HR6611_HM1.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹11,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹5,999.00</label>
+            </h3>
+            <p class="la-rp1">Details:- OWN THE RUN WOVEN ASTRO PANTS</p>
+            <p class="la-rp1">Size:- 30,32,34,36</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/59ec599e62eb4bf1abb6afc30097eca0_9366/Adicolor_Classics_SST_Track_Pants_Red_IM4543_21_model.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹9,999.00</del>
+              <label style="color: green; padding-left: 10px"> ₹6,999.00</label>
+            </h3>
+            <p class="la-rp1">Details:- ADICOLOR CLASSICS SST TRACK PANTS</p>
+            <p class="la-rp1">Size:- 32,34</p>
+          </div>
+          <div class="la-block2">
+            <img
+              src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/10c8efc8916a48c3a38601bebb34d71c_9366/Break_the_Norm_Jacket_Blue_IM1732_HM1.jpg"
+              alt="error"
+            />
+            <h3 class="la-rp1">
+              Price:- <del style="color: red">₹10,999</del>
+              <label style="color: green; padding-left: 10px"> ₹8,999</label>
+            </h3>
+            <p class="la-rp1">Details:- INDIA CRICKET TEST JERSEY MEN</p>
+            <p class="la-rp1">Size:- M, L, XL, XXL</p>
+          </div>
+        </div>
+      </div>
+      <div id="la-child3">
+        <br />
+        <br />
+        <h3>Brands</h3>
+        <ul>
+          <li><label for="">Adidas</label> <input type="checkbox" /></li>
+          <li><label for="">Nike</label> <input type="checkbox" /></li>
+          <li><label for="">Reebok</label> <input type="checkbox" /></li>
+          <li><label for="">LEE</label> <input type="checkbox" /></li>
+          <li><label for="">Levi's</label> <input type="checkbox" /></li>
+          <li><label for="">U.S Polo</label> <input type="checkbox" /></li>
+        </ul>
+        <br />
+
+        <h3>Size</h3>
+        <ul>
+          <li><label for="">Medium</label> <input type="checkbox" /></li>
+          <li><label for="">Large</label> <input type="checkbox" /></li>
+          <li><label for="">X-Large</label> <input type="checkbox" /></li>
+          <li><label for="">2X-Large</label> <input type="checkbox" /></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

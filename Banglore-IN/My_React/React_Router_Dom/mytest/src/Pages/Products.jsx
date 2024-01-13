@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../Styles/Product.css";
+import { CartContext, myCartContext } from "../Context/CartContext";
 
 let products = [
   {
@@ -211,15 +212,16 @@ let products = [
 ];
 
 const Products = () => {
-  const [cart, setCart] = useState([]);
-
+  // const [cart, setCart] = useState([]);
+  const { cart, handleCart } = useContext(CartContext);
+  console.log(cart);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  function handleAdd(product) {
-    setCart([...cart, product]);
-    console.log(cart);
-  }
+  // function handleAdd(product) {
+  //   setCart([...cart, product]);
+  //   console.log(cart);
+  // }
 
   function handleCategoryFilter(category) {
     setSelectedCategory(category);
@@ -297,7 +299,7 @@ const Products = () => {
                       borderRadius: "10px",
                       marginBottom: "20px",
                     }}
-                    onClick={() => handleAdd(el)}
+                    // onClick={() => handleAdd(el)}
                   >
                     Add to cart
                   </button>
