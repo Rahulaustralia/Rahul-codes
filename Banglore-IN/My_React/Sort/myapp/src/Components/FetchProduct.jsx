@@ -36,7 +36,11 @@ const FetchProduct = () => {
           return (
             <>
               <div key={item.id} style={{ border: "1px solid black" }}>
-                <img src={item.images[0]} alt="error" />
+                <img
+                  style={{ height: "200px" }}
+                  src={item.images[0]}
+                  alt="error"
+                />
                 <h4> Brand:- {item.brand}</h4>
                 <p>Category:- {item.category}</p>
                 <h4> Price :- {item.price} </h4>
