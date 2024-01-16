@@ -44,6 +44,7 @@ const FetchProduct = () => {
                 <h4> Brand:- {item.brand}</h4>
                 <p>Category:- {item.category}</p>
                 <h4> Price :- {item.price} </h4>
+                <button>Add to cart</button>
               </div>
             </>
           );
