@@ -1,0 +1,46 @@
+Redux => 
+1> Props drelling
+2> complex => updating state in 
+3>  
+4>
+
+
+Redux 
+- Action (What to do);
+- Reducer (How to do);
+store(global single )
+
+
+Redux only deal with functions without side effects
+
+
+#=> or if we want to use sideEffects in redux so we have to use Thunk
+
+#] Action => pure object
+emp= {type: "INC", payload:1}
+
+
+#] Reducer=> pure function it conist two perameter (current state, action)
+       => it updating the redux store 
+
+#] Store =>  single global storage system
+       =>  that must be rap in to top side
+       => if store update re-render happen
+       => it always expect single reducer           
+
+
+
+
+#] React-Redux => 
+
+1> useSelector()
+2> useDispatch() 
+
+#] Connect - Higher Order Function
+
+
+
+The connect 
+it provide its connected components with the pieces of the data in it needs from the store, and the functions 
+it can be used to dispatch action to the store.  
+
