@@ -1,0 +1,41 @@
+# Express JS
+=> express js is a node js framework that provides broad features for building web and 
+   mobile applications. It is used to create a server as a replacement of http modules 
+# Why Express JS ?
+=> express was created to make API's and web applications in a easy and minium codes.
+=> It saves a lot of time almost half often of a node js applications.
+# Advantages of Express JS :-
+1=> Easy to learn 
+2=> Fast 
+3=>Time Efficent 
+4=> Economycal 
+5=> Acrincionous bhaviour
+
+# features of Express 
+1> Fast server side 
+2> Middleware
+3> Routing
+4> Easy to de building
+5> Easy to connect Data base
+
+
+# installing Syntax
+=>  npm: express;
+
+# syntax 
+=> const express = require('express');
+  const app = express();
+
+  // in between this we write everything
+
+  app.listen(POST,hostName,()=>{
+
+  })
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  syntax 
+
+  app.method("url,(request,response)=>{
+    
+  })
