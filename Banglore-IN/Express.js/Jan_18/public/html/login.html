@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <div>
+      <form id="form">
+        <label for="">User Name</label>
+        <input
+          type="text"
+          placeholder="Enter Your Name"
+          name="username"
+          id="username"
+        />
+        <br />
+
+        <label for="">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          name="password"
+          id="password"
+        />
+        <br />
+        <button>Login</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  form = document.getElementById("form");
+  let userData = {};
+
+  form.addEventListener("input", (event) => {
+    let value = event.target.value;
+    let id = event.target.id;
+    userData[id] = value;
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (userData.username && userData.password) {
+      fetch("/newuser", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userData),
+      })
+        .then((data) => data.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error));
+    } else {
+      alert("PROVIDE ALL THE FIELDS");
+    }
+  });
+</script>
