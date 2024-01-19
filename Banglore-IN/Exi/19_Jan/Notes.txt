@@ -1,0 +1,24 @@
+Browser Optimization technic
+=> React-memo()
+=> useMemo()
+=> useCallbacks()
+
+
+React :-
+=> state value change
+=> props change
+=> parents rerender
+
+
+memo :- 
+
+
+# useCallbacks :-
+
+syntax :- useCallbacks(()=>{
+  ----------------------
+},[])
+
+ 
+
+ is this health way to use every time Browser Optimization technic
