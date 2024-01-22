@@ -15,6 +15,7 @@ const Counter = () => {
       <button onClick={() => setCount(count - 1)} disabled={count === 0}>
         Remove
       </button>
+      {/* <button>Reset</button> */}
     </div>
   );
 };
