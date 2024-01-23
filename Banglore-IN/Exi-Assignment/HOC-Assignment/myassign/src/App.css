@@ -1,0 +1,12 @@
+.parent{
+  display: flex;
+
+}
+.one{
+  width: 45%;
+  margin: auto;
+}
+.tow{
+  width: 45%;
+  margin: auto;
+}
