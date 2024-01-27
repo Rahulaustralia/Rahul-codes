@@ -1,0 +1,6 @@
+Q1] What is ODM ?
+Q2} How to connect with node server ?
+Q3} What is Mongoos ?
+Q4} Explain about Sceema and Module ?
+Q5} What is incript libary and its usses ?
+Q6} How to generate auth Tocken ? or Explain json Webtocken Libary ?
