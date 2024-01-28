@@ -23,7 +23,7 @@ const Counter = () => {
   function handleClickDEC() {
     dispatch({ type: "DEC" });
   }
-
+  // ueseReducer
   return (
     <div>
       <div>
