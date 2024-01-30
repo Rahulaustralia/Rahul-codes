@@ -1,0 +1,22 @@
+#URL
+#Event
+# Stream And Buffer
+
+# Events
+- On
+- Once
+- add EventListener
+- enit
+
+Node has a inBuild event aswell as we can create over own event(Custom Event) also
+
+let event = require("event");
+let eventEmitter = new event.EventEmitter()
+event.on("saymyname",()=>{
+    console.log("my Name is Rahul")
+})
+
+eventEmitter.emit("saymyname");
+
+
+
