@@ -1,0 +1,22 @@
+.cart-parent{
+   
+}
+.class-child{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.class-child img{
+    width: 100px;
+    height: 70px;
+}
+.total{
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 30%;
+    margin: auto;
+}

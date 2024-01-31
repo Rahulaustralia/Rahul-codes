@@ -3,11 +3,29 @@
     display: flex;
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 3px;
     justify-content: space-between;
 }
 .two{
     display: flex;
     justify-content: space-around;
     width: 40%;
+}
+.two a{
+    text-decoration: none;
+    color: white;
+    margin-top: 16px;
+}
+
+.three{
+    width: 10%;
+    display: flex;
+    text-align: center;
+    color: white;
+}
+.three p {
+    padding-right: 5px;
+}
+.three sup{
+    margin-top: 13px;
 }

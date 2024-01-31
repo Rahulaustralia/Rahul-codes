@@ -1,19 +1,22 @@
 import React from "react";
 import "../Style/Header.css";
 
-const Header = () => {
+const Header = ({ count }) => {
   return (
     <>
       <div className="Navbar">
         <div className="one">
-          <h1>LoGo</h1>
+          <h3>LoGo</h3>
         </div>
         <div className="two">
           <a href="#">Product</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
         </div>
-        <div className="three"></div>
+        <div className="three">
+          <p>Cart</p>
+          <sup>{count}</sup>
+        </div>
       </div>
     </>
   );
