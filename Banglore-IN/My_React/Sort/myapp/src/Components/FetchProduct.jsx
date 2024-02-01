@@ -25,6 +25,7 @@ const FetchProduct = () => {
       <h1> Product Fetch </h1>
       <button onClick={handleHtoL}> High To Low </button>
       <button onClick={handleLtoH}> Low To High </button>
+      // H To L
       <div
         style={{
           display: "grid",
