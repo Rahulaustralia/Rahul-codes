@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    display: flex;
+    background-color: black;
+    color: white;
+}
+.leftNav{
+    width: 20%;
+    text-align: center;
+}
+.middleNav{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+.rightNav{
+    width: 20%;
+    padding: 15px;
+
+}
+.rightNav button{
+    margin-right: 20px;
+}
