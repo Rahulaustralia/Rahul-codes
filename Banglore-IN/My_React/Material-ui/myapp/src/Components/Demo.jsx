@@ -7,7 +7,7 @@ const Demo = () => {
         // Button
         {/* The variant to use.
 
-   Type:'contained'
+   variant='contained'
   | 'outlined'
   | 'text'
   | string 
