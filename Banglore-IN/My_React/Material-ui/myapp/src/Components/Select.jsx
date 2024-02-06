@@ -6,6 +6,10 @@ import { Typography } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import TextField from "@mui/material/TextField";
 import Slider from "@mui/material/Slider";
+import Avatar from "@mui/material/Avatar";
+import Badge from "@mui/material/Badge";
+import MailIcon from "@mui/icons-material/Mail";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Select = () => {
   return (
@@ -32,10 +36,33 @@ const Select = () => {
       <h1>TextField</h1>
       <TextField label="Name" />
 
+      <h1> Avatar </h1>
+      <Avatar
+        alt="Travis Howard"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPFGo-rTmyK6FmGCVAuJJg8Q_zQ7IrUVlqgg&usqp=CAU"
+      />
+
+      <h1> Badge </h1>
+      <Badge
+        badgeContent={10}
+        color="primary"
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <h1> Progress Bar </h1>
+        <Box sx={{ display: "flex" }}>
+          <CircularProgress />
+        </Box>
+
+        <MailIcon color="action" />
+      </Badge>
       <Box sx={{ hight: "200px", border: "2px solid blue" }}>
         <h1> Rahul </h1>
       </Box>
       {/* Stack */}
+
       <div>
         <Typography variant="h1">h1 Heading</Typography>
         <Typography variant="h2">h2 Heading</Typography>
