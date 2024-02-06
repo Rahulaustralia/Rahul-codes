@@ -3,6 +3,10 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { Typography } from "@mui/material";
+import Rating from "@mui/material/Rating";
+import TextField from "@mui/material/TextField";
+import Slider from "@mui/material/Slider";
+
 const Select = () => {
   return (
     <div>
@@ -18,6 +22,16 @@ const Select = () => {
           Disabled
         </Button>
       </Stack>
+
+      <h1>Rating </h1>
+      <Rating />
+      <br />
+      <h1> Slider </h1>
+      <Slider />
+      <br />
+      <h1>TextField</h1>
+      <TextField label="Name" />
+
       <Box sx={{ hight: "200px", border: "2px solid blue" }}>
         <h1> Rahul </h1>
       </Box>
