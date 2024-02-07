@@ -10,6 +10,8 @@ import Avatar from "@mui/material/Avatar";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import CircularProgress from "@mui/material/CircularProgress";
+import Skeleton from "@mui/material/Skeleton";
+import Grid from "@mui/material/Grid";
 
 const Select = () => {
   return (
@@ -63,6 +65,24 @@ const Select = () => {
       </Box>
       {/* Stack */}
 
+      <h1> Skeleton </h1>
+
+      <Box width={200} height={400}>
+        <Skeleton variant="circular" width={40} height={40} />
+        <Skeleton variant="rectangular" width="300px" height="200px" />
+        <Skeleton variant="text" />
+      </Box>
+
+      <Stack
+        direction="row"
+        style={{ padding: "20px", marginLeft: "180px" }}
+        spacing={10}
+      >
+        <Skeleton variant="rectangular" width="300px" height="200px" />
+        <Skeleton variant="rectangular" width="300px" height="200px" />
+        <Skeleton variant="rectangular" width="300px" height="200px" />
+      </Stack>
+
       <div>
         <Typography variant="h1">h1 Heading</Typography>
         <Typography variant="h2">h2 Heading</Typography>
@@ -88,6 +108,71 @@ const Select = () => {
           magni. Fugiat.
         </Typography>
       </div>
+      <h1> Grid </h1>
+
+      {/* <Grid container spacing={2}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="yellow" p={5} textAlign="center">
+            Center1
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="blue" p={5} textAlign="center">
+            Center2
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="red" p={5} textAlign="center">
+            Center3
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="green" p={5} textAlign="center">
+            Center4
+          </Box>
+        </Grid>
+      </Grid> */}
+
+      <Grid container spacing={2}>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="yellow" p={5} textAlign="center">
+            <Grid container>
+              <Grid item xs={12}>
+                <Box bgcolor="red" p={5} textAlign="center">
+                  1-1
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box bgcolor="green" p={5} textAlign="center">
+                  1-2
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                <Box bgcolor="orange" p={5} textAlign="center">
+                  1-3
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="blue" p={5} textAlign="center">
+            Center2
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="red" p={5} textAlign="center">
+            Center3
+          </Box>
+        </Grid>
+        <Grid item lg={3} md={4} sm={6} xs={12}>
+          <Box bgcolor="green" p={5} textAlign="center">
+            Center4
+          </Box>
+        </Grid>
+      </Grid>
+
+      <div style={{ marginBottom: "50px" }}></div>
     </div>
   );
 };
