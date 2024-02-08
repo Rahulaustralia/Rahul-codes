@@ -12,6 +12,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import CircularProgress from "@mui/material/CircularProgress";
 import Skeleton from "@mui/material/Skeleton";
 import Grid from "@mui/material/Grid";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "../Theme";
 
 const Select = () => {
   return (
@@ -173,6 +175,13 @@ const Select = () => {
       </Grid>
 
       <div style={{ marginBottom: "50px" }}></div>
+      <div>
+        <ThemeProvider theme={theme}>
+          <Button variant="contained" color="Ram">
+            Button Outline
+          </Button>
+        </ThemeProvider>
+      </div>
     </div>
   );
 };
