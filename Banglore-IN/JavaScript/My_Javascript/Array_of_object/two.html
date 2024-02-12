@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array Of Object</h1>
+  </body>
+</html>
+
+<script>
+  let students = [
+    { name: "Rahul", age: 26, address: "Dewas" },
+    { name: "Raj", age: 23, address: "Indore" },
+    { name: "Pradeep", age: 25, address: "Rajghar" },
+    { name: "Priyanshu", age: 28, address: "Bhopal" },
+  ];
+
+  let res = students.map((el, i) => {
+    return el.age + 2;
+  });
+
+  console.log(res);
+</script>
