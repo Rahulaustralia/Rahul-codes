@@ -7,12 +7,30 @@
   </head>
   <body>
     <h1>Fetch</h1>
+    <div id="conatiner"></div>
   </body>
 </html>
 
 <script>
-  function getData() {
-    let data = fetch(`https://fakestoreapi.com/products`);
-    data.json();
+  async function getData() {
+    let data = await fetch(`https://fakestoreapi.com/products`);
+    let myData = await data.json();
+
+    console.log(myData);
+    fetchData(myData);
+  }
+  getData();
+  let container = document.getElementById("container");
+
+  function fetchData(myData) {
+    myData.forEach((item, index) => {
+      let div = document.createElement("div");
+
+      let h1 = document.createElement("h1");
+      h1.innerText = item.category;
+
+      div.append(h1);
+      container.appendChild(div);
+    });
   }
 </script>
