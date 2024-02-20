@@ -29,7 +29,10 @@
       let h1 = document.createElement("h1");
       h1.innerText = item.category;
 
-      div.append(h1);
+      let h2 = document.createElement("h2");
+      h2.innerText = item.title;
+
+      div.append(h1, h2);
       container.append(div);
     });
   }
