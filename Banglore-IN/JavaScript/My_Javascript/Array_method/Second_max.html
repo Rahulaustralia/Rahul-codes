@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Second Max in Array</h1>
+  </body>
+</html>
+
+<script>
+  let arr = [11, 2, 5, 10, 45, 1];
+
+  let first_max = arr[0];
+  let second_max = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > first_max) {
+      second_max = first_max;
+      first_max = arr[i];
+    } else if (arr[i] > second_max && arr[i] !== first_max) {
+      second_max = arr[i];
+    }
+  }
+  console.log(second_max);
+</script>
