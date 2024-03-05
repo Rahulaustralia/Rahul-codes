@@ -9,7 +9,85 @@
   <body>
     <div id="container">
       <p id="heading">Splt tter</p>
-      <div id="section"></div>
+      <div id="section">
+        <div class="section-child-1">
+          <p class="c1-pi-r1">Bill</p>
+          <input class="s-c1-input" type="number" id="billAmount" />
+          <br />
+          <span class="s-c1-span">Select Tip %</span>
+          <div class="s-c1-box" id="tipButtons">
+            <button class="s-c1-button" onclick="calculateTip(5)">5%</button>
+            <button class="s-c1-button" onclick="calculateTip(10)">10%</button>
+            <button class="s-c1-button" onclick="calculateTip(15)">15%</button>
+            <button class="s-c1-button" onclick="calculateTip(20)">20%</button>
+            <button class="s-c1-button" onclick="calculateTip(25)">25%</button>
+            <button class="s-c1-button" onclick="customTip()">Custom</button>
+          </div>
+          <p class="s-c1-p1">Number of People</p>
+          <input class="classs-c1-input-2" type="number" id="numOfPeople" />
+        </div>
+
+        <div class="section-child-2">
+          <div class="parent-div">
+            <div class="child-1">
+              <p class="s-c2-p1">Tip Amount</p>
+              <span class="s-c2-span">/Person</span>
+            </div>
+            <div class="child-2">
+              <p class="s-c2-p2" id="tipAmount">$0.00</p>
+            </div>
+          </div>
+          <div class="parent-div">
+            <div class="child-1">
+              <p class="s-c2-p1">Total Amount</p>
+              <span class="s-c2-span">/Person</span>
+            </div>
+            <div class="child-2">
+              <p class="s-c2-p2" id="totalAmount">$0.00</p>
+            </div>
+          </div>
+          <button class="s-c2-button" onclick="resetCalculator()">Reset</button>
+        </div>
+      </div>
     </div>
+
+    <script>
+      function calculateTip(percentage) {
+        const billAmount = parseFloat(
+          document.getElementById("billAmount").value
+        );
+        const numOfPeople = parseFloat(
+          document.getElementById("numOfPeople").value
+        );
+
+        if (!isNaN(billAmount) && !isNaN(numOfPeople)) {
+          const tipAmount = (billAmount * percentage) / 100;
+          const totalAmount = billAmount + tipAmount;
+          const tipPerPerson = tipAmount / numOfPeople;
+          const totalPerPerson = totalAmount / numOfPeople;
+
+          document.getElementById(
+            "tipAmount"
+          ).textContent = `$${tipPerPerson.toFixed(2)}`;
+          document.getElementById(
+            "totalAmount"
+          ).textContent = `$${totalPerPerson.toFixed(2)}`;
+        }
+      }
+
+      function customTip() {
+        const customPercentage = prompt("Enter custom tip percentage:");
+        if (customPercentage !== null) {
+          calculateTip(parseFloat(customPercentage));
+        }
+      }
+
+      function resetCalculator() {
+        document.getElementById("billAmount").value = "";
+        document.getElementById("numOfPeople").value = "";
+        document.getElementById("tipAmount").textContent = "$0.00";
+        document.getElementById("totalAmount").textContent = "$0.00";
+      }
+    </script>
   </body>
 </html>
