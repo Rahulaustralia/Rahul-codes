@@ -1,0 +1,26 @@
+#container{
+    width:  1440px;
+    height: 1112px;
+    background-color: #C5E4E7;
+}
+
+#heading{
+    width: 130px;
+    height: 91px;
+    top: 137px;
+    left: 620px;
+    font-family: IBM Plex Mono;
+font-size: 40px;
+font-weight: 600;
+line-height: 50px;
+letter-spacing: 0.2em;
+color: #406667;
+}
+#section{
+    width: 1170px;
+height: 657px;
+top: 320px;
+left: 135px;
+border-radius: 15px;
+
+}
