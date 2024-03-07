@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Find duplicates in the string</h1>
+  </body>
+</html>
+<script>
+  let str = "The sun rises in the east";
+
+  let obj = {};
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (obj[char] == undefined) {
+      obj[char] = 1;
+    } else {
+      obj[char]++;
+    }
+  }
+
+  //   console.log(obj);
+
+  let bag = "";
+  for (let key in obj) {
+    if (obj[key] > 1) {
+      console.log(obj[key]);
+    }
+  }
+</script>
