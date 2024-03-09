@@ -1,0 +1,117 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+header{
+    /* height: 72px; */
+    width: 100%;
+    display: flex;
+    padding: 8px;
+   
+       
+}
+#header-container{
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+.headerLogo{
+    justify-content: center;
+    margin: 18px 20px 0px 20px;
+    
+}
+.searchContent{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 600px;
+    height: 43px;
+    margin: 11px 5px 0px 5px;
+    border-radius: 5px;
+    display: inline-flex;
+}
+.location{
+    color: rgb(226, 46, 46);
+    font-size: 20px;
+    margin: 9px 0px 0px 9px;
+    
+}
+select{
+    width: 176px;
+    height: 35px;
+    margin: 3px;
+    padding-left: 4px;
+    font-size: 16px;
+    border: none;
+}
+.pipe{
+    color: grey;
+    margin: 5px 0px 0px 0px;
+    font-size: 23px;
+}
+.glass{
+    font-size: 20px;
+    color: grey;
+    margin: 10px 0px 0px 9px;
+}
+.search{
+    font-size: 15px;
+    width: 300px;
+    height: 25px;
+    margin: 7px 0px 0px 7px;
+    border: none;
+}
+
+.buttonsBox{
+    width: 210px;
+    height: 45px;
+    display: inline-flex;
+    gap: 40px;
+    margin: 10px 0px 0px 5px;
+    padding-left: 25px;
+}
+.buttons{
+    width: 80px;
+    font-size: 17px;
+    border: none;
+    background: white;
+    color: grey;
+}
+.buttons:hover{
+    color: black;
+}
+ 
+
+@media screen and (max-width: 768px) {
+    /* Adjust styles for medium devices here */
+    .location {
+        font-size: 14px;
+    }
+
+    select,
+    .pipe,
+    .glass,
+    .search,
+    .buttons {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjust styles for small devices here */
+    .searchContent {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    select,
+    .search,
+    .buttonsBox {
+        width: 100%;
+        max-width: none;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+}
+

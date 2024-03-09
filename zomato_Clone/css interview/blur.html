@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="blur.css" />
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="shimmer"></div>
+      <img
+        class="static-image"
+        src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=600&quality=80"
+        alt="Static Image"
+      />
+    </div>
+
+    <script>
+      setTimeout(function () {
+        document.querySelector(".shimmer").style.display = "none";
+        document.querySelector(".static-image").style.display = "block";
+      }, 3000);
+    </script>
+  </body>
+</html>

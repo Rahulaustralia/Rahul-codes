@@ -1,0 +1,138 @@
+.main{
+    display: flexbox;
+    height: 454px;
+    width: 75%;
+    margin: auto;
+    
+}
+.footer-rp-main{
+   width: 100%;
+   background-color: rgb(249, 246, 246);
+}
+.FHead{
+    height: 35px;
+    width: 990px;
+    margin: 48px 0px 40px 0px;
+    cursor: pointer;
+}
+.Flogo{
+    cursor: pointer;
+    width: 132px;
+    height: 28px;
+    margin-top: 80px;
+}
+.india{
+    width: 110px;
+    height: 38px;
+    margin: 0px 5px 0px 570px;
+    border-radius: 5px;
+    border: 1px black solid;
+    background-color: white;
+    margin-bottom: 50px;
+    
+}
+.fullFoot{
+    width: 990px;
+    height: 100px;
+}
+.insideFull{
+    width: 190px;
+    float: left;
+}
+.wor{
+    color: grey;
+    margin: 10px;
+    cursor: pointer;
+}
+.wor:hover{
+    color: black;
+    cursor: pointer;
+}
+.miniIcons{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #181616;
+    color: white;
+    cursor: pointer;
+    float: left;
+    padding: 5px;
+    margin: 3px;
+}
+
+.last{
+    width: 970px;
+    height: 80px;
+    border-top: 1px #8080808a solid;
+    margin-top: 180px;
+    font-size: 13.2px;
+}
+
+
+/* Media query for small devices */
+@media(max-width: 480px)and (min-width:320px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .FHead, .Flogo, .india, .fullFoot, .last {
+        width: 100%;
+        max-width: none;
+    }
+
+    .FHead {
+        margin: 10px 0;
+    }
+
+    .Flogo {
+        margin-top: 5px;
+    }
+
+    .india, .fullFoot, .last {
+        margin-top: 5px;
+    }
+    .last{
+        display: none;
+    }
+    .india{
+        display: none;
+    }
+    .FHead{
+        text-align: center;
+    }
+    .footer-rp-main{
+       
+        background-color: white;
+        text-align: center;
+        margin-left: 20px;
+       
+    }
+    
+}
+
+/* Media query for medium devices */
+@media(max-width: 720px)and (min-width:480px){
+    .main {
+        flex-direction: column;
+    }
+
+    .FHead, .Flogo, .india, .fullFoot, .last {
+        width: 100%;
+        max-width: none;
+    }
+
+    .FHead {
+        margin: 15px 0;
+    }
+
+    .Flogo {
+        margin-top: 8px;
+    }
+
+    .india, .fullFoot, .last {
+        margin-top: 8px;
+    }
+    
+    
+
+}

@@ -1,0 +1,177 @@
+
+/* Header  */
+.rp-head-box-parent{
+   position: sticky;
+   top: 0;
+   background-color: white;
+   
+}
+#head-box{
+    width: 45%;
+    margin-left: 180px;
+    display: inline-block;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+ }
+ #head-box img{
+    height: 40px;
+    width: 40px;
+    background-color: #e5f3f3;
+    border-radius: 50%;
+    padding: 10px;
+ }
+ .head-p{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 20px;
+ }
+ .img-space{
+    margin-left: 25px;
+   
+ }
+ #head-mid{
+    padding: 5px;
+    width: 100%;
+    background-color: #f8f8f8;
+    
+ }
+ #head-mid-child{
+    padding: 10px;
+    width: 75%;
+    margin: auto;
+ }
+#Collections{
+    font-size: 27px;
+}
+#rp-title{
+    margin-top: 7x;
+    color: rgb(110, 110, 110);
+}
+#rp-head-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 15px;
+    gap: 20px;
+}
+#rp-head-grid img{
+ width: 100%;
+ height: 300px;
+ border-radius: 10px;
+}
+#rp-head-button-section{
+    width: 100%;
+    color: rgb(109, 109, 109);
+    margin-top: 15px;
+    margin-bottom: 25px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+#rp-head-button-section-child{
+  padding: 10px;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  gap: 15px;
+}
+.rp-btn1{
+    border: 1px solid rgb(109, 109, 109);
+    width: auto;
+    padding: 10px;
+    border-radius: 9px;
+    font-size: small;
+}
+
+#rp-head-banner{
+  width: 75%;
+  margin: auto;
+  
+}
+#rp-head-banner img{
+    width: 100%;
+}
+#rp-head-banner p{
+    font-size: 30px;
+}
+
+
+ /* Other styles remain the same */
+
+ @media(max-width: 720px)and (min-width:480px) {
+    /* Adjust styles for smaller screens */
+
+    .searchContent {
+        width: 90%; /* Adjusted width for smaller screens */
+    }
+
+    .buttonsBox {
+        width: 100%;
+        justify-content: center;
+        padding-left: 0;
+        margin: 10px 0;
+    }
+
+    #head-box {
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .rp-head-box-parent {
+        position: relative; /* Remove sticky positioning for smaller screens */
+    }
+    #rp-head-grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+       }
+       #rp-head-button-section-child{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+       } 
+      #head-mid{
+        width: 100%;
+      }   
+     #head-mid-child{
+        width: 100%;
+     } 
+    
+}
+
+@media(max-width: 480px)and (min-width:320px) {
+   #rp-head-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+   }
+   .rp-head-box-parent{
+    position: static;
+   }
+   #head-box{
+    display: grid;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+   }
+   #rp-head-button-section{
+     position: static;
+   }
+   .rp-head-img-1{
+    margin-left: 20px;
+   }
+   
+ 
+   #rp-head-button-section-child{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+   }
+   #rp-head-banner img{
+    height: 200px;
+   }
+   #rp-head-banner p{
+    font-size: small;
+   }
+}

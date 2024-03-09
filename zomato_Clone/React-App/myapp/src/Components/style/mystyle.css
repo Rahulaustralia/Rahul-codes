@@ -1,0 +1,149 @@
+.nav-main{
+    display: flex;
+    width: 75%;
+    margin: auto;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.rp-img{
+    width: 130px ;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.nav-search{
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    height: 40px;
+    border-radius: 10px;
+    color: lightgray;
+}
+.nav-search select{
+    width: 50%;
+    padding: 8px;
+    border: none;
+    color: rgb(115, 114, 114);
+}
+.nav-input{
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    color: rgb(115, 114, 114);
+}
+
+.nav-login{
+    display: flex;
+    
+}
+.nav-login p{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.nav-next{
+    width: 75%;
+    margin: auto;
+    font-size: small;
+    color: rgb(115, 114, 114);
+    text-align: left;
+    
+    
+}
+
+.header{
+    display: flex;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+   
+    
+}
+.head-child1{
+    display: flex;
+    margin-right: 20px;
+}
+.head-img1{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: rgb(219, 219, 219);
+    padding: 8px;
+    border-radius: 50%;
+}
+.header-mid{
+    width: 75%;
+    margin: auto;
+    display: flex;
+}
+
+.hm-p{
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    margin-right: 18px;
+    padding: 8px;
+    color: rgb(121, 121, 121);
+}
+.header-lower{
+    width: 100%;
+    margin: auto;
+    background-color: rgb(234, 234, 234);
+}
+.hl-grid{
+    display: grid;
+    width: 75%;
+    margin: auto;
+    grid-template-columns: repeat(6,1fr);
+    gap: 25xpx;
+
+}
+
+.hl-grid img{
+   width: 100%;
+}
+.hl-p1{
+    font-size: 25px;
+   text-align: left;
+   margin-left: 250px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+@media(max-width: 480px)and (min-width:320px) {
+  .nav-main{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  } 
+  .nav-main img{
+    margin-left: 70px;
+  }
+  .nav-search{
+    margin-top: 20px;
+    margin-left: 40px;
+  } 
+  .nav-input{
+    display: none;
+  }
+  .nav-login{
+    margin-left: 65px;
+  }
+  .header-mid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+ .hl-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+ }
+ .hl-p1{
+   font-size: 20px;
+   margin: auto;
+   margin-left: 50px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+ }
+}

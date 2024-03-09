@@ -1,12 +1,14 @@
 import React from "react";
 import Fetch from "./Components/Fetch";
 import Test from "./Components/Test";
+import Demo1 from "./Components/Demo1";
 
 const App = () => {
   return (
     <>
       {/* <Fetch /> */}
-      <Test />
+      {/* <Test /> */}
+      <Demo1 />
     </>
   );
 };
