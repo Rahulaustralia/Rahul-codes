@@ -1,5 +1,6 @@
 import "./App.css";
 import FetchAPI from "./Components/FetchAPI";
+import Nav from "./Components/Nav";
 import Test from "./Components/Test";
 import Todo from "./Components/Todo";
 
@@ -9,7 +10,8 @@ function App() {
       {/* <Todo />
       <FetchAPI /> */}
 
-      <Test />
+      {/* <Test /> */}
+      <Nav />
     </div>
   );
 }
