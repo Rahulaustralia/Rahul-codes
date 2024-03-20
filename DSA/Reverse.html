@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Reverse Number</h1>
+  </body>
+</html>
+
+<script>
+  let num = "0123";
+
+  let str = num.toString();
+  let bag = "";
+  //   console.log(str, typeof str);
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    bag += str[i];
+  }
+
+  let myNum = Number(bag);
+
+  console.log(myNum, typeof myNum);
+
+  //   let num = 111;
+  //   let temp = num;
+  //   let str = "";
+  //   for (let i = num; ; i++) {
+  //     while (i > 0) {
+  //       let rem = num % 10;
+  //       str += rem;
+
+  //       num = Math.trunc(num / 10);
+  //     }
+  //     if (str == temp) {
+  //       console.log(num, "Number is plaindrom");
+  //       break;
+  //     }
+  //   }
+</script>
