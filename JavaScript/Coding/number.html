@@ -12,4 +12,16 @@
 
 <script>
   let num = 123;
+
+  let temp = num;
+  let str = "";
+  while (num > 0) {
+    let rem = num % 10;
+
+    str += rem;
+
+    num = Math.trunc(num / 10);
+  }
+
+  console.log(str);
 </script>
