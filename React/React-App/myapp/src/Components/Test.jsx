@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../Style/Test.css";
 
 const Test = () => {
   const [data, setData] = useState([]);
@@ -17,11 +18,15 @@ const Test = () => {
   return (
     <>
       <h1> Fetch Data </h1>
-      <div>
+      <div className="parent">
         {data.map((el) => {
           return (
-            <div key={el.id}>
-              <h1> {el.title} </h1>
+            <div key={el.id} className="child">
+              <img src={el.image} alt="error" />
+              <h3>Category: {el.category}</h3>
+              <p>Title: {el.title} </p>
+              <h6>Price: {el.price}</h6>
+              <p>Rating: {el.rating.rate}</p>
             </div>
           );
         })}
