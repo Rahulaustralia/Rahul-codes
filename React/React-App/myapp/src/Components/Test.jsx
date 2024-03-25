@@ -18,6 +18,10 @@ const Test = () => {
   return (
     <>
       <h1> Fetch Data </h1>
+      <div className="button">
+        <button>High to Low</button>
+        <button>Low to High</button>
+      </div>
       <div className="parent">
         {data.map((el) => {
           return (
