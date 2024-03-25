@@ -1,5 +1,6 @@
 import React from "react";
 import ImageSlider from "./Components/Demo";
+import Test from "./Components/Test";
 
 const App = () => {
   const images = [
@@ -12,6 +13,7 @@ const App = () => {
       <div className="app">
         <h1>Image Slider</h1>
         <ImageSlider images={images} />
+        <Test />
       </div>
     </>
   );
