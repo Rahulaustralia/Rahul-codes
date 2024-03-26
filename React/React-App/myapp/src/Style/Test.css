@@ -18,3 +18,12 @@
 .button{
     margin-left: 43%;
 }
+.button button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0087fe;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}

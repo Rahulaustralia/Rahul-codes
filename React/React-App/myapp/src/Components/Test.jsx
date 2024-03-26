@@ -14,13 +14,18 @@ const Test = () => {
       });
   }, []);
 
-  console.log(data);
+  function handleHTL() {
+    data.filter((a, b) => {
+      return a - b;
+    });
+  }
+  function handleLTH() {}
   return (
     <>
       <h1> Fetch Data </h1>
       <div className="button">
-        <button>High to Low</button>
-        <button>Low to High</button>
+        <button onClick={handleHTL()}>High to Low</button>
+        <button onClick={handleLTH()}>Low to High</button>
       </div>
       <div className="parent">
         {data.map((el) => {
