@@ -1,6 +1,7 @@
 import React from "react";
 import ImageSlider from "./Components/Demo";
 import Test from "./Components/Test";
+import Home from "./Components/Home";
 
 const App = () => {
   const images = [
@@ -11,9 +12,10 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <h1>Image Slider</h1>
+        {/* <h1>Image Slider</h1>
         <ImageSlider images={images} />
-        <Test />
+        <Test /> */}
+        <Home />
       </div>
     </>
   );

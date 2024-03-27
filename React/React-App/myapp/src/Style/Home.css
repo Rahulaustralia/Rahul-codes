@@ -1,0 +1,76 @@
+*{
+    margin: 0px;
+    padding: 0px; 
+ }
+ .h2{
+     margin-left: 10px;
+     padding: 20px;
+ }
+ .parent{
+     width: 100%;
+     display: flex;
+ }
+ 
+ .container1{
+     width: 20%;
+     border: 2px solid blue;
+ }
+ 
+ .container2{
+     width: 80%;
+ }
+ .music-container{
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(1,1fr);
+     gap: 5px;
+ }
+ 
+ .music-child{
+  display: flex;   
+  padding: 10px;
+ 
+ }
+ 
+ .music-child:hover{
+    background-color: palevioletred; 
+ }
+ 
+ .music-child img{
+     width: 50px;
+     height: 50px;
+     margin-left: 20px;
+ }
+ .music-child p{
+    margin-left: 20px;
+    margin-top: 5px; 
+ }
+ .topNav{
+     display: flex;
+     justify-content: space-evenly;
+ }
+ .btn1{
+     padding: 7px;
+     border-radius: 7px;
+     background-color: white;
+     width: 60px;
+ }
+ .mid-part{
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+     margin-top: 100px;
+     text-align: center;
+ }
+ .mid-part img{
+     width: 180px;
+     height: 180px;
+     border-radius: 50%;
+ }
+ .music-player{
+    text-align: center;
+ }
+ 
+ .rj{
+  margin: auto;
+ }
