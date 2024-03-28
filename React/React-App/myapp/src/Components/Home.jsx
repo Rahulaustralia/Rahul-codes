@@ -8,16 +8,13 @@ import VolumeUp from "@mui/icons-material/VolumeUp";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PauseIcon from "@mui/icons-material/Pause";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const [value, setValue] = React.useState(30);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const [selectedMusic, setSelectedMusic] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [volume, setVolume] = useState(30);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -30,8 +27,39 @@ const Home = () => {
       });
   }, []);
 
-  const handleCardClick = (imageUrl) => {
-    setSelectedImage(imageUrl);
+  const handleCardClick = (music) => {
+    setSelectedMusic(music);
+    setIsPlaying(true); // Auto-play when a music is selected
+  };
+
+  const handleNext = () => {
+    if (selectedMusic) {
+      const currentIndex = data.findIndex(
+        (music) => music.id === selectedMusic.id
+      );
+      const nextIndex = (currentIndex + 1) % data.length;
+      setSelectedMusic(data[nextIndex]);
+      setIsPlaying(true); // Auto-play next music
+    }
+  };
+
+  const handlePrevious = () => {
+    if (selectedMusic) {
+      const currentIndex = data.findIndex(
+        (music) => music.id === selectedMusic.id
+      );
+      const previousIndex = (currentIndex - 1 + data.length) % data.length;
+      setSelectedMusic(data[previousIndex]);
+      setIsPlaying(true); // Auto-play previous music
+    }
+  };
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleChangeVolume = (event, newValue) => {
+    setVolume(newValue);
   };
 
   return (
@@ -40,15 +68,22 @@ const Home = () => {
         <div className="container1">
           <h2 className="h2"> Library </h2>
           <div className="music-container">
-            {data.map((el) => {
+            {data.map((music) => {
+              const shortDescription = music.description
+                .split(" ")
+                .slice(0, 10)
+                .join(" ");
               return (
                 <div
-                  key={el.id}
+                  key={music.id}
                   className="music-child"
-                  onClick={() => handleCardClick(el.image)} // Added onClick event
+                  onClick={() => handleCardClick(music)}
                 >
-                  <img src={el.image} alt="error" />
-                  <p>{el.category}</p>
+                  <img src={music.image} alt="error" />
+                  <div className="music-details">
+                    <h5>{music.title}</h5>
+                    <p>{shortDescription}</p>
+                  </div>
                 </div>
               );
             })}
@@ -57,15 +92,17 @@ const Home = () => {
 
         <div className="container2">
           <div className="topNav">
-            <h2>Waves</h2>
+            <h2>Waves</h2> {/* Moved "Waves" title here */}
             <button className="btn1">Library</button>
           </div>
           <div className="mid-part">
-            {selectedImage && ( // Render selected image if exists
+            {selectedMusic && (
               <>
-                <img src={selectedImage} alt="error" />
-                <h2>Text Hear</h2>
-                <p>Song details here</p>
+                <img src={selectedMusic.image} alt="error" />
+                <h2>{selectedMusic.title}</h2>
+                <p>{selectedMusic.category}</p>
+                <p>{selectedMusic.description.slice(0, 20)}...</p>{" "}
+                {/* Display limited description */}
               </>
             )}
           </div>
@@ -80,18 +117,24 @@ const Home = () => {
                 <VolumeDown />
                 <Slider
                   aria-label="Volume"
-                  value={value}
-                  onChange={handleChange}
+                  value={volume}
+                  onChange={handleChangeVolume}
                 />
                 <VolumeUp />
               </Stack>
             </Box>
             <ArrowBackIosIcon
               style={{ marginRight: "20px", fontWeight: "bold" }}
+              onClick={handlePrevious}
             />
-            <PlayArrowIcon />
+            {isPlaying ? (
+              <PauseIcon onClick={handlePlayPause} />
+            ) : (
+              <PlayArrowIcon onClick={handlePlayPause} />
+            )}
             <ArrowForwardIosIcon
               style={{ marginLeft: "20px", fontWeight: "bold" }}
+              onClick={handleNext}
             />
           </div>
         </div>
@@ -99,4 +142,5 @@ const Home = () => {
     </>
   );
 };
+
 export default Home;
