@@ -9,3 +9,17 @@
     <h1>Hello</h1>
   </body>
 </html>
+
+<script>
+  let a = 123;
+  let temp = a;
+  let str = "";
+  while (a > 0) {
+    let rem = a % 10;
+    str += rem;
+
+    a = Math.trunc(a / 10);
+  }
+
+  console.log(str);
+</script>
