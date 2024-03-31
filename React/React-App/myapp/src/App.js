@@ -2,6 +2,7 @@ import React from "react";
 import ImageSlider from "./Components/Demo";
 import Test from "./Components/Test";
 import Home from "./Components/Home";
+import Myapi from "./Components/Myapi";
 
 const App = () => {
   const images = [
@@ -15,7 +16,8 @@ const App = () => {
         {/* <h1>Image Slider</h1>
         <ImageSlider images={images} />
         <Test /> */}
-        <Home />
+        {/* <Home /> */}
+        <Myapi />
       </div>
     </>
   );
