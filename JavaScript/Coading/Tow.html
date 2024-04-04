@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello JavaScript</h1>
+    <h1>InterChange Two variable without using 3rd Variable</h1>
   </body>
 </html>
 <script>
@@ -14,7 +14,8 @@
   let b = 20;
 
   a = a + b;
-  b = b - a;
-  b = console.log(a);
-  console.log(b);
+  b = a - b;
+  a = a - b;
+  console.log("a=", a);
+  console.log("b=", b);
 </script>
