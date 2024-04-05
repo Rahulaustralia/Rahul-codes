@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Second min in Array</h1>
+  </body>
+</html>
+
+<script>
+  let arr = [12, 8, 2, 7, 3, 5];
+
+  let max = -Infinity;
+  let secondMax = -Infinity;
+  let res = "";
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  console.log(max);
+</script>
