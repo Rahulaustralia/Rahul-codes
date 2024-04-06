@@ -3,6 +3,7 @@ import ImageSlider from "./Components/Demo";
 import Test from "./Components/Test";
 import Home from "./Components/Home";
 import Myapi from "./Components/Myapi";
+import MyTask from "./Components/MyTask";
 
 const App = () => {
   const images = [
@@ -18,6 +19,7 @@ const App = () => {
         <Test /> */}
         {/* <Home /> */}
         <Myapi />
+        <MyTask />
       </div>
     </>
   );
