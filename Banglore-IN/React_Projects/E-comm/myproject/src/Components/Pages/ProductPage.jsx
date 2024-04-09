@@ -13,6 +13,8 @@ const ProductPage = () => {
     });
   }, []);
 
+  console.log(data);
+
   return (
     <div className="Product-parent">
       {data.length > 0 &&

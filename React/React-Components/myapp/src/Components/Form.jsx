@@ -1,7 +1,17 @@
 import React from "react";
 
 const Form = () => {
-  return <div>Form</div>;
+  return (
+    <div>
+      <form action="">
+        <label htmlFor="">Email</label>
+        <input type="email" />
+        <br />
+        <label htmlFor="">Password</label>
+        <input type="password" />
+      </form>
+    </div>
+  );
 };
 
 export default Form;
