@@ -6,20 +6,37 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Second min in Array</h1>
+    <h1>Second min in Array =</h1>
+    <h2 id="ans"></h2>
   </body>
 </html>
 
 <script>
-  let arr = [12, 8, 2, 7, 3, 5];
+   // let arr = [12, 8, 2, 7, 3, 5];
 
-  let max = -Infinity;
-  let secondMax = -Infinity;
-  let res = "";
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-  console.log(max);
+   // let max = -Infinity;
+   // let secondMax = -Infinity;
+   // let res = "";
+   // for (let i = 0; i < arr.length - 1; i++) {
+   //   if (arr[i] > max) {
+   //     max = arr[i];
+   //   }
+   // }
+   // console.log(max);
+
+   // let x = (document.getElementById("ans").innerText = max);
+
+   // a = 10;
+   // b = 11;
+   // console.log(a);
+   // Console.log(b);
+   // var a;
+   // let b;
+
+   let arr = [1,2,3,4];
+  let obj= arr.forEach((item,i)=>{
+     return {arr[i]=arr[i]:arr[i+1]}
+     i++
+   })
+   console.log(obj,"hello I am obj")
 </script>
