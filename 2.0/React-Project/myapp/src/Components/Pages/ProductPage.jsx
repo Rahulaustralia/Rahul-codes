@@ -6,7 +6,7 @@ const ProductPage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("'https://dummyjson.com/products").then((res) => {
+    axios.get("https://fakestoreapi.com/products").then((res) => {
       setData(res.data);
     });
   }, []);
