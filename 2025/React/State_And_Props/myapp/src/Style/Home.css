@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+#navbar{
+    width: 100%;
+    height: 70px;
+    background-color:  #007bff;
+    display: flex;
+}
+#rp1{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; 
+}
+
+#rp2{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#rp2 p{
+    padding-right: 100px;
+    font-size: large;
+    cursor: pointer;
+}
+
+#rp3{
+    width: 20%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0; 
+}
+
+#slider {
+    width: 98%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+#items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  #child {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #child:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  #child img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  #child p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+
+  #child h6 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  #child button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #child button:hover {
+    background-color: #0056b3;
+  }
+  
+  #child button:focus {
+    outline: none;
+  }
+  
