@@ -11,6 +11,32 @@
 </html>
 
 <script>
-  let arr = [2, 6, 1, 15];
+  //   let arr = [2, 6, 1, 15];
   // find the smallest element in the array
+
+  //   let bag = "";
+  //   let small = Infinity;
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] < small) {
+  //       small = arr[i];
+  //     }
+  //   }
+  //   console.log(small);
+
+  //   let arr1 = [4, 10, 6, 2, 4, 3];
+  //   // find the number of count
+
+  //   let obj = {};
+
+  //   for (let i = 0; i < arr.length; i++) [l];
+
+  let object = { name: "Vishal", address: "UP" };
+  function print(age) {
+    console.log(this.name, age, this.address);
+  }
+  print.call(object, 15);
+
+  print.apply(object, [14]);
+  let x = print.bind(object, 23);
+  x();
 </script>

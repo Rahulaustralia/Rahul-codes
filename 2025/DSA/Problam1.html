@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Problam 1</h1>
+  </body>
+</html>
+
+<script>
+  // 3 = "hello"
+  // 5 = "world"
+  // 35 = " Hello World"
+
+  let bag = "";
+  let a = "hello";
+  let b = "world";
+  let c = "Hello World";
+
+  for (let i = 1; i <= 100; i++) {
+    if (i == 3) {
+      bag += a;
+    } else if (i == 5) {
+      bag += b;
+    } else if (i == 35 || i == 53) {
+      bag += c;
+    } else {
+      bag += [i];
+    }
+  }
+  console.log(bag);
+</script>
