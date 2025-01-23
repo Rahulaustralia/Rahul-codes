@@ -21,14 +21,14 @@
   let c = "Hello World";
 
   for (let i = 1; i <= 100; i++) {
-    if (i == 3) {
-      bag += a;
-    } else if (i == 5) {
-      bag += b;
-    } else if (i == 35 || i == 53) {
-      bag += c;
+    if (i % 3 == 0 && i % 5 == 0) {
+      bag += "\n" + c;
+    } else if (i % 5 == 0) {
+      bag += "\n" + b;
+    } else if (i % 3 == 0) {
+      bag += "\n" + a;
     } else {
-      bag += [i];
+      bag += "\n" + [i];
     }
   }
   console.log(bag);
