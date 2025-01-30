@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent {
+        width: 100%;
+        height: 300px;
+        border: 2px solid red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+      #mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: orangered;
+        transition: width 2s, hight 2s, transform 5s;
+      }
+      #mydiv:hover {
+        width: 200px;
+        height: 200px;
+        transform: rotate(360deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="mydiv"></div>
+    </div>
+
+    <div id="parent2">
+      <div id="rp1"></div>
+      <div id="rp2"></div>
+      <div id="rp3"></div>
+    </div>
+  </body>
+</html>
