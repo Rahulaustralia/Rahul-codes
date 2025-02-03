@@ -11,11 +11,11 @@
 </html>
 
 <script>
-  let num = 123;
-  let n = num;
-  let str = num.toString();
-
-  console.log(typeof str);
-
-  for(let )
+  let arr = [
+    { order: "2", name: "Vishal" },
+    { order: "1", name: "rahul" },
+    { order: "3", name: "priyanshu" },
+  ];
+  let y = arr.sort((a, b) => Number(a.order) - Number(b.order));
+  console.log(y);
 </script>
