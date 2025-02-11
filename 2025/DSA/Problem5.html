@@ -6,18 +6,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Object Problem</h1>
+    <h1>Object question</h1>
   </body>
 </html>
 
 <script>
-  let str = "rahulpandey";
+  let str = "hellowworld";
 
   let obj = {};
 
   for (let i = 0; i < str.length; i++) {
     let char = str[i];
-
     if (obj[char] == undefined) {
       obj[char] = 1;
     } else {
@@ -27,10 +26,11 @@
 
   let bag = "";
   for (let key in obj) {
-    if (obj[key] == 1) {
+    if (obj[key] > 2) {
       bag += obj[key];
     }
   }
 
   console.log(bag);
+  console.log("Hello");
 </script>
