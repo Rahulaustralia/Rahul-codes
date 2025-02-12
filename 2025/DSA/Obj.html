@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+  </body>
+</html>
+
+<script>
+  let myObj = { name: "Rahul", age: 27, location: "Dewas" };
+
+  //   console.log(myObj["name"]); // Bracket Notation
+  //   console.log(myObj.age);
+
+  let arr = [7, 2, 5, 7, 3, 2, 7, 1];
+
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let char = arr[i];
+
+    if (obj[char] == undefined) {
+      obj[char] = 1;
+    } else {
+      obj[char]++;
+    }
+  }
+  let max = -Infinity;
+  for (let key in obj) {
+    if (obj[key] > max) {
+      max = obj[key];
+    }
+  }
+
+  console.log("Maximum Value is", max);
+</script>
