@@ -4,10 +4,16 @@
     grid-template-columns: repeat(3,1fr);
     gap: 15px;
     padding: 15px;
+    
 }
 #RPchild{
     border: 2px solid black;
     border-radius: 5px;
+   
+}
+#RPchild2{
+    width: 30%;
+    border: 2px solid black;
 }
 #RPchild img{
     height: 200px;

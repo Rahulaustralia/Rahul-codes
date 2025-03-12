@@ -21,6 +21,9 @@ const ProductPage = () => {
           </div>
         );
       })}
+      <div id="RPchild2">
+        <button>Man</button>
+      </div>
     </div>
   );
 };
