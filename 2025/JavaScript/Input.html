@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form</h1>
+
+    <label for="">Email</label>
+    <input type="email" name="" id="email" placeholder="Enter your Email" />
+    <br />
+    <label for="">Password</label>
+    <input
+      type="password"
+      name=""
+      id="password"
+      placeholder="Enter your Password"
+    />
+
+    <br />
+    <button id="btn">Submit</button>
+
+    <div>
+      <h1>Display Data</h1>
+      <p>Email :- <span id="displayEmail"> </span></p>
+      <p>Password :- <span id="displayPassword"> </span></p>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.getElementById("btn").addEventListener("click", myFunction);
+
+  function myFunction() {
+    let myEmh1ail = document.getElementById("email").value;
+    let myPassword = document.getElementById("password").value;
+
+    document.getElementById("displayEmail").innerText = myEmh1ail;
+
+    document.getElementById("displayPassword").innerText = myPassword;
+  }
+</script>
