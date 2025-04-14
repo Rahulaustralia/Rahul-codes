@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CallBack</h1>
+  </body>
+</html>
+
+<script>
+  //   let a = 5;
+  //   function one(a) {
+  //     function two(a) {
+  //       console.log(a);
+  //     }
+  //     return two(a);
+  //   }
+  //   one(a);
+  let test = {
+    name: "vishal",
+    print(age) {
+      console.log(`${this.name}, hello I am `, age);
+    },
+  };
+
+  let obj = { name: "Rahul", age: 5 };
+
+  test.print.call(obj, 21);
+
+  test.print.apply(obj, [14]);
+
+  let x = test.print.bind(obj, 25);
+
+  x();
+</script>
