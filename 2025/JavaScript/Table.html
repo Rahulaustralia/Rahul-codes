@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Table</h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  let table = document.createElement("table");
+  let tr = document.createElement("tr");
+  let td = (document.createElement("td").innerText = " Rahul");
+
+  table = table.appendChild(tr, td);
+
+  let container = document.getElementById("container");
+
+  container.append(table);
+</script>
