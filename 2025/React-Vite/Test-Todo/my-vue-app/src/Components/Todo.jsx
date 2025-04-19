@@ -5,7 +5,7 @@ const Todo = () => {
   const [data, setData] = useState([]);
   const [edit, setEdit] = useState("");
 
-  const handleAdd = () => {
+  const handleAddTodo = () => {
     if (text) {
       if (edit) {
         const UpdateData = data.map((el) => {
@@ -16,7 +16,6 @@ const Todo = () => {
             return el;
           }
         });
-
         setData(UpdateData);
         setText("");
         setEdit("");
@@ -29,44 +28,44 @@ const Todo = () => {
   };
 
   const handleDelete = (id) => {
-    const DeleteData = data.filter((item) => {
+    let DeleteTodo = data.filter((item) => {
       return item.id !== id;
     });
-
-    setData(DeleteData);
+    setData(DeleteTodo);
   };
 
   const handleEdit = (id) => {
-    const EditData = data.find((item) => {
-      return item.id === id;
+    let EditData = data.find((el) => {
+      return el.id === id;
     });
-    setData(EditData.text);
+    setText(EditData.text);
     setEdit(EditData);
   };
 
   return (
     <div>
-      <h1>My Todo App </h1>
+      <h1>Test Todo </h1>
       <input
         type="text"
-        value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Enter Any Text"
+        value={text}
+        placeholder="Enter any Text"
       />
-      <button onClick={handleAdd}>{edit ? "Edit Todo" : "Add Todo"}</button>
+      <button onClick={handleAddTodo}>{edit ? "Edit Todo" : "Add Todo"}</button>
+
       <div>
         {data.length === 0 ? (
           <h1> No Data Found </h1>
         ) : (
           <table border={2} cellPadding={5} cellSpacing={5}>
-            <thead>
+            <tbody>
               <tr>
-                <th>ID</th>
+                <th>Todo Id</th>
                 <th>Todo Data</th>
                 <th>Delete Todo</th>
                 <th>Update Todo</th>
               </tr>
-            </thead>
+            </tbody>
             <tbody>
               {data.map((item) => {
                 return (
@@ -79,7 +78,7 @@ const Todo = () => {
                       </button>
                     </td>
                     <td>
-                      <button onClick={() => handleEdit(item.id)}>Edit</button>
+                      <button onClick={handleEdit(item.id)}>Edit</button>
                     </td>
                   </tr>
                 );
