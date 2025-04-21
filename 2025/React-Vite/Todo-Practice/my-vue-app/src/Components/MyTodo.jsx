@@ -23,7 +23,7 @@ const MyTodo = () => {
     const EditData = todoData.find((item) => {
       return item.id === id;
     });
-    setText(EditData);
+    setText(EditData.text);
     setEditTodo(EditData);
   };
 
