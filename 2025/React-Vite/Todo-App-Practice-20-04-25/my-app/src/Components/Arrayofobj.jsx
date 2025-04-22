@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Arrayofobj = () => {
   const [dataGender, setDataGender] = useState([]);
+  const [selected, setSelected] = useState("All");
 
   const peoples = [
     {
@@ -132,6 +133,18 @@ const Arrayofobj = () => {
     setDataGender(sorted);
   };
 
+  const handleCL = (e) => {
+    setSelected(e.target.value);
+  };
+  useEffect(() => {
+    if (selected === "All") {
+      setDataGender(peoples);
+    } else {
+      const filtered = peoples.filter((el) => el.codingSkill === selected);
+      setDataGender(filtered);
+    }
+  }, [selected]);
+
   return (
     <div>
       <button onClick={() => handleGender("Male")}>Men's Data</button>
@@ -140,6 +153,14 @@ const Arrayofobj = () => {
       <br />
       <button onClick={() => handleAge("HTL")}>Age High to Low</button>
       <button onClick={() => handleAge("LTH")}>Age Low to High</button>
+
+      <select onChange={handleCL}>
+        <option value="All">All </option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="C++">C++</option>
+      </select>
       <table border={2} cellPadding={5} cellSpacing={5}>
         <thead>
           <tr>
