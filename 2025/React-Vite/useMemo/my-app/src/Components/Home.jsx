@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -12,6 +12,17 @@ const Home = () => {
   const Number = useMemo(() => {
     return Math.random().toFixed(2);
   }, []);
+
+  let b = Math.random().toFixed(2);
+
+  const myFunction = (a = b) => {
+    return a;
+  };
+
+  const rG = useCallback(myFunction(), []);
+
+  console.log("My Function", myFunction());
+  console.log(rG());
 
   return (
     <div>
