@@ -29,9 +29,11 @@ const Forms = () => {
     e.preventDefault();
 
     setFromData([
-      ...FormData,
+      ...fromData,
       { id: Math.trunc(Math.random() * 1000), ...formState },
     ]);
+
+    setFormState(initialState);
   };
 
   return (
@@ -72,6 +74,7 @@ const Forms = () => {
         <br />
         <label htmlFor="">Country </label>
         <select name="country" value={country} onChange={handleChange}>
+          <option value="">Select Country</option>
           <option value="india">India</option>
           <option value="australia">Australia</option>
           <option value="russia">Russia</option>
