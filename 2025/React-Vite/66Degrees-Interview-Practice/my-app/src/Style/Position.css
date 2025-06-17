@@ -1,0 +1,28 @@
+.c1{
+    width: 400px;
+    height: 100px;
+    border: 2px solid black;
+    margin: 15px;
+}
+
+#parent{
+    border: 2px solid red;
+}
+
+#box1{
+  background-color: orangered;
+}
+
+#box2{
+    background-color: aqua;
+    position: relative;
+    top: 15px;
+}
+
+#box3{
+    background-color: gold;
+}
+
+#box4{
+    background-color: green;
+}
