@@ -1,0 +1,125 @@
+/* Clean, modern table layout for Home component */
+
+:root{
+  --bg-start: #f6f9fc;
+  --bg-end: #eef2f7;
+  --card-bg: #ffffff;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --table-border: rgba(15,23,42,0.06);
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.home-container{
+  max-width: 980px;
+  margin: 30px auto;
+  padding: 28px;
+  background: linear-gradient(180deg,var(--bg-start),var(--bg-end));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: #0f172a;
+}
+
+/* Header */
+.home-container > h1{
+  margin: 0 0 18px 0;
+  font-size: 1.6rem;
+  letter-spacing: -0.2px;
+  color: var(--accent);
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Table container to allow overflow on small screens */
+.home-container > div{
+  overflow-x: auto;
+}
+
+/* Table styling */
+table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  background: transparent;
+  font-size: 0.95rem;
+}
+
+/* Rounded "card" look by styling rows as cards */
+tbody tr{
+  background: var(--card-bg);
+  transition: transform .12s ease, box-shadow .12s ease;
+  border: 1px solid var(--table-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.03);
+}
+
+/* make each row appear as a row with cells inline — add small gap via border-collapse trick */
+tbody tr td{
+  padding: 12px 14px;
+  vertical-align: middle;
+  border: none;
+}
+
+/* Header cells */
+thead th{
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+}
+
+/* Hover accent */
+tbody tr:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+}
+
+/* ID cell */
+tbody tr td:first-child{
+  width: 56px;
+  font-weight: 600;
+  color: #0b1320;
+}
+
+/* Brand and category cells */
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3){
+  color: #0b1320;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Image thumbnail */
+img.thumb{
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(15,23,42,0.06);
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px){
+  .home-container{
+    padding: 16px;
+    margin: 16px;
+  }
+  thead th{
+    font-size: 0.8rem;
+  }
+  tbody tr td{
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+  img.thumb{
+    width: 44px;
+    height: 44px;
+  }
+}
